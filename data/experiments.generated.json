@@ -483,7 +483,7 @@
       "walk_forward_passed": false
     }
   ],
-  "duplicate_reruns_discarded": 26,
+  "duplicate_reruns_discarded": 33,
   "families": {
     "ma_crossover_50_200": {
       "slug": "ma-crossover-50-200",
@@ -497,6 +497,7 @@
           "generated_at": "2026-09-11T16:38:20+00:00",
           "generated_at_source": "2026-09-11T16:38:20+00:00",
           "params_line": "fast=50, slow=200",
+          "period_string": "2015-01-02 to 2026-08-14",
           "verdict_text": "Final validation judgment: PASS: coherent between development and OOS; the frozen strategy matches or beats the benchmark on return and Sharpe in every OOS window.",
           "verdict_category": "pass",
           "verdict_label": "PASS",
@@ -557,14 +558,15 @@
       "slug": "ma-crossover-5-20",
       "variants": [
         {
-          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260912_110949_ma_crossover_5_20.md",
-          "filename": "20260912_110949_ma_crossover_5_20.md",
+          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260912_124328_ma_crossover_5_20.md",
+          "filename": "20260912_124328_ma_crossover_5_20.md",
           "family": "ma_crossover_5_20",
           "slug": "ma-crossover-5-20",
           "variant_index": 1,
-          "generated_at": "2026-09-12T11:09:49+00:00",
-          "generated_at_source": "2026-09-12T11:09:49+00:00",
+          "generated_at": "2026-09-12T12:43:28+00:00",
+          "generated_at_source": "2026-09-12T12:43:28+00:00",
           "params_line": "fast=5, slow=20",
+          "period_string": "2020-01-01 to 2022-11-23",
           "verdict_text": "Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.",
           "verdict_category": "fail",
           "verdict_label": "FAIL",
@@ -624,6 +626,7 @@
           "generated_at": "2026-09-11T22:27:46+00:00",
           "generated_at_source": "2026-09-11T22:27:46+00:00",
           "params_line": "fast=50, slow=200, lookback_months=6, series_id=FEDFUNDS, vintage_policy=latest_vintage_date_lte_trading_day",
+          "period_string": "2015-01-02 to 2026-08-14",
           "verdict_text": "Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.",
           "verdict_category": "fail",
           "verdict_label": "FAIL",
@@ -695,6 +698,7 @@
           "generated_at": "2026-09-11T22:57:37+00:00",
           "generated_at_source": "2026-09-11T22:57:37+00:00",
           "params_line": "fast=50, slow=200, lookback_months=6, series_id=TB3MS, vintage_policy=latest_vintage_date_lte_trading_day",
+          "period_string": "2015-01-02 to 2026-08-14",
           "verdict_text": "Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.",
           "verdict_category": "fail",
           "verdict_label": "FAIL",
@@ -771,6 +775,7 @@
           "generated_at": "2026-09-11T18:02:41+00:00",
           "generated_at_source": "2026-09-11T18:02:41+00:00",
           "params_line": "fast=50, slow=200, active_state=0, regime_vintage=latest_stored_vintage",
+          "period_string": "2015-01-02 to 2026-08-14",
           "verdict_text": "Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.",
           "verdict_category": "fail",
           "verdict_label": "FAIL",
@@ -846,6 +851,7 @@
           "generated_at": "2026-09-11T19:16:46+00:00",
           "generated_at_source": "2026-09-11T19:16:46+00:00",
           "params_line": "fast=50, slow=200, rolling_window=3, daily_aggregation=equal_weight_mean_across_digests, normalization=positive_minus_negative_hits_div_total_words, lag=calendar_day_D_to_next_trading_session, lexicon=simplified_finance_domain_subset_not_full_LM",
+          "period_string": "2026-08-10 to 2026-08-14",
           "verdict_text": "Walk-forward verdict: NOT RUN / NOT EVALUABLE.",
           "verdict_category": "not_evaluable",
           "verdict_label": "NOT EVALUABLE",
@@ -910,6 +916,7 @@
           "generated_at": "2026-09-11T23:24:01+00:00",
           "generated_at_source": "2026-09-11T23:24:01+00:00",
           "params_line": "rule_version=classic_1983_close_execution_v1, n_period=20, risk_fraction=0.01, system1_entry=20, system1_exit=10, system2_entry=55, system2_exit=20, stop_n=2.0, pyramid_n=0.5, market_cap=4, close_group_cap=6, loose_group_cap=10, direction_cap=12, groups={'equities': ['SPY', 'QQQ', 'IWM'], 'bonds': ['TLT', 'IEF'], 'metals': ['GLD', 'SLV'], 'commodities': ['DBC', 'USO'], 'currency': ['UUP']}, loose_group_interpretation=every_pairwise_union_of_close_groups",
+          "period_string": "2010-01-04 to 2026-08-14",
           "verdict_text": "Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.",
           "verdict_category": "fail",
           "verdict_label": "FAIL",
@@ -1022,6 +1029,7 @@
           "generated_at": "2026-09-11T23:32:31+00:00",
           "generated_at_source": "2026-09-11T23:32:31+00:00",
           "params_line": "rule_version=classic_1983_close_execution_v1, n_period=20, risk_fraction=0.01, simulation_cost_bps=5.0, system1_entry=20, system1_exit=10, system2_entry=55, system2_exit=20, stop_n=2.0, pyramid_n=0.5, market_cap=4, close_group_cap=6, loose_group_cap=10, direction_cap=12, groups={'equities': ['SPY', 'QQQ', 'IWM'], 'bonds': ['TLT', 'IEF'], 'metals': ['GLD', 'SLV'], 'commodities': ['DBC', 'USO'], 'currency': ['UUP']}, loose_group_interpretation=every_pairwise_union_of_close_groups, data_selection=market_data_hub_configured_production_db_2010_present",
+          "period_string": "2010-01-04 to 2026-09-10",
           "verdict_text": "Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.",
           "verdict_category": "fail",
           "verdict_label": "FAIL",
@@ -1179,6 +1187,7 @@
           "generated_at": "2026-09-12T08:35:39+00:00",
           "generated_at_source": "2026-09-12T08:35:39+00:00",
           "params_line": "rule_version=classic_1983_close_execution_v2_capital_corrected, n_period=20, risk_fraction=0.01, simulation_cost_bps=5.0, margin_ratio=0.1, max_aggregate_leverage=1.0, same_symbol_system_overlap_risk_multiplier=0.5, system1_entry=20, system1_exit=10, system2_entry=55, system2_exit=20, stop_n=2.0, pyramid_n=0.5, market_cap=4, close_group_cap=6, loose_group_cap=10, direction_cap=12, groups={'equities': ['SPY', 'QQQ', 'IWM'], 'bonds': ['TLT', 'IEF'], 'metals': ['GLD', 'SLV'], 'commodities': ['DBC', 'USO'], 'currency': ['UUP']}, loose_group_interpretation=every_pairwise_union_of_close_groups, data_selection=market_data_hub_configured_production_db_2010_present",
+          "period_string": "2010-01-04 to 2026-09-10",
           "verdict_text": "Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.",
           "verdict_category": "fail",
           "verdict_label": "FAIL",
@@ -1293,14 +1302,87 @@
       "slug": "volatility-managed-ma-crossover-50-200",
       "variants": [
         {
+          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260911_204934_volatility_managed_ma_crossover_50_200.md",
+          "filename": "20260911_204934_volatility_managed_ma_crossover_50_200.md",
+          "family": "volatility_managed_ma_crossover_50_200",
+          "slug": "volatility-managed-ma-crossover-50-200",
+          "variant_index": 1,
+          "generated_at": "2026-09-11T20:49:34+00:00",
+          "generated_at_source": "2026-09-11T20:49:34+00:00",
+          "params_line": "fast=50, slow=200, volatility_lookback=126, target_annual_vol=0.12, max_leverage=1.0",
+          "period_string": "2015-01-02 to 2026-08-14",
+          "verdict_text": "Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.",
+          "verdict_category": "fail",
+          "verdict_label": "FAIL",
+          "badge_class": "verdict-badge--fail",
+          "registered": true,
+          "registry_matches": [
+            {
+              "timestamp": "2026-09-11T20:49:34+00:00",
+              "walk_forward_passed": false,
+              "params": {
+                "fast": 50,
+                "max_leverage": 1.0,
+                "slow": 200,
+                "target_annual_vol": 0.12,
+                "volatility_lookback": 126
+              }
+            }
+          ],
+          "chart_filename": "volatility-managed-ma-crossover-50-200__variant-1.svg",
+          "sections": [
+            {
+              "heading": "Experiment",
+              "classification": "experiment",
+              "raw_markdown_body": "\n\r\n- Period: 2015-01-02 to 2026-08-14 (2921 sessions)\r\n- Execution rule: close-derived weights are applied one session later\r\n- Transaction costs: 5.00 bps per unit of turnover\r\n- Cash return: 0%; taxes, slippage and market impact: not modeled\r\n- Parameters: fast=50, slow=200, volatility_lookback=126, target_annual_vol=0.12, max_leverage=1.0\r\n\r\n"
+            },
+            {
+              "heading": "Frozen volatility-management parameters",
+              "classification": "extra",
+              "raw_markdown_body": "\n\r\n- Trailing realized-volatility lookback: 126 trading-day returns (six months). This exactly matches Barroso and Santa-Clara (2015) and was not tuned on this run.\r\n- Target annualized volatility: 12.00%. This is the paper's round, conventional risk target, fixed before observing this run rather than selected to maximize its results.\r\n- Maximum leverage: 1.00x of the existing MA allocation. This conservative retail-ETF cap permits only de-risking and never levering above the ungated strategy's allocation.\r\n- Missing-history rule: exposure is explicitly zero until all trailing daily returns required by the volatility lookback exist; no volatility or position weight is imputed.\r\n- Overlay rule: the existing MA trend direction and equal-weight active allocation are unchanged; each active allocation is multiplied by `min(max_leverage, target_annual_vol / trailing_realized_vol)`.\r\n\r\n"
+            },
+            {
+              "heading": "Data provenance",
+              "classification": "provenance",
+              "raw_markdown_body": "\n\r\n- Source: `market-data-hub` (`adj_close`; live rows included: `False`)\r\n- Requested symbols: SPY, QQQ\r\n- Validated common panel: 2015-01-02 to 2026-08-14; 2921 rows\r\n- Database: `C:\\Users\\Administrator\\Documents\\GitHub\\market-data-hub\\market_data.duckdb`\r\n\r\n| Symbol | Last date | Status | Coverage score | Stalled |\r\n|---|---:|---|---:|---|\r\n| QQQ | 2026-08-14 00:00:00 | ok | 97.31 | False |\r\n| SPY | 2026-08-14 00:00:00 | ok | 97.33 | False |\r\n\r\n"
+            },
+            {
+              "heading": "Research rationale",
+              "classification": "rationale",
+              "raw_markdown_body": "\n\r\nScaling down an active 50/200 moving-average allocation when its recent realized volatility is high may reduce crash exposure and improve risk-adjusted returns without changing the trend signal.\r\n\r\nReuse the existing 50/200 MA direction and equal-weight active allocation unchanged. For each ETF with an active allocation, multiply that allocation by min(1.0, 12% / its annualized realized volatility over the trailing 126 daily returns). Hold cash until the complete volatility window exists.\r\n\r\nSources:\r\n\r\n- [Barroso, P. and Santa-Clara, P. (2015), \"Momentum has its moments\", Journal of Financial Economics, 116(1), 111-120.](https://doi.org/10.1016/j.jfineco.2014.11.010) — Scaling a momentum/trend strategy's exposure by the inverse of its own trailing 6-month realized volatility, targeting a constant volatility level, took the (unmanaged) strategy's Sharpe ratio from 0.53 to 0.97 and \"virtually eliminated\" crashes -- volatility risk is itself predictable by recent realized volatility, and high recent volatility predicts poor subsequent returns, which is exactly what scaling down in high-vol periods avoids. Also available on IDEAS/RePEc: https://ideas.repec.org/a/eee/jfinec/v116y2015i1p111-120.html\r\n- [Hurst, B., Ooi, Y.H. and Pedersen, L.H. (2017), \"A Century of Evidence on Trend-Following Investing\", Journal of Portfolio Management, 44(1), 15-29.](https://www.aqr.com/Insights/Research/Journal-Article/A-Century-of-Evidence-on-Trend-Following-Investing) — Time-series trend-following delivered positive average returns in every decade since 1880 across markets (average Sharpe ~0.4) and performed well in 8 of the 10 largest drawdown periods for a 60/40 portfolio over the last century -- i.e. trend-following's edge shows up especially in crisis/high-volatility periods, which is exactly when a volatility-scaling overlay reduces exposure, making the two ideas complementary rather than in tension.\r\n\r\nKnown risks:\r\n\r\n- scaling down can sacrifice returns when a profitable crisis trend coincides with high realized volatility\r\n- realized volatility can change faster than a six-month estimator\r\n- the unlevered cap prevents calm-period risk normalization upward\r\n- cash return is modeled as zero and execution frictions are incomplete\r\n- one historical sample is not evidence of future profitability\r\n\r\n"
+            },
+            {
+              "heading": "Net backtest metrics",
+              "classification": "metrics",
+              "raw_markdown_body": "\n\r\n| Metric | Strategy | Ungated MA | Benchmark |\r\n|---|---:|---:|---:|\r\n| Cumulative return | 151.45% | 318.82% | 500.62% |\r\n| CAGR | 8.28% | 13.15% | 16.73% |\r\n| Annualized volatility | 11.20% | 16.74% | 19.44% |\r\n| Annualized Sharpe (rf=0) | 0.77 | 0.82 | 0.89 |\r\n| Maximum drawdown | -20.44% | -30.86% | -30.86% |\r\n| Annualized turnover | 176.26% | 189.80% | 8.63% |\r\n| Transaction-cost drag (sum of daily rates) | 1.02% | 1.10% | 0.05% |\r\n\r\n"
+            },
+            {
+              "heading": "Walk-forward / out-of-sample validation",
+              "classification": "walkforward",
+              "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2015-01-02 to 2021-12-15 | 1752 | 75.40% | 8.42% | 11.06% | 0.79 | -20.44% | 227.51% | 1.00 | -152.11% | -0.21 |\r\n| oos_1 | out_of_sample | 2021-12-16 to 2026-08-14 | 1169 | 55.80% | 10.03% | 10.64% | 0.95 | -15.30% | 86.52% | 0.77 | -30.71% | 0.18 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n"
+            },
+            {
+              "heading": "Giudizio / conclusion",
+              "classification": "verdict",
+              "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.\r\n\r\n"
+            },
+            {
+              "heading": "Ecosystem review",
+              "classification": "ecosystem",
+              "raw_markdown_body": "\n\r\n- **LazyFin:** Do not recreate hierarchical portfolio optimization in LazyAlpha; the line was moved/retired from LazyFin and belongs to LazyPortfolio. (`C:\\Users\\Administrator\\Documents\\GitHub\\LazyFin\\docs\\status.md`)\r\n- **investmentcommittee:** Keep B0/P0/Sa/PH/PF as methodological reference: same data, folds, costs and rebalance rules for honest comparisons; do not clone it 1:1. (`C:\\Users\\Administrator\\Documents\\GitHub\\investment-process-top-down-etf.md`)\r\n"
+            }
+          ]
+        },
+        {
           "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260911_230108_volatility_managed_ma_crossover_50_200.md",
           "filename": "20260911_230108_volatility_managed_ma_crossover_50_200.md",
           "family": "volatility_managed_ma_crossover_50_200",
           "slug": "volatility-managed-ma-crossover-50-200",
-          "variant_index": 1,
+          "variant_index": 2,
           "generated_at": "2026-09-11T23:01:08+00:00",
           "generated_at_source": "2026-09-11T23:01:08+00:00",
           "params_line": "fast=50, slow=200, volatility_lookback=126, target_annual_vol=0.12, max_leverage=1.0",
+          "period_string": "2010-01-04 to 2026-08-14",
           "verdict_text": "Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.",
           "verdict_category": "fail",
           "verdict_label": "FAIL",
@@ -1320,7 +1402,7 @@
               }
             }
           ],
-          "chart_filename": "volatility-managed-ma-crossover-50-200__variant-1.svg",
+          "chart_filename": "volatility-managed-ma-crossover-50-200__variant-2.svg",
           "sections": [
             {
               "heading": "Experiment",

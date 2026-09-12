@@ -31,8 +31,19 @@ SECTION_RE = re.compile(r"^## ([^\r\n]+)\r?$", re.MULTILINE)
 BOLD_LINE_RE = re.compile(r"^[ \t]*\*\*(.+?)\*\*", re.MULTILINE)
 GENERATED_RE = re.compile(r"^Generated:[ \t]*(\S+)[ \t]*\r?$", re.MULTILINE)
 PARAMS_RE = re.compile(r"^- Parameters:[ \t]?(.*?)(?:\r?$)", re.MULTILINE)
+PERIOD_RE = re.compile(
+    r"^- Period:[ \t]+(\S+[ \t]+to[ \t]+\S+)[ \t]+\([^)\r\n]+\)[ \t]*\r?$",
+    re.MULTILINE,
+)
 
 CATEGORY_ORDER = ("pass", "fail", "inconclusive", "informational", "not_evaluable")
+CATEGORY_LABELS = {
+    "pass": "Walk-forward PASS",
+    "fail": "FAIL",
+    "inconclusive": "INCONCLUSIVE",
+    "informational": "INFORMATIONAL ONLY",
+    "not_evaluable": "NOT EVALUABLE",
+}
 
 
 class BuildError(RuntimeError):
@@ -61,6 +72,7 @@ class Report:
     generated_at_source: str
     sections: list[Section]
     params_line: str
+    period_string: str
     verdict_text: str
     verdict_category: str
     verdict_label: str
@@ -80,6 +92,13 @@ class ResearchNote:
     generated_at_source: str | None
     body: str
     slug: str
+
+
+@dataclass
+class ReportPathStatus:
+    bucket: str
+    report: Report | None = None
+    research_note: ResearchNote | None = None
 
 
 def read_source_text(path: Path) -> str:
@@ -257,6 +276,10 @@ def parse_report(path: Path, registry: list[RegistryEntry]) -> Report:
     if params_match is None:
         raise BuildError(f"{path.name}: Experiment section has no '- Parameters:' bullet")
     params_line = params_match.group(1)
+    period_match = PERIOD_RE.search(experiment_sections[0].body)
+    if period_match is None:
+        raise BuildError(f"{path.name}: Experiment section has no parseable '- Period:' bullet")
+    period_string = period_match.group(1)
 
     verdict_text, verdict_category, verdict_label = canonical_verdict(sections, path.name)
     badge_class = (
@@ -285,6 +308,7 @@ def parse_report(path: Path, registry: list[RegistryEntry]) -> Report:
         generated_at_source=generated_source,
         sections=sections,
         params_line=params_line,
+        period_string=period_string,
         verdict_text=verdict_text,
         verdict_category=verdict_category,
         verdict_label=verdict_label,
@@ -323,7 +347,9 @@ def parse_research_note(path: Path, text: str) -> ResearchNote:
     )
 
 
-def load_reports(registry: list[RegistryEntry]) -> tuple[list[Report], list[ResearchNote]]:
+def load_reports(
+    registry: list[RegistryEntry],
+) -> tuple[list[Report], list[ResearchNote], dict[str, ReportPathStatus]]:
     try:
         paths = sorted(REPORTS_DIR.glob("*.md"), key=lambda path: path.name.lower())
     except OSError as exc:
@@ -331,6 +357,7 @@ def load_reports(registry: list[RegistryEntry]) -> tuple[list[Report], list[Rese
 
     reports: list[Report] = []
     research_notes: list[ResearchNote] = []
+    report_path_statuses: dict[str, ReportPathStatus] = {}
     errors: list[str] = []
     for path in paths:
         if path.name == ".gitkeep":
@@ -344,9 +371,17 @@ def load_reports(registry: list[RegistryEntry]) -> tuple[list[Report], list[Rese
                 (line.rstrip("\r") for line in text.splitlines() if line.strip()), ""
             )
             if first_nonblank.startswith(REPORT_HEADING_PREFIX):
-                reports.append(parse_report(path, registry))
+                report = parse_report(path, registry)
+                reports.append(report)
+                report_path_statuses[normalized_windows_path(path.resolve())] = ReportPathStatus(
+                    bucket="structured", report=report
+                )
             else:
-                research_notes.append(parse_research_note(path, text))
+                research_note = parse_research_note(path, text)
+                research_notes.append(research_note)
+                report_path_statuses[normalized_windows_path(path.resolve())] = ReportPathStatus(
+                    bucket="research_note", research_note=research_note
+                )
         except BuildError as exc:
             errors.append(str(exc))
     if errors:
@@ -370,10 +405,12 @@ def load_reports(registry: list[RegistryEntry]) -> tuple[list[Report], list[Rese
         (note for note in research_notes if note.generated_at_source is None),
         key=lambda note: note.filename.casefold(),
     )
-    return reports, dated_notes + undated_notes
+    return reports, dated_notes + undated_notes, report_path_statuses
 
 
-def group_and_deduplicate(reports: list[Report]) -> tuple[dict[str, list[Report]], int]:
+def group_and_deduplicate(
+    reports: list[Report], report_path_statuses: dict[str, ReportPathStatus]
+) -> tuple[dict[str, list[Report]], int]:
     grouped_raw: dict[str, list[Report]] = defaultdict(list)
     for report in reports:
         grouped_raw[report.family].append(report)
@@ -391,15 +428,30 @@ def group_and_deduplicate(reports: list[Report]) -> tuple[dict[str, list[Report]
             )
         seen_slugs[slug] = family
 
-        by_params: dict[str, Report] = {}
         for report in grouped_raw[family]:
-            current = by_params.get(report.params_line)
-            if current is None or report.generated_at > current.generated_at:
-                by_params[report.params_line] = report
-        variants = sorted(by_params.values(), key=lambda report: (report.generated_at, report.filename))
-        discarded += len(grouped_raw[family]) - len(variants)
-        for index, report in enumerate(variants, start=1):
             report.slug = slug
+
+        by_variant: dict[tuple[str, str], Report] = {}
+        for report in grouped_raw[family]:
+            variant_key = (report.params_line, report.period_string)
+            current = by_variant.get(variant_key)
+            if current is None or report.generated_at > current.generated_at:
+                by_variant[variant_key] = report
+        variants = sorted(by_variant.values(), key=lambda report: (report.generated_at, report.filename))
+        discarded += len(grouped_raw[family]) - len(variants)
+        for report in grouped_raw[family]:
+            status = report_path_statuses[normalized_windows_path(report.source_path.resolve())]
+            surviving_report = by_variant[(report.params_line, report.period_string)]
+            if surviving_report is report:
+                status.bucket = "surviving_structured"
+            elif surviving_report.generated_at > report.generated_at:
+                status.bucket = "discarded_duplicate"
+            else:
+                raise BuildError(
+                    f"{report.filename}: exact duplicate was not superseded by a "
+                    "later-timestamped report"
+                )
+        for index, report in enumerate(variants, start=1):
             report.variant_index = index
         grouped[family] = variants
     return grouped, discarded
@@ -626,7 +678,7 @@ def render_leaderboard(grouped: dict[str, list[Report]], newline: str) -> str:
     lines = [
         "# Leaderboard",
         "",
-        "This lists every documented experiment variant, passing and failing alike, sourced directly from the individual reports.",
+        "This lists every documented experiment variant — one row per distinct parameter set and sample period that was actually run (exact-duplicate reruns collapse to their latest occurrence) — passing and failing alike, sourced directly from the individual reports.",
         "",
         "| Strategy | Params | Generated | Registered | Verdict |",
         "|---|---|---|---:|---|",
@@ -647,21 +699,54 @@ def registry_badge(entry: RegistryEntry) -> str:
 
 
 def render_changelog(
-    registry: list[RegistryEntry], grouped: dict[str, list[Report]], newline: str
+    registry: list[RegistryEntry], report_path_statuses: dict[str, ReportPathStatus], newline: str
 ) -> str:
-    slug_by_family = {family: variants[0].slug for family, variants in grouped.items()}
     lines = [
         "# Changelog",
         "",
-        "This is LazyAlpha's own append-only experiment registry, in its original order, unedited.",
+        "This is LazyAlpha's own append-only experiment registry, rendered in its original append order — no rows reordered, removed, or added. Parameter dictionaries are shown compactly and each row links to its exact matching page where the source report is still the latest for its parameter set and sample period.",
         "",
     ]
     for entry in registry:
         raw = entry.raw
         strategy_name = str(raw["strategy_name"])
         strategy_display = html.escape(strategy_name)
-        if strategy_name in slug_by_family:
-            strategy_display = f"[{strategy_display}](models/{slug_by_family[strategy_name]}.md)"
+        report_path = Path(str(raw["report_path"])).resolve()
+        report_path_status = report_path_statuses.get(normalized_windows_path(report_path))
+        if report_path_status is None:
+            raise BuildError(
+                f"{REGISTRY_PATH.name}: line {entry.line_number} report_path does not match "
+                f"a parsed file in {REPORTS_DIR}: {raw['report_path']}"
+            )
+        if report_path_status.bucket == "surviving_structured":
+            matching_report = report_path_status.report
+            if matching_report is None:
+                raise BuildError(f"internal error: missing report for {report_path}")
+            strategy_display = (
+                f"[{strategy_display}](models/{matching_report.slug}.md"
+                f"#variant-{matching_report.variant_index})"
+            )
+        elif report_path_status.bucket == "discarded_duplicate":
+            discarded_report = report_path_status.report
+            if discarded_report is None:
+                raise BuildError(f"internal error: missing discarded report for {report_path}")
+            strategy_display = (
+                f"[{strategy_display}](models/{discarded_report.slug}.md)"
+                " (superseded by a later identical rerun on this family's page)"
+            )
+        elif report_path_status.bucket == "research_note":
+            research_note = report_path_status.research_note
+            if research_note is None:
+                raise BuildError(f"internal error: missing research note for {report_path}")
+            strategy_display += (
+                f" (published as a comparative [research note](notes/{research_note.slug}.md), "
+                "not a single-strategy model card)"
+            )
+        else:
+            raise BuildError(
+                f"internal error: unknown report-path bucket {report_path_status.bucket!r} "
+                f"for {report_path}"
+            )
         compact_params = json.dumps(raw["params"], sort_keys=True, ensure_ascii=False)
         lines.append(
             f"- {html.escape(str(raw['timestamp']))} · {strategy_display} · "
@@ -674,7 +759,7 @@ def detect_newline(text: str) -> str:
     return "\r\n" if "\r\n" in text else "\n"
 
 
-def updated_index(index_text: str, total: int, passes: int) -> str:
+def updated_index(index_text: str, categories: Counter[str]) -> str:
     newline = detect_newline(index_text)
     start_marker = "<!-- STATS:START -->"
     end_marker = "<!-- STATS:END -->"
@@ -684,15 +769,17 @@ def updated_index(index_text: str, total: int, passes: int) -> str:
         raise BuildError("docs/index.md: missing or misordered literal STATS markers")
     content_start = start + len(start_marker)
     content_end = end
-    replacement = newline + newline.join(
-        [
-            '<div class="la-stat-row">',
-            f'  <div class="la-stat"><span class="la-stat__value">{total}</span><span class="la-stat__label">Experiments documented</span></div>',
-            f'  <div class="la-stat"><span class="la-stat__value">{passes}</span><span class="la-stat__label">Walk-forward PASS</span></div>',
-            f'  <div class="la-stat"><span class="la-stat__value">{total - passes}</span><span class="la-stat__label">FAIL / inconclusive / blocked</span></div>',
-            "</div>",
-        ]
-    ) + newline
+    stat_lines = [
+        '<div class="la-stat-row">',
+        f'  <div class="la-stat"><span class="la-stat__value">{sum(categories.values())}</span><span class="la-stat__label">Experiments documented</span></div>',
+    ]
+    stat_lines.extend(
+        f'  <div class="la-stat"><span class="la-stat__value">{categories[category]}</span><span class="la-stat__label">{CATEGORY_LABELS[category]}</span></div>'
+        for category in CATEGORY_ORDER
+        if categories[category] > 0
+    )
+    stat_lines.append("</div>")
+    replacement = newline + newline.join(stat_lines) + newline
     return index_text[:content_start] + replacement + index_text[content_end:]
 
 
@@ -736,6 +823,7 @@ def report_as_json(report: Report) -> dict[str, Any]:
         "generated_at": report.generated_at.isoformat(),
         "generated_at_source": report.generated_at_source,
         "params_line": report.params_line,
+        "period_string": report.period_string,
         "verdict_text": report.verdict_text,
         "verdict_category": report.verdict_category,
         "verdict_label": report.verdict_label,
@@ -769,8 +857,8 @@ def atomic_write_bytes(path: Path, content: bytes) -> None:
 def build() -> None:
     # Read and validate every source and every edit target before creating outputs.
     registry = load_registry()
-    reports, research_notes = load_reports(registry)
-    grouped, duplicate_count = group_and_deduplicate(reports)
+    reports, research_notes, report_path_statuses = load_reports(registry)
+    grouped, duplicate_count = group_and_deduplicate(reports, report_path_statuses)
     variants = [report for family_reports in grouped.values() for report in family_reports]
 
     try:
@@ -800,9 +888,9 @@ def build() -> None:
     }
     notes_index = render_notes_index(research_notes, index_newline)
     leaderboard = render_leaderboard(grouped, index_newline)
-    changelog = render_changelog(registry, grouped, index_newline)
-    passes = sum(report.verdict_category == "pass" for report in variants)
-    new_index = updated_index(index_text, len(variants), passes)
+    changelog = render_changelog(registry, report_path_statuses, index_newline)
+    categories = Counter(report.verdict_category for report in variants)
+    new_index = updated_index(index_text, categories)
     new_mkdocs = updated_mkdocs(mkdocs_text, grouped)
     dataset = {
         "source_root": str(LAZYALPHA_ROOT),
@@ -837,7 +925,6 @@ def build() -> None:
     atomic_write_text(SITE_ROOT / "mkdocs.yml", new_mkdocs)
     atomic_write_text(DATA_DIR / "experiments.generated.json", dataset_json)
 
-    categories = Counter(report.verdict_category for report in variants)
     registered = sum(report.registered for report in variants)
     breakdown = ", ".join(f"{category}={categories[category]}" for category in CATEGORY_ORDER)
     print(f"Families: {len(grouped)}")
