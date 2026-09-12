@@ -1,0 +1,1370 @@
+{
+  "source_root": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha",
+  "registry_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\lazyalpha\\state\\experiments.jsonl",
+  "registry_entries": [
+    {
+      "params": {
+        "fast": 50,
+        "slow": 200
+      },
+      "period_end": "2026-08-14",
+      "period_start": "2015-01-02",
+      "report_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260911_163820_ma_crossover_50_200.md",
+      "strategy_name": "ma_crossover_50_200",
+      "symbols": [
+        "QQQ",
+        "SPY"
+      ],
+      "timestamp": "2026-09-11T16:38:20+00:00",
+      "walk_forward_passed": true
+    },
+    {
+      "params": {
+        "active_state": 0,
+        "fast": 50,
+        "regime_vintage": "latest_stored_vintage",
+        "slow": 200
+      },
+      "period_end": "2026-08-14",
+      "period_start": "2015-01-02",
+      "report_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260911_180241_regime_conditional_ma_50_200_state_0.md",
+      "strategy_name": "regime_conditional_ma_50_200_state_0",
+      "symbols": [
+        "QQQ",
+        "SPY"
+      ],
+      "timestamp": "2026-09-11T18:02:41+00:00",
+      "walk_forward_passed": false
+    },
+    {
+      "params": {
+        "fast": 50,
+        "max_leverage": 1.0,
+        "slow": 200,
+        "target_annual_vol": 0.12,
+        "volatility_lookback": 126
+      },
+      "period_end": "2026-08-14",
+      "period_start": "2015-01-02",
+      "report_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260911_204934_volatility_managed_ma_crossover_50_200.md",
+      "strategy_name": "volatility_managed_ma_crossover_50_200",
+      "symbols": [
+        "QQQ",
+        "SPY"
+      ],
+      "timestamp": "2026-09-11T20:49:34+00:00",
+      "walk_forward_passed": false
+    },
+    {
+      "params": {
+        "fast": 50,
+        "lookback_months": 6,
+        "series_id": "FEDFUNDS",
+        "slow": 200,
+        "vintage_policy": "latest_vintage_date_lte_trading_day"
+      },
+      "period_end": "2026-08-14",
+      "period_start": "2015-01-02",
+      "report_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260911_222746_policy_conditional_ma_50_200_6m.md",
+      "strategy_name": "policy_conditional_ma_50_200_6m",
+      "symbols": [
+        "QQQ",
+        "SPY"
+      ],
+      "timestamp": "2026-09-11T22:27:46+00:00",
+      "walk_forward_passed": false
+    },
+    {
+      "params": {
+        "fast": 50,
+        "lookback_months": 6,
+        "series_id": "TB3MS",
+        "slow": 200,
+        "vintage_policy": "latest_vintage_date_lte_trading_day"
+      },
+      "period_end": "2026-08-14",
+      "period_start": "2015-01-02",
+      "report_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260911_225737_policy_conditional_ma_50_200_6m.md",
+      "strategy_name": "policy_conditional_ma_50_200_6m",
+      "symbols": [
+        "QQQ",
+        "SPY"
+      ],
+      "timestamp": "2026-09-11T22:57:37+00:00",
+      "walk_forward_passed": false
+    },
+    {
+      "params": {
+        "fast": 50,
+        "max_leverage": 1.0,
+        "sample": "extended_2010_2026",
+        "slow": 200,
+        "target_annual_vol": 0.12,
+        "volatility_lookback": 126
+      },
+      "period_end": "2026-08-14",
+      "period_start": "2010-01-04",
+      "report_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260911_230108_volatility_managed_ma_crossover_50_200.md",
+      "strategy_name": "volatility_managed_ma_crossover_50_200",
+      "symbols": [
+        "QQQ",
+        "SPY"
+      ],
+      "timestamp": "2026-09-11T23:01:38+00:00",
+      "walk_forward_passed": false
+    },
+    {
+      "params": {
+        "close_group_cap": 6,
+        "direction_cap": 12,
+        "groups": {
+          "bonds": [
+            "TLT",
+            "IEF"
+          ],
+          "commodities": [
+            "DBC",
+            "USO"
+          ],
+          "currency": [
+            "UUP"
+          ],
+          "equities": [
+            "SPY",
+            "QQQ",
+            "IWM"
+          ],
+          "metals": [
+            "GLD",
+            "SLV"
+          ]
+        },
+        "loose_group_cap": 10,
+        "loose_group_interpretation": "every_pairwise_union_of_close_groups",
+        "market_cap": 4,
+        "n_period": 20,
+        "pyramid_n": 0.5,
+        "risk_fraction": 0.01,
+        "rule_version": "classic_1983_close_execution_v1",
+        "stop_n": 2.0,
+        "system1_entry": 20,
+        "system1_exit": 10,
+        "system2_entry": 55,
+        "system2_exit": 20
+      },
+      "period_end": "2026-08-14",
+      "period_start": "2010-01-04",
+      "report_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\turtle_systems_1_and_2_2010_present.md",
+      "strategy_name": "turtle_systems_1_and_2",
+      "symbols": [
+        "DBC",
+        "GLD",
+        "IEF",
+        "IWM",
+        "QQQ",
+        "SLV",
+        "SPY",
+        "TLT",
+        "USO",
+        "UUP"
+      ],
+      "timestamp": "2026-09-11T23:24:01+00:00",
+      "walk_forward_passed": false
+    },
+    {
+      "params": {
+        "close_group_cap": 6,
+        "data_selection": "market_data_hub_configured_production_db_2010_present",
+        "direction_cap": 12,
+        "groups": {
+          "bonds": [
+            "TLT",
+            "IEF"
+          ],
+          "commodities": [
+            "DBC",
+            "USO"
+          ],
+          "currency": [
+            "UUP"
+          ],
+          "equities": [
+            "SPY",
+            "QQQ",
+            "IWM"
+          ],
+          "metals": [
+            "GLD",
+            "SLV"
+          ]
+        },
+        "loose_group_cap": 10,
+        "loose_group_interpretation": "every_pairwise_union_of_close_groups",
+        "market_cap": 4,
+        "n_period": 20,
+        "pyramid_n": 0.5,
+        "risk_fraction": 0.01,
+        "rule_version": "classic_1983_close_execution_v1",
+        "stop_n": 2.0,
+        "system1_entry": 20,
+        "system1_exit": 10,
+        "system2_entry": 55,
+        "system2_exit": 20
+      },
+      "period_end": "2026-09-10",
+      "period_start": "2010-01-04",
+      "report_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\turtle_systems_1_and_2_2010_2026-09-10.md",
+      "strategy_name": "turtle_systems_1_and_2",
+      "symbols": [
+        "DBC",
+        "GLD",
+        "IEF",
+        "IWM",
+        "QQQ",
+        "SLV",
+        "SPY",
+        "TLT",
+        "USO",
+        "UUP"
+      ],
+      "timestamp": "2026-09-11T23:26:29+00:00",
+      "walk_forward_passed": false
+    },
+    {
+      "params": {
+        "close_group_cap": 6,
+        "data_selection": "market_data_hub_configured_production_db_2010_present",
+        "direction_cap": 12,
+        "groups": {
+          "bonds": [
+            "TLT",
+            "IEF"
+          ],
+          "commodities": [
+            "DBC",
+            "USO"
+          ],
+          "currency": [
+            "UUP"
+          ],
+          "equities": [
+            "SPY",
+            "QQQ",
+            "IWM"
+          ],
+          "metals": [
+            "GLD",
+            "SLV"
+          ]
+        },
+        "loose_group_cap": 10,
+        "loose_group_interpretation": "every_pairwise_union_of_close_groups",
+        "market_cap": 4,
+        "n_period": 20,
+        "pyramid_n": 0.5,
+        "risk_fraction": 0.01,
+        "rule_version": "classic_1983_close_execution_v1",
+        "simulation_cost_bps": 5.0,
+        "stop_n": 2.0,
+        "system1_entry": 20,
+        "system1_exit": 10,
+        "system2_entry": 55,
+        "system2_exit": 20
+      },
+      "period_end": "2026-09-10",
+      "period_start": "2010-01-04",
+      "report_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\turtle_systems_1_and_2_2010_2026-09-10.md",
+      "strategy_name": "turtle_systems_1_and_2",
+      "symbols": [
+        "DBC",
+        "GLD",
+        "IEF",
+        "IWM",
+        "QQQ",
+        "SLV",
+        "SPY",
+        "TLT",
+        "USO",
+        "UUP"
+      ],
+      "timestamp": "2026-09-11T23:32:31+00:00",
+      "walk_forward_passed": false
+    },
+    {
+      "params": {
+        "close_group_cap": 6,
+        "cost_model": "futures_realistic",
+        "data_selection": "market_data_hub_configured_production_db_2010_present",
+        "direction_cap": 12,
+        "groups": {
+          "bonds": [
+            "TLT",
+            "IEF"
+          ],
+          "commodities": [
+            "DBC",
+            "USO"
+          ],
+          "currency": [
+            "UUP"
+          ],
+          "equities": [
+            "SPY",
+            "QQQ",
+            "IWM"
+          ],
+          "metals": [
+            "GLD",
+            "SLV"
+          ]
+        },
+        "loose_group_cap": 10,
+        "loose_group_interpretation": "every_pairwise_union_of_close_groups",
+        "maintenance_margin_ratio": 0.1,
+        "margin_call_action": "liquidate_all_and_halt",
+        "market_cap": 4,
+        "n_period": 20,
+        "pyramid_n": 0.5,
+        "risk_fraction": 0.01,
+        "rule_version": "classic_1983_close_execution_v1",
+        "simulation_cost_bps": 0.5,
+        "stop_n": 2.0,
+        "system1_entry": 20,
+        "system1_exit": 10,
+        "system2_entry": 55,
+        "system2_exit": 20
+      },
+      "period_end": "2026-09-10",
+      "period_start": "2010-01-04",
+      "report_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\turtle_original_vs_futures_realistic_2010-01-04_2026-09-10.md",
+      "strategy_name": "turtle_systems_1_and_2",
+      "symbols": [
+        "DBC",
+        "GLD",
+        "IEF",
+        "IWM",
+        "QQQ",
+        "SLV",
+        "SPY",
+        "TLT",
+        "USO",
+        "UUP"
+      ],
+      "timestamp": "2026-09-12T08:08:23+00:00",
+      "walk_forward_passed": false
+    },
+    {
+      "params": {
+        "close_group_cap": 6,
+        "data_selection": "market_data_hub_configured_production_db_2010_present",
+        "direction_cap": 12,
+        "groups": {
+          "bonds": [
+            "TLT",
+            "IEF"
+          ],
+          "commodities": [
+            "DBC",
+            "USO"
+          ],
+          "currency": [
+            "UUP"
+          ],
+          "equities": [
+            "SPY",
+            "QQQ",
+            "IWM"
+          ],
+          "metals": [
+            "GLD",
+            "SLV"
+          ]
+        },
+        "loose_group_cap": 10,
+        "loose_group_interpretation": "every_pairwise_union_of_close_groups",
+        "margin_ratio": 0.1,
+        "market_cap": 4,
+        "max_aggregate_leverage": 1.0,
+        "n_period": 20,
+        "pyramid_n": 0.5,
+        "risk_fraction": 0.01,
+        "rule_version": "classic_1983_close_execution_v2_capital_corrected",
+        "same_symbol_system_overlap_risk_multiplier": 0.5,
+        "simulation_cost_bps": 5.0,
+        "stop_n": 2.0,
+        "system1_entry": 20,
+        "system1_exit": 10,
+        "system2_entry": 55,
+        "system2_exit": 20
+      },
+      "period_end": "2026-09-10",
+      "period_start": "2010-01-04",
+      "report_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\turtle_core_risk_corrected_classic_2010-01-04_2026-09-10.md",
+      "strategy_name": "turtle_systems_1_and_2",
+      "symbols": [
+        "DBC",
+        "GLD",
+        "IEF",
+        "IWM",
+        "QQQ",
+        "SLV",
+        "SPY",
+        "TLT",
+        "USO",
+        "UUP"
+      ],
+      "timestamp": "2026-09-12T08:35:39+00:00",
+      "walk_forward_passed": false
+    },
+    {
+      "params": {
+        "close_group_cap": 6,
+        "cost_model": "futures_realistic",
+        "data_selection": "market_data_hub_configured_production_db_2010_present",
+        "direction_cap": 12,
+        "groups": {
+          "bonds": [
+            "TLT",
+            "IEF"
+          ],
+          "commodities": [
+            "DBC",
+            "USO"
+          ],
+          "currency": [
+            "UUP"
+          ],
+          "equities": [
+            "SPY",
+            "QQQ",
+            "IWM"
+          ],
+          "metals": [
+            "GLD",
+            "SLV"
+          ]
+        },
+        "loose_group_cap": 10,
+        "loose_group_interpretation": "every_pairwise_union_of_close_groups",
+        "maintenance_margin_ratio": 0.1,
+        "margin_call_action": "liquidate_all_and_halt",
+        "margin_ratio": 0.1,
+        "market_cap": 4,
+        "max_aggregate_leverage": 1.0,
+        "n_period": 20,
+        "pyramid_n": 0.5,
+        "risk_fraction": 0.01,
+        "rule_version": "classic_1983_close_execution_v2_capital_corrected",
+        "same_symbol_system_overlap_risk_multiplier": 0.5,
+        "simulation_cost_bps": 0.5,
+        "stop_n": 2.0,
+        "system1_entry": 20,
+        "system1_exit": 10,
+        "system2_entry": 55,
+        "system2_exit": 20
+      },
+      "period_end": "2026-09-10",
+      "period_start": "2010-01-04",
+      "report_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\turtle_core_risk_corrected_comparison_2010-01-04_2026-09-10.md",
+      "strategy_name": "turtle_systems_1_and_2",
+      "symbols": [
+        "DBC",
+        "GLD",
+        "IEF",
+        "IWM",
+        "QQQ",
+        "SLV",
+        "SPY",
+        "TLT",
+        "USO",
+        "UUP"
+      ],
+      "timestamp": "2026-09-12T08:37:15+00:00",
+      "walk_forward_passed": false
+    }
+  ],
+  "duplicate_reruns_discarded": 26,
+  "families": {
+    "ma_crossover_50_200": {
+      "slug": "ma-crossover-50-200",
+      "variants": [
+        {
+          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260911_163820_ma_crossover_50_200.md",
+          "filename": "20260911_163820_ma_crossover_50_200.md",
+          "family": "ma_crossover_50_200",
+          "slug": "ma-crossover-50-200",
+          "variant_index": 1,
+          "generated_at": "2026-09-11T16:38:20+00:00",
+          "generated_at_source": "2026-09-11T16:38:20+00:00",
+          "params_line": "fast=50, slow=200",
+          "verdict_text": "Final validation judgment: PASS: coherent between development and OOS; the frozen strategy matches or beats the benchmark on return and Sharpe in every OOS window.",
+          "verdict_category": "pass",
+          "verdict_label": "PASS",
+          "badge_class": "verdict-badge--pass",
+          "registered": true,
+          "registry_matches": [
+            {
+              "timestamp": "2026-09-11T16:38:20+00:00",
+              "walk_forward_passed": true,
+              "params": {
+                "fast": 50,
+                "slow": 200
+              }
+            }
+          ],
+          "chart_filename": "ma-crossover-50-200__variant-1.svg",
+          "sections": [
+            {
+              "heading": "Experiment",
+              "classification": "experiment",
+              "raw_markdown_body": "\n\r\n- Period: 2015-01-02 to 2026-08-14 (2921 sessions)\r\n- Execution rule: close-derived weights are applied one session later\r\n- Transaction costs: 5.00 bps per unit of turnover\r\n- Cash return: 0%; taxes, slippage and market impact: not modeled\r\n- Parameters: fast=50, slow=200\r\n\r\n"
+            },
+            {
+              "heading": "Data provenance",
+              "classification": "provenance",
+              "raw_markdown_body": "\n\r\n- Source: `market-data-hub` (`adj_close`; live rows included: `False`)\r\n- Requested symbols: SPY, QQQ\r\n- Validated common panel: 2015-01-02 to 2026-08-14; 2921 rows\r\n- Database: `C:\\Users\\Administrator\\Documents\\GitHub\\market-data-hub\\market_data.duckdb`\r\n\r\n| Symbol | Last date | Status | Coverage score | Stalled |\r\n|---|---:|---|---:|---|\r\n| QQQ | 2026-08-14 00:00:00 | ok | 97.31 | False |\r\n| SPY | 2026-08-14 00:00:00 | ok | 97.33 | False |\r\n\r\n"
+            },
+            {
+              "heading": "Research rationale",
+              "classification": "rationale",
+              "raw_markdown_body": "\n\r\nA slow trend filter may reduce severe drawdowns, but after costs it need not beat passive exposure.\r\n\r\nFor each ETF, hold it when its 50-day moving average is above its 200-day average; equal-weight active ETFs; otherwise cash.\r\n\r\nSources:\r\n\r\n- [A Quantitative Approach to Tactical Asset Allocation](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=962461) — Motivates a simple trend-following tactical allocation rule across asset classes.\r\n- [A Quantitative Approach to Faber's Tactical Asset Allocation](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1476225) — Warns that attractive rule-based results require statistical caution and bootstrap-style robustness tests.\r\n- [Momentum Trading, Return Chasing, and Predictable Crashes](https://www.nber.org/papers/w20660) — Documents high historical momentum returns alongside material and sometimes predictable crash risk.\r\n\r\nKnown risks:\r\n\r\n- whipsaw and repeated transaction costs in sideways markets\r\n- parameter/data-mining sensitivity\r\n- cash return is modeled as zero in the MVP\r\n- one historical sample is not evidence of future profitability\r\n\r\n"
+            },
+            {
+              "heading": "Net backtest metrics",
+              "classification": "metrics",
+              "raw_markdown_body": "\n\r\n| Metric | Strategy | Benchmark |\r\n|---|---:|---:|\r\n| Cumulative return | 318.82% | 500.62% |\r\n| CAGR | 13.15% | 16.73% |\r\n| Annualized volatility | 16.74% | 19.44% |\r\n| Annualized Sharpe (rf=0) | 0.82 | 0.89 |\r\n| Maximum drawdown | -30.86% | -30.86% |\r\n| Annualized turnover | 189.80% | 8.63% |\r\n| Transaction-cost drag (sum of daily rates) | 1.10% | 0.05% |\r\n\r\n"
+            },
+            {
+              "heading": "Walk-forward / out-of-sample validation",
+              "classification": "walkforward",
+              "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2015-01-02 to 2021-12-15 | 1752 | 144.26% | 13.71% | 17.40% | 0.83 | -30.86% | 227.51% | 1.00 | -83.25% | -0.17 |\r\n| oos_1 | out_of_sample | 2021-12-16 to 2026-08-14 | 1169 | 90.74% | 14.94% | 14.65% | 1.02 | -20.78% | 86.52% | 0.77 | 4.22% | 0.26 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: PASS: coherent between development and OOS; the frozen strategy matches or beats the benchmark on return and Sharpe in every OOS window.**\r\n\r\n"
+            },
+            {
+              "heading": "Giudizio / conclusion",
+              "classification": "verdict",
+              "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: PASS: coherent between development and OOS; the frozen strategy matches or beats the benchmark on return and Sharpe in every OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.\r\n\r\n"
+            },
+            {
+              "heading": "Ecosystem review",
+              "classification": "ecosystem",
+              "raw_markdown_body": "\n\r\n- **LazyFin:** Do not recreate hierarchical portfolio optimization in LazyAlpha; the line was moved/retired from LazyFin and belongs to LazyPortfolio. (`C:\\Users\\Administrator\\Documents\\GitHub\\LazyFin\\docs\\status.md`)\r\n- **investmentcommittee:** Keep B0/P0/Sa/PH/PF as methodological reference: same data, folds, costs and rebalance rules for honest comparisons; do not clone it 1:1. (`C:\\Users\\Administrator\\Documents\\GitHub\\investment-process-top-down-etf.md`)\r\n"
+            }
+          ]
+        }
+      ]
+    },
+    "ma_crossover_5_20": {
+      "slug": "ma-crossover-5-20",
+      "variants": [
+        {
+          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260912_110949_ma_crossover_5_20.md",
+          "filename": "20260912_110949_ma_crossover_5_20.md",
+          "family": "ma_crossover_5_20",
+          "slug": "ma-crossover-5-20",
+          "variant_index": 1,
+          "generated_at": "2026-09-12T11:09:49+00:00",
+          "generated_at_source": "2026-09-12T11:09:49+00:00",
+          "params_line": "fast=5, slow=20",
+          "verdict_text": "Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.",
+          "verdict_category": "fail",
+          "verdict_label": "FAIL",
+          "badge_class": "verdict-badge--fail",
+          "registered": false,
+          "registry_matches": [],
+          "chart_filename": "ma-crossover-5-20__variant-1.svg",
+          "sections": [
+            {
+              "heading": "Experiment",
+              "classification": "experiment",
+              "raw_markdown_body": "\n\r\n- Period: 2020-01-01 to 2022-11-23 (756 sessions)\r\n- Execution rule: close-derived weights are applied one session later\r\n- Transaction costs: 5.00 bps per unit of turnover\r\n- Cash return: 0%; taxes, slippage and market impact: not modeled\r\n- Parameters: fast=5, slow=20\r\n\r\n"
+            },
+            {
+              "heading": "Data provenance",
+              "classification": "provenance",
+              "raw_markdown_body": "\n\r\n- Source: `synthetic-explicit-test-only` (`generated`; live rows included: `False`)\r\n- Requested symbols: A, B, C\r\n- Validated common panel: 2020-01-01 to 2022-11-23; 756 rows\r\n- Database: `market-data-hub configured default`\r\n\r\n"
+            },
+            {
+              "heading": "Research rationale",
+              "classification": "rationale",
+              "raw_markdown_body": "\n\r\nA slow trend filter may reduce severe drawdowns, but after costs it need not beat passive exposure.\r\n\r\nFor each ETF, hold it when its 50-day moving average is above its 200-day average; equal-weight active ETFs; otherwise cash.\r\n\r\nSources:\r\n\r\n- [A Quantitative Approach to Tactical Asset Allocation](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=962461) — Motivates a simple trend-following tactical allocation rule across asset classes.\r\n- [A Quantitative Approach to Faber's Tactical Asset Allocation](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1476225) — Warns that attractive rule-based results require statistical caution and bootstrap-style robustness tests.\r\n- [Momentum Trading, Return Chasing, and Predictable Crashes](https://www.nber.org/papers/w20660) — Documents high historical momentum returns alongside material and sometimes predictable crash risk.\r\n\r\nKnown risks:\r\n\r\n- whipsaw and repeated transaction costs in sideways markets\r\n- parameter/data-mining sensitivity\r\n- cash return is modeled as zero in the MVP\r\n- one historical sample is not evidence of future profitability\r\n\r\n"
+            },
+            {
+              "heading": "Net backtest metrics",
+              "classification": "metrics",
+              "raw_markdown_body": "\n\r\n| Metric | Strategy | Benchmark |\r\n|---|---:|---:|\r\n| Gross cumulative return | -10.03% | -4.97% |\r\n| Cumulative return | -15.65% | -5.02% |\r\n| CAGR | -5.51% | -1.70% |\r\n| Annualized volatility | 12.06% | 9.22% |\r\n| Annualized Sharpe (rf=0) | -0.41 | -0.14 |\r\n| Maximum drawdown | -24.34% | -14.56% |\r\n| Annualized turnover | 4300.00% | 33.33% |\r\n| Transaction-cost drag (sum of daily rates) | 6.45% | 0.05% |\r\n\r\n"
+            },
+            {
+              "heading": "Walk-forward / out-of-sample validation",
+              "classification": "walkforward",
+              "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2020-01-01 to 2021-09-24 | 453 | -12.65% | -7.25% | 11.98% | -0.57 | -19.66% | -9.38% | -0.55 | -3.28% | -0.02 |\r\n| oos_1 | out_of_sample | 2021-09-27 to 2022-11-23 | 303 | -1.89% | -1.58% | 11.49% | -0.08 | -15.01% | 3.72% | 0.38 | -5.61% | -0.46 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n"
+            },
+            {
+              "heading": "Giudizio / conclusion",
+              "classification": "verdict",
+              "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.\r\n\r\n"
+            },
+            {
+              "heading": "Ecosystem review",
+              "classification": "ecosystem",
+              "raw_markdown_body": "\n\r\n- **LazyFin:** Do not recreate hierarchical portfolio optimization in LazyAlpha; the line was moved/retired from LazyFin and belongs to LazyPortfolio. (`C:\\Users\\Administrator\\Documents\\GitHub\\LazyFin\\docs\\status.md`)\r\n- **investmentcommittee:** Keep B0/P0/Sa/PH/PF as methodological reference: same data, folds, costs and rebalance rules for honest comparisons; do not clone it 1:1. (`C:\\Users\\Administrator\\Documents\\GitHub\\investment-process-top-down-etf.md`)\r\n"
+            }
+          ]
+        }
+      ]
+    },
+    "policy_conditional_ma_50_200_6m": {
+      "slug": "policy-conditional-ma-50-200-6m",
+      "variants": [
+        {
+          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260911_222746_policy_conditional_ma_50_200_6m.md",
+          "filename": "20260911_222746_policy_conditional_ma_50_200_6m.md",
+          "family": "policy_conditional_ma_50_200_6m",
+          "slug": "policy-conditional-ma-50-200-6m",
+          "variant_index": 1,
+          "generated_at": "2026-09-11T22:27:46+00:00",
+          "generated_at_source": "2026-09-11T22:27:46+00:00",
+          "params_line": "fast=50, slow=200, lookback_months=6, series_id=FEDFUNDS, vintage_policy=latest_vintage_date_lte_trading_day",
+          "verdict_text": "Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.",
+          "verdict_category": "fail",
+          "verdict_label": "FAIL",
+          "badge_class": "verdict-badge--fail",
+          "registered": true,
+          "registry_matches": [
+            {
+              "timestamp": "2026-09-11T22:27:46+00:00",
+              "walk_forward_passed": false,
+              "params": {
+                "fast": 50,
+                "lookback_months": 6,
+                "series_id": "FEDFUNDS",
+                "slow": 200,
+                "vintage_policy": "latest_vintage_date_lte_trading_day"
+              }
+            }
+          ],
+          "chart_filename": "policy-conditional-ma-50-200-6m__variant-1.svg",
+          "sections": [
+            {
+              "heading": "Experiment",
+              "classification": "experiment",
+              "raw_markdown_body": "\n\r\n- Period: 2015-01-02 to 2026-08-14 (2921 sessions)\r\n- Execution rule: close-derived weights are applied one session later\r\n- Transaction costs: 5.00 bps per unit of turnover\r\n- Cash return: 0%; taxes, slippage and market impact: not modeled\r\n- Parameters: fast=50, slow=200, lookback_months=6, series_id=FEDFUNDS, vintage_policy=latest_vintage_date_lte_trading_day\r\n\r\n"
+            },
+            {
+              "heading": "Monetary-policy data provenance and action rule",
+              "classification": "extra",
+              "raw_markdown_body": "\n\r\n- Source: `FRED ALFRED API` (live, authenticated point-in-time API)\r\n- Series: `FEDFUNDS` (monthly Effective Federal Funds Rate)\r\n- Vendor vintage inventory: 364 total; the requested newest-200 response returned 200 from 2010-07-06 to 2026-09-01\r\n- Backtest snapshots: 150 distinct vintages from 2014-06-02 to 2026-08-03; latest available observation periods span 2014-05-01 to 2026-07-01\r\n- Live API use: 151 calls against a 200-call client budget (one vintage inventory plus one observation snapshot per required vintage; cached for full-sample and walk-forward reuse)\r\n- Point-in-time policy: backward `merge_asof` on publication/vintage date; only `vintage_date <= trading day` can match, and pre-first-vintage dates remain missing\r\n- Frozen action rule: apply existing 50/200 MA weights only when the current as-known policy rate is below the rate known 6 calendar months earlier; otherwise cash\r\n- Missing current or trailing readings raise `PolicyRateDataUnavailable`; no revised-history or unconditional fallback is allowed\r\n\r\n"
+            },
+            {
+              "heading": "Data provenance",
+              "classification": "provenance",
+              "raw_markdown_body": "\n\r\n- Source: `market-data-hub` (`adj_close`; live rows included: `False`)\r\n- Requested symbols: SPY, QQQ\r\n- Validated common panel: 2015-01-02 to 2026-08-14; 2921 rows\r\n- Database: `C:\\Users\\Administrator\\Documents\\GitHub\\market-data-hub\\market_data.duckdb`\r\n\r\n| Symbol | Last date | Status | Coverage score | Stalled |\r\n|---|---:|---|---:|---|\r\n| QQQ | 2026-08-14 00:00:00 | ok | 97.31 | False |\r\n| SPY | 2026-08-14 00:00:00 | ok | 97.33 | False |\r\n\r\n"
+            },
+            {
+              "heading": "Research rationale",
+              "classification": "rationale",
+              "raw_markdown_body": "\n\r\nA slow trend filter may reduce severe drawdowns, but after costs it need not beat passive exposure.\r\n\r\nFor each ETF, hold it when its 50-day moving average is above its 200-day average; equal-weight active ETFs; otherwise cash.\r\n\r\nSources:\r\n\r\n- [A Quantitative Approach to Tactical Asset Allocation](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=962461) — Motivates a simple trend-following tactical allocation rule across asset classes.\r\n- [A Quantitative Approach to Faber's Tactical Asset Allocation](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1476225) — Warns that attractive rule-based results require statistical caution and bootstrap-style robustness tests.\r\n- [Momentum Trading, Return Chasing, and Predictable Crashes](https://www.nber.org/papers/w20660) — Documents high historical momentum returns alongside material and sometimes predictable crash risk.\r\n\r\nKnown risks:\r\n\r\n- whipsaw and repeated transaction costs in sideways markets\r\n- parameter/data-mining sensitivity\r\n- cash return is modeled as zero in the MVP\r\n- one historical sample is not evidence of future profitability\r\n\r\n"
+            },
+            {
+              "heading": "Net backtest metrics",
+              "classification": "metrics",
+              "raw_markdown_body": "\n\r\n| Metric | Strategy | Ungated MA | Benchmark |\r\n|---|---:|---:|---:|\r\n| Cumulative return | 60.40% | 318.82% | 500.62% |\r\n| CAGR | 4.16% | 13.15% | 16.73% |\r\n| Annualized volatility | 12.93% | 16.74% | 19.44% |\r\n| Annualized Sharpe (rf=0) | 0.38 | 0.82 | 0.89 |\r\n| Maximum drawdown | -30.86% | -30.86% | -30.86% |\r\n| Annualized turnover | 155.29% | 189.80% | 8.63% |\r\n| Transaction-cost drag (sum of daily rates) | 0.90% | 1.10% | 0.05% |\r\n\r\n"
+            },
+            {
+              "heading": "Walk-forward / out-of-sample validation",
+              "classification": "walkforward",
+              "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2015-01-02 to 2021-12-15 | 1752 | 44.83% | 5.47% | 13.32% | 0.47 | -30.86% | 227.51% | 1.00 | -182.68% | -0.53 |\r\n| oos_1 | out_of_sample | 2021-12-16 to 2026-08-14 | 1169 | 17.37% | 3.51% | 11.54% | 0.36 | -20.78% | 86.52% | 0.77 | -69.15% | -0.41 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n"
+            },
+            {
+              "heading": "Giudizio / conclusion",
+              "classification": "verdict",
+              "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.\r\n\r\n"
+            },
+            {
+              "heading": "Ecosystem review",
+              "classification": "ecosystem",
+              "raw_markdown_body": "\n\r\n- **LazyFin:** Do not recreate hierarchical portfolio optimization in LazyAlpha; the line was moved/retired from LazyFin and belongs to LazyPortfolio. (`C:\\Users\\Administrator\\Documents\\GitHub\\LazyFin\\docs\\status.md`)\r\n- **investmentcommittee:** Keep B0/P0/Sa/PH/PF as methodological reference: same data, folds, costs and rebalance rules for honest comparisons; do not clone it 1:1. (`C:\\Users\\Administrator\\Documents\\GitHub\\investment-process-top-down-etf.md`)\r\n"
+            }
+          ]
+        },
+        {
+          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260911_225737_policy_conditional_ma_50_200_6m.md",
+          "filename": "20260911_225737_policy_conditional_ma_50_200_6m.md",
+          "family": "policy_conditional_ma_50_200_6m",
+          "slug": "policy-conditional-ma-50-200-6m",
+          "variant_index": 2,
+          "generated_at": "2026-09-11T22:57:37+00:00",
+          "generated_at_source": "2026-09-11T22:57:37+00:00",
+          "params_line": "fast=50, slow=200, lookback_months=6, series_id=TB3MS, vintage_policy=latest_vintage_date_lte_trading_day",
+          "verdict_text": "Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.",
+          "verdict_category": "fail",
+          "verdict_label": "FAIL",
+          "badge_class": "verdict-badge--fail",
+          "registered": true,
+          "registry_matches": [
+            {
+              "timestamp": "2026-09-11T22:57:37+00:00",
+              "walk_forward_passed": false,
+              "params": {
+                "fast": 50,
+                "lookback_months": 6,
+                "series_id": "TB3MS",
+                "slow": 200,
+                "vintage_policy": "latest_vintage_date_lte_trading_day"
+              }
+            }
+          ],
+          "chart_filename": "policy-conditional-ma-50-200-6m__variant-2.svg",
+          "sections": [
+            {
+              "heading": "Experiment",
+              "classification": "experiment",
+              "raw_markdown_body": "\n\r\n- Period: 2015-01-02 to 2026-08-14 (2921 sessions)\r\n- Execution rule: close-derived weights are applied one session later\r\n- Transaction costs: 5.00 bps per unit of turnover\r\n- Cash return: 0%; taxes, slippage and market impact: not modeled\r\n- Parameters: fast=50, slow=200, lookback_months=6, series_id=TB3MS, vintage_policy=latest_vintage_date_lte_trading_day\r\n\r\n"
+            },
+            {
+              "heading": "Monetary-policy data provenance and action rule",
+              "classification": "extra",
+              "raw_markdown_body": "\n\r\n- Source: `FRED ALFRED API` (live, authenticated point-in-time API)\r\n- Series: `TB3MS` (monthly Effective Federal Funds Rate)\r\n- Vendor vintage inventory: 359 total; the requested newest-200 response returned 200 from 2010-03-01 to 2026-09-01\r\n- Backtest snapshots: 148 distinct vintages from 2014-06-02 to 2026-08-03; latest available observation periods span 2014-05-01 to 2026-07-01\r\n- Live API use: 149 calls against a 200-call client budget (one vintage inventory plus one observation snapshot per required vintage; cached for full-sample and walk-forward reuse)\r\n- Point-in-time policy: backward `merge_asof` on publication/vintage date; only `vintage_date <= trading day` can match, and pre-first-vintage dates remain missing\r\n- Frozen action rule: apply existing 50/200 MA weights only when the current as-known policy rate is below the rate known 6 calendar months earlier; otherwise cash\r\n- Missing current or trailing readings raise `PolicyRateDataUnavailable`; no revised-history or unconditional fallback is allowed\r\n\r\n"
+            },
+            {
+              "heading": "Data provenance",
+              "classification": "provenance",
+              "raw_markdown_body": "\n\r\n- Source: `market-data-hub` (`adj_close`; live rows included: `False`)\r\n- Requested symbols: SPY, QQQ\r\n- Validated common panel: 2015-01-02 to 2026-08-14; 2921 rows\r\n- Database: `C:\\Users\\Administrator\\Documents\\GitHub\\market-data-hub\\market_data.duckdb`\r\n\r\n| Symbol | Last date | Status | Coverage score | Stalled |\r\n|---|---:|---|---:|---|\r\n| QQQ | 2026-08-14 00:00:00 | ok | 97.31 | False |\r\n| SPY | 2026-08-14 00:00:00 | ok | 97.33 | False |\r\n\r\n"
+            },
+            {
+              "heading": "Research rationale",
+              "classification": "rationale",
+              "raw_markdown_body": "\n\r\nA slow trend filter may reduce severe drawdowns, but after costs it need not beat passive exposure.\r\n\r\nFor each ETF, hold it when its 50-day moving average is above its 200-day average; equal-weight active ETFs; otherwise cash.\r\n\r\nSources:\r\n\r\n- [A Quantitative Approach to Tactical Asset Allocation](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=962461) — Motivates a simple trend-following tactical allocation rule across asset classes.\r\n- [A Quantitative Approach to Faber's Tactical Asset Allocation](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1476225) — Warns that attractive rule-based results require statistical caution and bootstrap-style robustness tests.\r\n- [Momentum Trading, Return Chasing, and Predictable Crashes](https://www.nber.org/papers/w20660) — Documents high historical momentum returns alongside material and sometimes predictable crash risk.\r\n\r\nKnown risks:\r\n\r\n- whipsaw and repeated transaction costs in sideways markets\r\n- parameter/data-mining sensitivity\r\n- cash return is modeled as zero in the MVP\r\n- one historical sample is not evidence of future profitability\r\n\r\n"
+            },
+            {
+              "heading": "Net backtest metrics",
+              "classification": "metrics",
+              "raw_markdown_body": "\n\r\n| Metric | Strategy | Ungated MA | Benchmark |\r\n|---|---:|---:|---:|\r\n| Cumulative return | 152.35% | 318.82% | 500.62% |\r\n| CAGR | 8.31% | 13.15% | 16.73% |\r\n| Annualized volatility | 13.53% | 16.74% | 19.44% |\r\n| Annualized Sharpe (rf=0) | 0.66 | 0.82 | 0.89 |\r\n| Maximum drawdown | -30.86% | -30.86% | -30.86% |\r\n| Annualized turnover | 155.29% | 189.80% | 8.63% |\r\n| Transaction-cost drag (sum of daily rates) | 0.90% | 1.10% | 0.05% |\r\n\r\n"
+            },
+            {
+              "heading": "Walk-forward / out-of-sample validation",
+              "classification": "walkforward",
+              "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2015-01-02 to 2021-12-15 | 1752 | 75.50% | 8.43% | 14.24% | 0.64 | -30.86% | 227.51% | 1.00 | -152.02% | -0.36 |\r\n| oos_1 | out_of_sample | 2021-12-16 to 2026-08-14 | 1169 | 43.79% | 8.14% | 12.40% | 0.69 | -20.78% | 86.52% | 0.77 | -42.73% | -0.07 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n"
+            },
+            {
+              "heading": "Giudizio / conclusion",
+              "classification": "verdict",
+              "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.\r\n\r\n"
+            },
+            {
+              "heading": "Ecosystem review",
+              "classification": "ecosystem",
+              "raw_markdown_body": "\n\r\n- **LazyFin:** Do not recreate hierarchical portfolio optimization in LazyAlpha; the line was moved/retired from LazyFin and belongs to LazyPortfolio. (`C:\\Users\\Administrator\\Documents\\GitHub\\LazyFin\\docs\\status.md`)\r\n- **investmentcommittee:** Keep B0/P0/Sa/PH/PF as methodological reference: same data, folds, costs and rebalance rules for honest comparisons; do not clone it 1:1. (`C:\\Users\\Administrator\\Documents\\GitHub\\investment-process-top-down-etf.md`)\r\n"
+            }
+          ]
+        }
+      ]
+    },
+    "regime_conditional_ma_50_200_state_0": {
+      "slug": "regime-conditional-ma-50-200-state-0",
+      "variants": [
+        {
+          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260911_180241_regime_conditional_ma_50_200_state_0.md",
+          "filename": "20260911_180241_regime_conditional_ma_50_200_state_0.md",
+          "family": "regime_conditional_ma_50_200_state_0",
+          "slug": "regime-conditional-ma-50-200-state-0",
+          "variant_index": 1,
+          "generated_at": "2026-09-11T18:02:41+00:00",
+          "generated_at_source": "2026-09-11T18:02:41+00:00",
+          "params_line": "fast=50, slow=200, active_state=0, regime_vintage=latest_stored_vintage",
+          "verdict_text": "Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.",
+          "verdict_category": "fail",
+          "verdict_label": "FAIL",
+          "badge_class": "verdict-badge--fail",
+          "registered": true,
+          "registry_matches": [
+            {
+              "timestamp": "2026-09-11T18:02:41+00:00",
+              "walk_forward_passed": false,
+              "params": {
+                "active_state": 0,
+                "fast": 50,
+                "regime_vintage": "latest_stored_vintage",
+                "slow": 200
+              }
+            }
+          ],
+          "chart_filename": "regime-conditional-ma-50-200-state-0__variant-1.svg",
+          "sections": [
+            {
+              "heading": "Experiment",
+              "classification": "experiment",
+              "raw_markdown_body": "\n\r\n- Period: 2015-01-02 to 2026-08-14 (2921 sessions)\r\n- Execution rule: close-derived weights are applied one session later\r\n- Transaction costs: 5.00 bps per unit of turnover\r\n- Cash return: 0%; taxes, slippage and market impact: not modeled\r\n- Parameters: fast=50, slow=200, active_state=0, regime_vintage=latest_stored_vintage\r\n\r\n"
+            },
+            {
+              "heading": "Regime data provenance and action map",
+              "classification": "extra",
+              "raw_markdown_body": "\n\r\n- Source: LazyStats production result depot `C:\\ProgramData\\InvestmentCommittee\\live\\db\\result_depot.sqlite` (opened read-only)\r\n- Series: `regime:SPY`, `regime:QQQ`\r\n- Available state history: 2015-01-02 to 2026-08-14\r\n- Classifier: existing production HMM, exactly 3 states ordered by volatility; LazyAlpha performs no fitting\r\n- Frozen action map: state 0 (Low Vol) applies the existing 50/200 MA weights; states 1 (Mid Vol) and 2 (High Vol) are cash\r\n- Modeling reason: production diagnostics associate state 0 with positive fitted annualized mean returns for both SPY and QQQ; state 1 is near-flat for SPY and state 2 is negative for both\r\n- Vintage policy: latest stored vintage per historical date. Later full-history refits can revise past states, so this is a retrospective classifier-history test, not a point-in-time/live replay\r\n\r\n"
+            },
+            {
+              "heading": "Data provenance",
+              "classification": "provenance",
+              "raw_markdown_body": "\n\r\n- Source: `market-data-hub` (`adj_close`; live rows included: `False`)\r\n- Requested symbols: SPY, QQQ\r\n- Validated common panel: 2015-01-02 to 2026-08-14; 2921 rows\r\n- Database: `C:\\Users\\Administrator\\Documents\\GitHub\\market-data-hub\\market_data.duckdb`\r\n\r\n| Symbol | Last date | Status | Coverage score | Stalled |\r\n|---|---:|---|---:|---|\r\n| QQQ | 2026-08-14 00:00:00 | ok | 97.31 | False |\r\n| SPY | 2026-08-14 00:00:00 | ok | 97.33 | False |\r\n\r\n"
+            },
+            {
+              "heading": "Research rationale",
+              "classification": "rationale",
+              "raw_markdown_body": "\n\r\nConditioning an existing trend signal on the production HMM's low-volatility, positive-mean state may reduce adverse exposure, but it can also discard profitable trends and need not beat the ungated signal or passive exposure after costs.\r\n\r\nReuse the frozen 50/200 moving-average crossover weights for each ETF, but apply them only when that ETF's persisted LazyStats three-state HMM reading is state 0 (Low Vol); states 1 and 2 map to cash. State 0 was chosen before backtesting because production diagnostics associate it with positive fitted mean returns for both SPY and QQQ, while state 1 is near-flat for SPY and state 2 is negative for both.\r\n\r\nSources:\r\n\r\n- [Regime-Aware Trading with HMMs and Macro Features](https://pyquantlab.medium.com/regime-aware-trading-with-hidden-markov-models-hmms-and-macro-features-c75f6d357880) — Provides practitioner evidence and implementation context for conditioning exposures on an HMM regime call.\r\n- [Downside Risk Reduction Using Regime-Switching Signals](https://arxiv.org/html/2402.05272v2) — Studies regime-switching signals as a way to reduce downside risk relative to static exposure.\r\n\r\nKnown risks:\r\n\r\n- latest-vintage regime history can include retrospective revisions, so this is not a point-in-time replay\r\n- HMM state identities and fitted relationships may change on refit\r\n- gating may miss sharp recoveries or profitable mid-volatility trends\r\n- cash return is modeled as zero and execution frictions are incomplete\r\n- one historical sample is not evidence of future profitability\r\n\r\n"
+            },
+            {
+              "heading": "Net backtest metrics",
+              "classification": "metrics",
+              "raw_markdown_body": "\n\r\n| Metric | Strategy | Ungated MA | Benchmark |\r\n|---|---:|---:|---:|\r\n| Cumulative return | 331.98% | 318.82% | 500.62% |\r\n| CAGR | 13.45% | 13.15% | 16.73% |\r\n| Annualized volatility | 6.60% | 16.74% | 19.44% |\r\n| Annualized Sharpe (rf=0) | 1.95 | 0.82 | 0.89 |\r\n| Maximum drawdown | -4.31% | -30.86% | -30.86% |\r\n| Annualized turnover | 370.97% | 189.80% | 8.63% |\r\n| Transaction-cost drag (sum of daily rates) | 2.15% | 1.10% | 0.05% |\r\n\r\n"
+            },
+            {
+              "heading": "Walk-forward / out-of-sample validation",
+              "classification": "walkforward",
+              "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2015-01-02 to 2021-12-15 | 1752 | 181.97% | 16.08% | 6.96% | 2.18 | -4.27% | 227.51% | 1.00 | -45.55% | 1.18 |\r\n| oos_1 | out_of_sample | 2021-12-16 to 2026-08-14 | 1169 | 53.20% | 9.63% | 6.03% | 1.56 | -4.31% | 86.52% | 0.77 | -33.31% | 0.79 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n"
+            },
+            {
+              "heading": "Giudizio / conclusion",
+              "classification": "verdict",
+              "raw_markdown_body": "\n\r\n**Full-sample comparison: INCONCLUSIVE: better on only one of net return and Sharpe.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.\r\n\r\n"
+            },
+            {
+              "heading": "Ecosystem review",
+              "classification": "ecosystem",
+              "raw_markdown_body": "\n\r\n- **LazyFin:** Do not recreate hierarchical portfolio optimization in LazyAlpha; the line was moved/retired from LazyFin and belongs to LazyPortfolio. (`C:\\Users\\Administrator\\Documents\\GitHub\\LazyFin\\docs\\status.md`)\r\n- **investmentcommittee:** Keep B0/P0/Sa/PH/PF as methodological reference: same data, folds, costs and rebalance rules for honest comparisons; do not clone it 1:1. (`C:\\Users\\Administrator\\Documents\\GitHub\\investment-process-top-down-etf.md`)\r\n"
+            }
+          ]
+        }
+      ]
+    },
+    "sentiment_conditional_ma_50_200_3d": {
+      "slug": "sentiment-conditional-ma-50-200-3d",
+      "variants": [
+        {
+          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260911_191646_sentiment_conditional_ma_50_200_3d.md",
+          "filename": "20260911_191646_sentiment_conditional_ma_50_200_3d.md",
+          "family": "sentiment_conditional_ma_50_200_3d",
+          "slug": "sentiment-conditional-ma-50-200-3d",
+          "variant_index": 1,
+          "generated_at": "2026-09-11T19:16:46+00:00",
+          "generated_at_source": "2026-09-11T19:16:46+00:00",
+          "params_line": "fast=50, slow=200, rolling_window=3, daily_aggregation=equal_weight_mean_across_digests, normalization=positive_minus_negative_hits_div_total_words, lag=calendar_day_D_to_next_trading_session, lexicon=simplified_finance_domain_subset_not_full_LM",
+          "verdict_text": "Walk-forward verdict: NOT RUN / NOT EVALUABLE.",
+          "verdict_category": "not_evaluable",
+          "verdict_label": "NOT EVALUABLE",
+          "badge_class": "verdict-badge--warn",
+          "registered": false,
+          "registry_matches": [],
+          "chart_filename": "sentiment-conditional-ma-50-200-3d__variant-1.svg",
+          "sections": [
+            {
+              "heading": "Experiment",
+              "classification": "experiment",
+              "raw_markdown_body": "\n\r\n- Period: 2026-08-10 to 2026-08-14 (5 sessions)\r\n- Execution rule: close-derived weights are applied one session later\r\n- Transaction costs: 5.00 bps per unit of turnover\r\n- Cash return: 0%; taxes, slippage and market impact: not modeled\r\n- Parameters: fast=50, slow=200, rolling_window=3, daily_aggregation=equal_weight_mean_across_digests, normalization=positive_minus_negative_hits_div_total_words, lag=calendar_day_D_to_next_trading_session, lexicon=simplified_finance_domain_subset_not_full_LM\r\n\r\n"
+            },
+            {
+              "heading": "Digest-sentiment provenance and action rule",
+              "classification": "extra",
+              "raw_markdown_body": "\n\r\n- Source: `digests` in `C:\\ProgramData\\InvestmentCommittee\\live\\db\\digests.db` (SQLite URI `mode=ro` plus `PRAGMA query_only=ON`)\r\n- Path resolution: explicit argument, else `os.environ.get('DIGESTS_DB')`, else the production literal; this run used DIGESTS_DB environment variable\r\n- Production rows: 156 total; 152 scored; 4 empty-text rows explicitly excluded (never scored as neutral)\r\n- Calendar coverage: 2026-08-05 to 2026-09-11 (38 distinct consecutive days)\r\n- Engines: claude, deepseek; cycles: europeclose, morning, usclose\r\n- Per-digest score: `(positive exact-token hits - negative exact-token hits) / all alphabetic word tokens`; same-day digests are aggregated by an equal-weight arithmetic mean\r\n- Positive subset (34 terms): `accelerate`, `accelerated`, `accelerating`, `advance`, `advanced`, `advances`, `beat`, `beats`, `bullish`, `expansion`, `gain`, `gained`, `gains`, `grow`, `growing`, `growth`, `improve`, `improved`, `improvement`, `outperform`, `outperformed`, `profit`, `profitable`, `rally`, `rebound`, `rebounded`, `recovery`, `resilient`, `strength`, `strong`, `stronger`, `surge`, `surged`, `upside`\r\n- Negative subset (34 terms): `bankrupt`, `bankruptcy`, `bearish`, `breach`, `contraction`, `crisis`, `decline`, `declined`, `declines`, `default`, `defaults`, `distress`, `distressed`, `downgrade`, `downgraded`, `fraud`, `impairment`, `insolvency`, `liquidation`, `loss`, `losses`, `miss`, `missed`, `plunge`, `plunged`, `recession`, `slump`, `slumped`, `underperform`, `underperformed`, `warning`, `weak`, `weaker`, `weakness`\r\n- Dictionary limitation: this is a simplified, manually curated representative finance-news subset inspired by Loughran & McDonald (2011), not the licensed/full Loughran-McDonald Master Dictionary and not a claim to reproduce it\r\n- Routine finance terms including `liability`, `tax`, and `cost` are intentionally absent; exact-token matching avoids assigning their generic-English polarity\r\n- Frozen gate: apply the existing 50/200 MA weights only when the trailing 3-calendar-day mean daily sentiment is strictly positive; otherwise cash\r\n- Window rationale: three calendar days was frozen before this run as a short smoother appropriate to an initial ~38-day history; it reduces single-digest/engine noise while preserving more usable observations than a five-day window\r\n- Lag rule: every calendar-day D digest score first becomes eligible for the next trading session after D; the backtest engine's uniform one-session weight shift is retained\r\n- Evaluation-only overlap: 2026-08-10 to 2026-08-14; earlier price rows are retained only to warm up the frozen 200-day MA and are excluded from all reported metrics\r\n- Missing required calendar-day or trading-day coverage raises `DigestSentimentDataUnavailable`; it is never imputed as zero/neutral\r\n- Methodology source: [Loughran & McDonald (2011), *The Journal of Finance* 66(1), 35-65](https://doi.org/10.1111/j.1540-6261.2010.01625.x)\r\n\r\n"
+            },
+            {
+              "heading": "Data provenance",
+              "classification": "provenance",
+              "raw_markdown_body": "\n\r\n- Source: `market-data-hub` (`adj_close`; live rows included: `False`)\r\n- Requested symbols: SPY, QQQ\r\n- Validated common panel: 2015-01-02 to 2026-08-14; 2921 rows\r\n- Database: `C:\\Users\\Administrator\\Documents\\GitHub\\market-data-hub\\market_data.duckdb`\r\n\r\n| Symbol | Last date | Status | Coverage score | Stalled |\r\n|---|---:|---|---:|---|\r\n| QQQ | 2026-08-14 00:00:00 | ok | 97.31 | False |\r\n| SPY | 2026-08-14 00:00:00 | ok | 97.33 | False |\r\n\r\n"
+            },
+            {
+              "heading": "Research rationale",
+              "classification": "rationale",
+              "raw_markdown_body": "\n\r\nA positive short-horizon tone in the operator's own crawled news digests may identify periods when the existing trend signal is safer to hold, but the current history is far too short to test that claim conclusively.\r\n\r\nScore every digest with an explicitly documented finance-domain positive/negative exact-token subset, average digest scores by calendar day, take a frozen three-day trailing mean, and gate the existing 50/200 MA weights on strictly positive sentiment. A calendar-day D digest can affect only the next trading session.\r\n\r\nSources:\r\n\r\n- [When Is a Liability Not a Liability? Textual Analysis, Dictionaries, and 10-Ks](https://doi.org/10.1111/j.1540-6261.2010.01625.x) — Shows why generic negative dictionaries misclassify many routine financial words and motivates finance-specific categories.\r\n\r\nKnown risks:\r\n\r\n- the hand-curated subset is much smaller than the full published dictionary\r\n- digest selection and summarization can change measured tone\r\n- three-day smoothing can lag abrupt news reversals\r\n- the currently available overlap is informational only\r\n- cash return is modeled as zero and execution frictions are incomplete\r\n\r\n"
+            },
+            {
+              "heading": "Net backtest metrics",
+              "classification": "metrics",
+              "raw_markdown_body": "\n\r\n| Metric | Strategy | Ungated MA | Benchmark |\r\n|---|---:|---:|---:|\r\n| Cumulative return | 0.70% | 0.76% | 0.76% |\r\n| CAGR | 42.46% | 46.11% | 46.11% |\r\n| Annualized volatility | 8.63% | 8.50% | 8.50% |\r\n| Annualized Sharpe (rf=0) | 4.14 | 4.50 | 4.50 |\r\n| Maximum drawdown | -0.33% | -0.33% | -0.33% |\r\n| Annualized turnover | 5040.00% | 0.00% | 0.00% |\r\n| Transaction-cost drag (sum of daily rates) | 0.05% | 0.00% | 0.00% |\r\n\r\n"
+            },
+            {
+              "heading": "Walk-forward / out-of-sample validation",
+              "classification": "walkforward",
+              "raw_markdown_body": "\n\r\n**Walk-forward verdict: NOT RUN / NOT EVALUABLE.** The real digest history is too short for a statistically meaningful development/OOS split. These metrics are a short-sample infrastructure smoke test only, not a PASS/FAIL verdict.\r\n\r\n"
+            },
+            {
+              "heading": "Giudizio / conclusion",
+              "classification": "verdict",
+              "raw_markdown_body": "\n\r\n**INFORMATIONAL ONLY / NON-CONCLUSIVE.** The observed return, Sharpe, and drawdown differences are descriptive metrics from a very short overlap, not evidence for promotion and not a strategy verdict.\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.\r\n\r\n"
+            },
+            {
+              "heading": "Ecosystem review",
+              "classification": "ecosystem",
+              "raw_markdown_body": "\n\r\n- **LazyAlpha backlog:** Family 4 explicitly calls for sentiment from LazyCrawler's own digests, so this implementation reuses the named proprietary data asset and the existing MA signal rather than duplicating another family. (`C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\docs\\candidate-strategy-families.md`)\r\n"
+            }
+          ]
+        }
+      ]
+    },
+    "turtle_systems_1_and_2": {
+      "slug": "turtle-systems-1-and-2",
+      "variants": [
+        {
+          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\turtle_systems_1_and_2_2010_present.md",
+          "filename": "turtle_systems_1_and_2_2010_present.md",
+          "family": "turtle_systems_1_and_2",
+          "slug": "turtle-systems-1-and-2",
+          "variant_index": 1,
+          "generated_at": "2026-09-11T23:24:01+00:00",
+          "generated_at_source": "2026-09-11T23:24:01+00:00",
+          "params_line": "rule_version=classic_1983_close_execution_v1, n_period=20, risk_fraction=0.01, system1_entry=20, system1_exit=10, system2_entry=55, system2_exit=20, stop_n=2.0, pyramid_n=0.5, market_cap=4, close_group_cap=6, loose_group_cap=10, direction_cap=12, groups={'equities': ['SPY', 'QQQ', 'IWM'], 'bonds': ['TLT', 'IEF'], 'metals': ['GLD', 'SLV'], 'commodities': ['DBC', 'USO'], 'currency': ['UUP']}, loose_group_interpretation=every_pairwise_union_of_close_groups",
+          "verdict_text": "Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.",
+          "verdict_category": "fail",
+          "verdict_label": "FAIL",
+          "badge_class": "verdict-badge--fail",
+          "registered": true,
+          "registry_matches": [
+            {
+              "timestamp": "2026-09-11T23:24:01+00:00",
+              "walk_forward_passed": false,
+              "params": {
+                "close_group_cap": 6,
+                "direction_cap": 12,
+                "groups": {
+                  "bonds": [
+                    "TLT",
+                    "IEF"
+                  ],
+                  "commodities": [
+                    "DBC",
+                    "USO"
+                  ],
+                  "currency": [
+                    "UUP"
+                  ],
+                  "equities": [
+                    "SPY",
+                    "QQQ",
+                    "IWM"
+                  ],
+                  "metals": [
+                    "GLD",
+                    "SLV"
+                  ]
+                },
+                "loose_group_cap": 10,
+                "loose_group_interpretation": "every_pairwise_union_of_close_groups",
+                "market_cap": 4,
+                "n_period": 20,
+                "pyramid_n": 0.5,
+                "risk_fraction": 0.01,
+                "rule_version": "classic_1983_close_execution_v1",
+                "stop_n": 2.0,
+                "system1_entry": 20,
+                "system1_exit": 10,
+                "system2_entry": 55,
+                "system2_exit": 20
+              }
+            }
+          ],
+          "chart_filename": "turtle-systems-1-and-2__variant-1.svg",
+          "sections": [
+            {
+              "heading": "Experiment",
+              "classification": "experiment",
+              "raw_markdown_body": "\n\r\n- Period: 2010-01-04 to 2026-08-14 (4178 sessions)\r\n- Execution rule: close-derived weights are applied one session later\r\n- Transaction costs: 5.00 bps per unit of turnover\r\n- Cash return: 0%; taxes, slippage and market impact: not modeled\r\n- Parameters: rule_version=classic_1983_close_execution_v1, n_period=20, risk_fraction=0.01, system1_entry=20, system1_exit=10, system2_entry=55, system2_exit=20, stop_n=2.0, pyramid_n=0.5, market_cap=4, close_group_cap=6, loose_group_cap=10, direction_cap=12, groups={'equities': ['SPY', 'QQQ', 'IWM'], 'bonds': ['TLT', 'IEF'], 'metals': ['GLD', 'SLV'], 'commodities': ['DBC', 'USO'], 'currency': ['UUP']}, loose_group_interpretation=every_pairwise_union_of_close_groups\r\n\r\n"
+            },
+            {
+              "heading": "Classic Turtle rules implemented",
+              "classification": "extra",
+              "raw_markdown_body": "\n\r\n- N: 20-day Wilder ATR of True Range, seeded by the first 20-day arithmetic mean; True Range is `max(high-low, abs(high-prev_close), abs(low-prev_close))`.\r\n- System 1: long/short on a close beyond the prior 20-day high/low; exit on the prior 10-day opposite extreme. A signal is skipped when the immediately preceding System 1 signal in the same market and direction would have won, except that a simultaneous 55-day breakout is an always-taken failsafe (subject only to portfolio caps). Skipped signals are tracked hypothetically through the same 2N stop/10-day exit so the next filter decision is stateful.\r\n- System 2: long/short on a close beyond the prior 55-day high/low; every signal is eligible, with the prior 20-day opposite extreme as exit.\r\n- Both systems run simultaneously. Their units are separately associated with their system exit, but count together against the same market and portfolio caps.\r\n- Position sizing: every new unit contains `(1% * current internally simulated equity) / current N` fractional ETF shares. Signed position market value divided by that same equity becomes the emitted weight; aggregate weights are deliberately not normalized or capped at 1.0.\r\n- Pyramiding: each campaign proposes another full unit for every 0.5N favorable move from its prior add level, up to the shared four-unit market limit. A crossed level rejected by a risk cap is skipped whole, never partially filled.\r\n- Stops: every unit starts 2N from its own fill. A new same-direction unit tightens every existing same-market unit to the new unit's effective stop (raised for longs, lowered for shorts; never loosened if N expands).\r\n- Execution interpretation: breakouts, channel exits, and stops are evaluated on adjusted closes. This is required by LazyAlpha's unchanged close-to-next-close weight protocol; it does not claim intraday stop fills or futures tick execution.\r\n\r\n"
+            },
+            {
+              "heading": "Correlation groups and layered unit limits",
+              "classification": "extra",
+              "raw_markdown_body": "\n\r\n| Close group | ETFs |\r\n|---|---|\r\n| Equities | SPY, QQQ, IWM |\r\n| Bonds | TLT, IEF |\r\n| Metals | GLD, SLV |\r\n| Commodities | DBC, USO |\r\n| Currency | UUP |\r\n\r\nAll caps are tested before each complete unit and are direction-specific, consistent with Faith's published wording: maximum 4 units per market; 6 in one direction inside a close group; 10 in one direction across every pairwise union of close groups; and 12 units in one direction portfolio-wide. The published rules name examples of loosely correlated futures but do not define a complete ETF taxonomy. The pairwise-union interpretation uses only the CEO-specified close groups, avoids inventing extra sectors, and keeps the 10- and 12-unit layers independently operative.\r\n\r\n**Major universe limitation:** LazyAlpha previously centered on SPY/QQQ, whose high correlation makes correlation caps and the original diversification mechanism nearly meaningless. These ten ETFs deliberately add rates, metals, commodities, and a dollar proxy, but remain US-listed proxies. This is a faithful mechanical replication of published rules on real ETF data, not a replication of the original edge, which depended on roughly two dozen genuinely different futures markets across asset classes and geographies.\r\n\r\n"
+            },
+            {
+              "heading": "Realized units, leverage, and reconciliation",
+              "classification": "extra",
+              "raw_markdown_body": "\n\r\n- Peak aggregate gross leverage: 38.5084x\r\n- Average aggregate gross leverage: 13.7945x\r\n- Maximum concurrent units: 24\r\n- Cap-skipped entry/add signals: 6231 (market=198, close-group=2804, loose-group=1598, direction=1631)\r\n- System 1 filter skips: 351; initial entries: 1462; pyramid additions: 1167\r\n- Internal-equity versus zero-cost `run_backtest` maximum absolute difference: 2.09547579288e-08; required tolerance: 0.0001; confirmed: `True`.\r\n- The reported performance below includes LazyAlpha transaction costs. Reconciliation is intentionally zero-cost because the strategy interface does not receive the backtester's cost setting; position sizing therefore compounds the strategy's own gross marked-to-market equity.\r\n- Leverage is real: aggregate position value can exceed equity. LazyAlpha models neither margin requirements nor financing cost for leveraged exposure. Cash return is also zero. Both are known simplifications, not hidden performance claims.\r\n\r\n"
+            },
+            {
+              "heading": "OHLC construction",
+              "classification": "extra",
+              "raw_markdown_body": "\n\r\n- Raw fields: `high`, `low`, `close`, and `adj_close` from `market-data-hub prices_daily`, with live rows excluded.\r\n- Back-adjustment: on every symbol/date, multiply raw high and low by `adj_close / close`; use `adj_close` as the close. Thus ATR and breakout channels share the corporate-action-consistent price scale used for returns.\r\n- Validated OHLC common panel: 2010-01-04 to 2026-08-14 (4178 sessions). Dates with an incomplete cross-symbol row are excluded from the common panel, exactly as in the standard adjusted-close adapter; nothing is imputed. Missing required columns/symbols, duplicates, non-finite present values, or non-positive present values are fatal.\r\n\r\n"
+            },
+            {
+              "heading": "Data provenance",
+              "classification": "provenance",
+              "raw_markdown_body": "\n\r\n- Source: `market-data-hub` (`adj_close`; live rows included: `False`)\r\n- Requested symbols: SPY, QQQ, IWM, TLT, IEF, GLD, SLV, DBC, USO, UUP\r\n- Validated common panel: 2010-01-04 to 2026-08-14; 4178 rows\r\n- Database: `C:\\Users\\Administrator\\Documents\\GitHub\\market-data-hub\\market_data.duckdb`\r\n\r\n| Symbol | Last date | Status | Coverage score | Stalled |\r\n|---|---:|---|---:|---|\r\n| DBC | 2026-08-14 00:00:00 | ok | 94.31 | False |\r\n| GLD | 2026-08-14 00:00:00 | ok | 94.32 | False |\r\n| IEF | 2026-08-14 00:00:00 | ok | 97.31 | False |\r\n| IWM | 2026-08-14 00:00:00 | ok | 97.31 | False |\r\n| QQQ | 2026-08-14 00:00:00 | ok | 97.31 | False |\r\n| SLV | 2026-08-14 00:00:00 | ok | 94.31 | False |\r\n| SPY | 2026-08-14 00:00:00 | ok | 97.33 | False |\r\n| TLT | 2026-08-14 00:00:00 | ok | 97.32 | False |\r\n| USO | 2026-08-14 00:00:00 | ok | 94.31 | False |\r\n| UUP | 2026-08-14 00:00:00 | ok | 94.31 | False |\r\n\r\n"
+            },
+            {
+              "heading": "Research rationale",
+              "classification": "rationale",
+              "raw_markdown_body": "\n\r\nVolatility-normalized breakouts across genuinely diverse markets may capture infrequent persistent trends, while 2N stops, pyramiding rules, and layered portfolio heat limits constrain failed breakouts.\r\n\r\nRun the published 20/10-day filtered System 1 and unfiltered 55/20-day System 2 together; size every unit at 1% of current equity per N, add at 0.5N, tighten stops, and enforce all four unit-cap layers.\r\n\r\nSources:\r\n\r\n- [The Original Turtle Trading Rules Explained](https://www.theturtletrader.com/turtle-trading-rules/) — Corroborates N/ATR sizing, 20/55-day entries, the System 1 winner filter and failsafe, 10/20-day exits, 2N stops, 0.5N adds, and the 4/6/10/12 unit limits.\r\n- [Way of the Turtle: Original Turtle Trading Rules](https://www.brookstradingcourse.com/wp-content/uploads/wpforo/attachments/12514/3508-CurtisFaith-WayoftheTurtle-1.pdf) — Original Turtle Curtis Faith describes the two systems, the 0.5N pyramid sequence, prior-breakout filter, and direction-specific correlated-market unit limits.\r\n- [The Original Turtle Rules](https://tradingblox.com/originalturtles/originalturtlerules.htm) — Hosts the freely published complete rules covering entries, position sizing, adds, stops, exits, and portfolio limits.\r\n\r\nKnown risks:\r\n\r\n- ten US-listed ETFs only partially approximate the original global futures diversification\r\n- close-based ETF execution differs from intraday stop orders and futures contract mechanics\r\n- leveraged exposure has no margin or financing-cost model in LazyAlpha\r\n- borrow availability, short fees, slippage, taxes, and market impact are not modeled\r\n- one historical sample and one fixed universe are not evidence of future profitability\r\n\r\n"
+            },
+            {
+              "heading": "Net backtest metrics",
+              "classification": "metrics",
+              "raw_markdown_body": "\n\r\n| Metric | Strategy | Benchmark |\r\n|---|---:|---:|\r\n| Cumulative return | -98.41% | 259.37% |\r\n| CAGR | -22.09% | 8.02% |\r\n| Annualized volatility | 113.98% | 10.63% |\r\n| Annualized Sharpe (rf=0) | 0.37 | 0.78 |\r\n| Maximum drawdown | -99.88% | -23.48% |\r\n| Annualized turnover | 49439.19% | 6.03% |\r\n| Transaction-cost drag (sum of daily rates) | 409.84% | 0.05% |\r\n\r\n"
+            },
+            {
+              "heading": "Walk-forward / out-of-sample validation",
+              "classification": "walkforward",
+              "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2010-01-04 to 2019-12-16 | 2506 | -98.70% | -35.36% | 109.12% | 0.16 | -99.88% | 65.32% | 0.60 | -164.02% | -0.44 |\r\n| oos_1 | out_of_sample | 2019-12-17 to 2026-08-14 | 1672 | -23.14% | -3.89% | 123.92% | 0.60 | -97.05% | 116.86% | 0.99 | -140.00% | -0.39 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n"
+            },
+            {
+              "heading": "Giudizio / conclusion",
+              "classification": "verdict",
+              "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.\r\n"
+            }
+          ]
+        },
+        {
+          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\turtle_systems_1_and_2_2010_2026-09-10.md",
+          "filename": "turtle_systems_1_and_2_2010_2026-09-10.md",
+          "family": "turtle_systems_1_and_2",
+          "slug": "turtle-systems-1-and-2",
+          "variant_index": 2,
+          "generated_at": "2026-09-11T23:32:31+00:00",
+          "generated_at_source": "2026-09-11T23:32:31+00:00",
+          "params_line": "rule_version=classic_1983_close_execution_v1, n_period=20, risk_fraction=0.01, simulation_cost_bps=5.0, system1_entry=20, system1_exit=10, system2_entry=55, system2_exit=20, stop_n=2.0, pyramid_n=0.5, market_cap=4, close_group_cap=6, loose_group_cap=10, direction_cap=12, groups={'equities': ['SPY', 'QQQ', 'IWM'], 'bonds': ['TLT', 'IEF'], 'metals': ['GLD', 'SLV'], 'commodities': ['DBC', 'USO'], 'currency': ['UUP']}, loose_group_interpretation=every_pairwise_union_of_close_groups, data_selection=market_data_hub_configured_production_db_2010_present",
+          "verdict_text": "Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.",
+          "verdict_category": "fail",
+          "verdict_label": "FAIL",
+          "badge_class": "verdict-badge--fail",
+          "registered": true,
+          "registry_matches": [
+            {
+              "timestamp": "2026-09-11T23:26:29+00:00",
+              "walk_forward_passed": false,
+              "params": {
+                "close_group_cap": 6,
+                "data_selection": "market_data_hub_configured_production_db_2010_present",
+                "direction_cap": 12,
+                "groups": {
+                  "bonds": [
+                    "TLT",
+                    "IEF"
+                  ],
+                  "commodities": [
+                    "DBC",
+                    "USO"
+                  ],
+                  "currency": [
+                    "UUP"
+                  ],
+                  "equities": [
+                    "SPY",
+                    "QQQ",
+                    "IWM"
+                  ],
+                  "metals": [
+                    "GLD",
+                    "SLV"
+                  ]
+                },
+                "loose_group_cap": 10,
+                "loose_group_interpretation": "every_pairwise_union_of_close_groups",
+                "market_cap": 4,
+                "n_period": 20,
+                "pyramid_n": 0.5,
+                "risk_fraction": 0.01,
+                "rule_version": "classic_1983_close_execution_v1",
+                "stop_n": 2.0,
+                "system1_entry": 20,
+                "system1_exit": 10,
+                "system2_entry": 55,
+                "system2_exit": 20
+              }
+            },
+            {
+              "timestamp": "2026-09-11T23:32:31+00:00",
+              "walk_forward_passed": false,
+              "params": {
+                "close_group_cap": 6,
+                "data_selection": "market_data_hub_configured_production_db_2010_present",
+                "direction_cap": 12,
+                "groups": {
+                  "bonds": [
+                    "TLT",
+                    "IEF"
+                  ],
+                  "commodities": [
+                    "DBC",
+                    "USO"
+                  ],
+                  "currency": [
+                    "UUP"
+                  ],
+                  "equities": [
+                    "SPY",
+                    "QQQ",
+                    "IWM"
+                  ],
+                  "metals": [
+                    "GLD",
+                    "SLV"
+                  ]
+                },
+                "loose_group_cap": 10,
+                "loose_group_interpretation": "every_pairwise_union_of_close_groups",
+                "market_cap": 4,
+                "n_period": 20,
+                "pyramid_n": 0.5,
+                "risk_fraction": 0.01,
+                "rule_version": "classic_1983_close_execution_v1",
+                "simulation_cost_bps": 5.0,
+                "stop_n": 2.0,
+                "system1_entry": 20,
+                "system1_exit": 10,
+                "system2_entry": 55,
+                "system2_exit": 20
+              }
+            }
+          ],
+          "chart_filename": "turtle-systems-1-and-2__variant-2.svg",
+          "sections": [
+            {
+              "heading": "Experiment",
+              "classification": "experiment",
+              "raw_markdown_body": "\n\r\n- Period: 2010-01-04 to 2026-09-10 (4196 sessions)\r\n- Execution rule: close-derived weights are applied one session later\r\n- Transaction costs: 5.00 bps per unit of turnover\r\n- Cash return: 0%; taxes, slippage and market impact: not modeled\r\n- Parameters: rule_version=classic_1983_close_execution_v1, n_period=20, risk_fraction=0.01, simulation_cost_bps=5.0, system1_entry=20, system1_exit=10, system2_entry=55, system2_exit=20, stop_n=2.0, pyramid_n=0.5, market_cap=4, close_group_cap=6, loose_group_cap=10, direction_cap=12, groups={'equities': ['SPY', 'QQQ', 'IWM'], 'bonds': ['TLT', 'IEF'], 'metals': ['GLD', 'SLV'], 'commodities': ['DBC', 'USO'], 'currency': ['UUP']}, loose_group_interpretation=every_pairwise_union_of_close_groups, data_selection=market_data_hub_configured_production_db_2010_present\r\n\r\n"
+            },
+            {
+              "heading": "Classic Turtle rules implemented",
+              "classification": "extra",
+              "raw_markdown_body": "\n\r\n- N: 20-day Wilder ATR of True Range, seeded by the first 20-day arithmetic mean; True Range is `max(high-low, abs(high-prev_close), abs(low-prev_close))`.\r\n- System 1: long/short on a close beyond the prior 20-day high/low; exit on the prior 10-day opposite extreme. A signal is skipped when the immediately preceding System 1 signal in the same market and direction would have won, except that a simultaneous 55-day breakout is an always-taken failsafe (subject only to portfolio caps). Skipped signals are tracked hypothetically through the same 2N stop/10-day exit so the next filter decision is stateful.\r\n- System 2: long/short on a close beyond the prior 55-day high/low; every signal is eligible, with the prior 20-day opposite extreme as exit.\r\n- Both systems run simultaneously. Their units are separately associated with their system exit, but count together against the same market and portfolio caps.\r\n- Position sizing: every new unit contains `(1% * current internally simulated equity) / current N` fractional ETF shares. Signed position market value divided by that same equity becomes the emitted weight; aggregate weights are deliberately not normalized or capped at 1.0.\r\n- Pyramiding: each campaign proposes another full unit for every 0.5N favorable move from its prior add level, up to the shared four-unit market limit. A crossed level rejected by a risk cap is skipped whole, never partially filled.\r\n- Stops: every unit starts 2N from its own fill. A new same-direction unit tightens every existing same-market unit to the new unit's effective stop (raised for longs, lowered for shorts; never loosened if N expands).\r\n- Execution interpretation: breakouts, channel exits, and stops are evaluated on adjusted closes. This is required by LazyAlpha's unchanged close-to-next-close weight protocol; it does not claim intraday stop fills or futures tick execution.\r\n\r\n"
+            },
+            {
+              "heading": "Correlation groups and layered unit limits",
+              "classification": "extra",
+              "raw_markdown_body": "\n\r\n| Close group | ETFs |\r\n|---|---|\r\n| Equities | SPY, QQQ, IWM |\r\n| Bonds | TLT, IEF |\r\n| Metals | GLD, SLV |\r\n| Commodities | DBC, USO |\r\n| Currency | UUP |\r\n\r\nAll caps are tested before each complete unit and are direction-specific, consistent with Faith's published wording: maximum 4 units per market; 6 in one direction inside a close group; 10 in one direction across every pairwise union of close groups; and 12 units in one direction portfolio-wide. The published rules name examples of loosely correlated futures but do not define a complete ETF taxonomy. The pairwise-union interpretation uses only the CEO-specified close groups, avoids inventing extra sectors, and keeps the 10- and 12-unit layers independently operative.\r\n\r\n**Major universe limitation:** LazyAlpha previously centered on SPY/QQQ, whose high correlation makes correlation caps and the original diversification mechanism nearly meaningless. These ten ETFs deliberately add rates, metals, commodities, and a dollar proxy, but remain US-listed proxies. This is a faithful mechanical replication of published rules on real ETF data, not a replication of the original edge, which depended on roughly two dozen genuinely different futures markets across asset classes and geographies.\r\n\r\n"
+            },
+            {
+              "heading": "Realized units, leverage, and reconciliation",
+              "classification": "extra",
+              "raw_markdown_body": "\n\r\n- Peak aggregate gross leverage: 40.5299x\r\n- Average aggregate gross leverage: 14.0696x\r\n- Maximum concurrent units: 24\r\n- Cap-skipped entry/add signals: 6279 (market=199, close-group=2844, loose-group=1605, direction=1631)\r\n- System 1 filter skips: 354; initial entries: 1473; pyramid additions: 1171\r\n- Internal-equity versus the reported 5.00-bps `run_backtest` maximum absolute difference: 1.68802216649e-09; required tolerance: 0.0001; confirmed: `True`.\r\n- The internal loop deducts the same one-session-lagged LazyAlpha turnover charge as the reported backtest before sizing that close's new units. Current simulated equity is therefore the strategy's own net marked-to-market equity, including modeled transaction costs.\r\n- Leverage is real: aggregate position value can exceed equity. LazyAlpha models neither margin requirements nor financing cost for leveraged exposure. Cash return is also zero. Both are known simplifications, not hidden performance claims.\r\n\r\n"
+            },
+            {
+              "heading": "OHLC construction",
+              "classification": "extra",
+              "raw_markdown_body": "\n\r\n- Raw fields: `high`, `low`, `close`, and `adj_close` from `market-data-hub prices_daily`, with live rows excluded.\r\n- Back-adjustment: on every symbol/date, multiply raw high and low by `adj_close / close`; use `adj_close` as the close. Thus ATR and breakout channels share the corporate-action-consistent price scale used for returns.\r\n- Validated OHLC common panel: 2010-01-04 to 2026-09-10 (4196 sessions). Dates with an incomplete cross-symbol row are excluded from the common panel, exactly as in the standard adjusted-close adapter; nothing is imputed. Missing required columns/symbols, duplicates, non-finite present values, or non-positive present values are fatal.\r\n\r\n"
+            },
+            {
+              "heading": "Data provenance",
+              "classification": "provenance",
+              "raw_markdown_body": "\n\r\n- Source: `market-data-hub` (`adj_close`; live rows included: `False`)\r\n- Requested symbols: SPY, QQQ, IWM, TLT, IEF, GLD, SLV, DBC, USO, UUP\r\n- Validated common panel: 2010-01-04 to 2026-09-10; 4196 rows\r\n- Database: `market-data-hub configured default`\r\n\r\n| Symbol | Last date | Status | Coverage score | Stalled |\r\n|---|---:|---|---:|---|\r\n| DBC | 2026-09-10 00:00:00 | ok | 95.50 | False |\r\n| GLD | 2026-09-10 00:00:00 | ok | 95.50 | False |\r\n| IEF | 2026-09-10 00:00:00 | ok | 98.50 | False |\r\n| IWM | 2026-09-10 00:00:00 | ok | 98.50 | False |\r\n| QQQ | 2026-09-10 00:00:00 | ok | 98.50 | False |\r\n| SLV | 2026-09-10 00:00:00 | ok | 95.50 | False |\r\n| SPY | 2026-09-10 00:00:00 | ok | 98.52 | False |\r\n| TLT | 2026-09-10 00:00:00 | ok | 98.51 | False |\r\n| USO | 2026-09-10 00:00:00 | ok | 95.50 | False |\r\n| UUP | 2026-09-10 00:00:00 | ok | 95.51 | False |\r\n\r\n"
+            },
+            {
+              "heading": "Research rationale",
+              "classification": "rationale",
+              "raw_markdown_body": "\n\r\nVolatility-normalized breakouts across genuinely diverse markets may capture infrequent persistent trends, while 2N stops, pyramiding rules, and layered portfolio heat limits constrain failed breakouts.\r\n\r\nRun the published 20/10-day filtered System 1 and unfiltered 55/20-day System 2 together; size every unit at 1% of current equity per N, add at 0.5N, tighten stops, and enforce all four unit-cap layers.\r\n\r\nSources:\r\n\r\n- [The Original Turtle Trading Rules Explained](https://www.theturtletrader.com/turtle-trading-rules/) — Corroborates N/ATR sizing, 20/55-day entries, the System 1 winner filter and failsafe, 10/20-day exits, 2N stops, 0.5N adds, and the 4/6/10/12 unit limits.\r\n- [Way of the Turtle: Original Turtle Trading Rules](https://www.brookstradingcourse.com/wp-content/uploads/wpforo/attachments/12514/3508-CurtisFaith-WayoftheTurtle-1.pdf) — Original Turtle Curtis Faith describes the two systems, the 0.5N pyramid sequence, prior-breakout filter, and direction-specific correlated-market unit limits.\r\n- [The Original Turtle Rules](https://tradingblox.com/originalturtles/originalturtlerules.htm) — Hosts the freely published complete rules covering entries, position sizing, adds, stops, exits, and portfolio limits.\r\n\r\nKnown risks:\r\n\r\n- ten US-listed ETFs only partially approximate the original global futures diversification\r\n- close-based ETF execution differs from intraday stop orders and futures contract mechanics\r\n- leveraged exposure has no margin or financing-cost model in LazyAlpha\r\n- borrow availability, short fees, slippage, taxes, and market impact are not modeled\r\n- one historical sample and one fixed universe are not evidence of future profitability\r\n\r\n"
+            },
+            {
+              "heading": "Net backtest metrics",
+              "classification": "metrics",
+              "raw_markdown_body": "\n\r\n| Metric | Strategy | Benchmark |\r\n|---|---:|---:|\r\n| Gross cumulative return | -18.47% | 265.80% |\r\n| Cumulative return | -98.82% | 265.62% |\r\n| CAGR | -23.39% | 8.10% |\r\n| Annualized volatility | 116.79% | 10.62% |\r\n| Annualized Sharpe (rf=0) | 0.37 | 0.79 |\r\n| Maximum drawdown | -99.94% | -23.48% |\r\n| Annualized turnover | 50592.57% | 6.01% |\r\n| Transaction-cost drag (sum of daily rates) | 421.20% | 0.05% |\r\n\r\n"
+            },
+            {
+              "heading": "Walk-forward / out-of-sample validation",
+              "classification": "walkforward",
+              "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2010-01-04 to 2020-01-02 | 2517 | -98.92% | -36.48% | 111.62% | 0.16 | -99.91% | 68.40% | 0.62 | -167.33% | -0.46 |\r\n| oos_1 | out_of_sample | 2020-01-03 to 2026-09-10 | 1679 | -55.20% | -11.35% | 122.86% | 0.54 | -98.06% | 115.74% | 0.98 | -170.94% | -0.44 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n"
+            },
+            {
+              "heading": "Giudizio / conclusion",
+              "classification": "verdict",
+              "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.\r\n"
+            }
+          ]
+        },
+        {
+          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\turtle_core_risk_corrected_classic_2010-01-04_2026-09-10.md",
+          "filename": "turtle_core_risk_corrected_classic_2010-01-04_2026-09-10.md",
+          "family": "turtle_systems_1_and_2",
+          "slug": "turtle-systems-1-and-2",
+          "variant_index": 3,
+          "generated_at": "2026-09-12T08:35:39+00:00",
+          "generated_at_source": "2026-09-12T08:35:39+00:00",
+          "params_line": "rule_version=classic_1983_close_execution_v2_capital_corrected, n_period=20, risk_fraction=0.01, simulation_cost_bps=5.0, margin_ratio=0.1, max_aggregate_leverage=1.0, same_symbol_system_overlap_risk_multiplier=0.5, system1_entry=20, system1_exit=10, system2_entry=55, system2_exit=20, stop_n=2.0, pyramid_n=0.5, market_cap=4, close_group_cap=6, loose_group_cap=10, direction_cap=12, groups={'equities': ['SPY', 'QQQ', 'IWM'], 'bonds': ['TLT', 'IEF'], 'metals': ['GLD', 'SLV'], 'commodities': ['DBC', 'USO'], 'currency': ['UUP']}, loose_group_interpretation=every_pairwise_union_of_close_groups, data_selection=market_data_hub_configured_production_db_2010_present",
+          "verdict_text": "Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.",
+          "verdict_category": "fail",
+          "verdict_label": "FAIL",
+          "badge_class": "verdict-badge--fail",
+          "registered": true,
+          "registry_matches": [
+            {
+              "timestamp": "2026-09-12T08:35:39+00:00",
+              "walk_forward_passed": false,
+              "params": {
+                "close_group_cap": 6,
+                "data_selection": "market_data_hub_configured_production_db_2010_present",
+                "direction_cap": 12,
+                "groups": {
+                  "bonds": [
+                    "TLT",
+                    "IEF"
+                  ],
+                  "commodities": [
+                    "DBC",
+                    "USO"
+                  ],
+                  "currency": [
+                    "UUP"
+                  ],
+                  "equities": [
+                    "SPY",
+                    "QQQ",
+                    "IWM"
+                  ],
+                  "metals": [
+                    "GLD",
+                    "SLV"
+                  ]
+                },
+                "loose_group_cap": 10,
+                "loose_group_interpretation": "every_pairwise_union_of_close_groups",
+                "margin_ratio": 0.1,
+                "market_cap": 4,
+                "max_aggregate_leverage": 1.0,
+                "n_period": 20,
+                "pyramid_n": 0.5,
+                "risk_fraction": 0.01,
+                "rule_version": "classic_1983_close_execution_v2_capital_corrected",
+                "same_symbol_system_overlap_risk_multiplier": 0.5,
+                "simulation_cost_bps": 5.0,
+                "stop_n": 2.0,
+                "system1_entry": 20,
+                "system1_exit": 10,
+                "system2_entry": 55,
+                "system2_exit": 20
+              }
+            }
+          ],
+          "chart_filename": "turtle-systems-1-and-2__variant-3.svg",
+          "sections": [
+            {
+              "heading": "Experiment",
+              "classification": "experiment",
+              "raw_markdown_body": "\n\r\n- Period: 2010-01-04 to 2026-09-10 (4196 sessions)\r\n- Execution rule: close-derived weights are applied one session later\r\n- Transaction costs: 5.00 bps per unit of turnover\r\n- Cash return: 0%; taxes, slippage and market impact: not modeled\r\n- Parameters: rule_version=classic_1983_close_execution_v2_capital_corrected, n_period=20, risk_fraction=0.01, simulation_cost_bps=5.0, margin_ratio=0.1, max_aggregate_leverage=1.0, same_symbol_system_overlap_risk_multiplier=0.5, system1_entry=20, system1_exit=10, system2_entry=55, system2_exit=20, stop_n=2.0, pyramid_n=0.5, market_cap=4, close_group_cap=6, loose_group_cap=10, direction_cap=12, groups={'equities': ['SPY', 'QQQ', 'IWM'], 'bonds': ['TLT', 'IEF'], 'metals': ['GLD', 'SLV'], 'commodities': ['DBC', 'USO'], 'currency': ['UUP']}, loose_group_interpretation=every_pairwise_union_of_close_groups, data_selection=market_data_hub_configured_production_db_2010_present\r\n\r\n"
+            },
+            {
+              "heading": "Classic Turtle rules implemented",
+              "classification": "extra",
+              "raw_markdown_body": "\n\r\n- N: 20-day Wilder ATR of True Range, seeded by the first 20-day arithmetic mean; True Range is `max(high-low, abs(high-prev_close), abs(low-prev_close))`.\r\n- System 1: long/short on a close beyond the prior 20-day high/low; exit on the prior 10-day opposite extreme. A signal is skipped when the immediately preceding System 1 signal in the same market and direction would have won, except that a simultaneous 55-day breakout is an always-taken failsafe (subject only to portfolio caps). Skipped signals are tracked hypothetically through the same 2N stop/10-day exit so the next filter decision is stateful.\r\n- System 2: long/short on a close beyond the prior 55-day high/low; every signal is eligible, with the prior 20-day opposite extreme as exit.\r\n- Both systems run simultaneously. Their units are separately associated with their system exit, but count together against the same market and portfolio caps. If the other system already holds the same symbol in the same direction, the new unit uses a 0.5 risk multiplier (0.5% rather than 1% at the defaults) to reduce duplicated same-instrument concentration without forbidding the historically simultaneous systems.\r\n- Position sizing: a normal new unit contains `(1% * current internally simulated equity) / current N` fractional shares; an overlapping same-direction System 1/System 2 unit uses half that risk. This preserves the futures-style risk-normalized notional calculation while correcting how capital availability is enforced.\r\n- Pyramiding: each campaign proposes another full unit for every 0.5N favorable move from its prior add level, up to the shared four-unit market limit. A crossed level rejected by a risk cap is skipped whole, never partially filled.\r\n- Stops: every unit starts 2N from its own fill. A new same-direction unit tightens every existing same-market unit to the new unit's effective stop (raised for longs, lowered for shorts; never loosened if N expands).\r\n- Execution interpretation: breakouts, channel exits, and stops are evaluated on adjusted closes. This is required by LazyAlpha's unchanged close-to-next-close weight protocol; it does not claim intraday stop fills or futures tick execution.\r\n\r\n"
+            },
+            {
+              "heading": "Correlation groups and layered unit limits",
+              "classification": "extra",
+              "raw_markdown_body": "\n\r\n| Close group | ETFs |\r\n|---|---|\r\n| Equities | SPY, QQQ, IWM |\r\n| Bonds | TLT, IEF |\r\n| Metals | GLD, SLV |\r\n| Commodities | DBC, USO |\r\n| Currency | UUP |\r\n\r\nAll original caps are tested before each complete unit and are direction-specific, consistent with Faith's published wording: maximum 4 units per market; 6 in one direction inside a close group; 10 in one direction across every pairwise union of close groups; and 12 units in one direction portfolio-wide. The published rules name examples of loosely correlated futures but do not define a complete ETF taxonomy. The pairwise-union interpretation uses only the CEO-specified close groups, avoids inventing extra sectors, and keeps the 10- and 12-unit layers independently operative.\r\n\r\nTwo distinct proactive capital constraints then apply to every initial entry and pyramid add. First, current margin committed by every open unit plus the proposed unit's `abs(shares * current price) * margin_ratio` must not exceed current equity. Futures margin is a performance bond and normally only a fraction of notional, unlike buying an ETF outright; CME and Schwab both describe typical futures margin as roughly 3%-12% of contract notional. The fixed 10% proxy is near the upper end of that published range and matches this repository's maintenance-margin experiment. Second, proposed aggregate gross notional divided by equity must not exceed the independent 1.0x operator safety ceiling. Passing the margin test does not waive the leverage ceiling.\r\n\r\nSources: [CME, Margin: Know What's Needed](https://www.cmegroup.com/education/courses/introduction-to-futures/margin-know-what-is-needed); [Schwab futures-margin overview](https://www.schwab.com/futures/futures-margin).\r\n\r\nThe same-symbol overlap reduction implements the established risk-management principle that leverage and position concentration must be monitored against explicit limits; the CFTC names both in its market-risk requirements. No authoritative source located prescribes one universal reduction factor for two Turtle systems on one instrument, so 0.5 is disclosed as the fixed operator policy factor, not a historically sourced Turtle constant.\r\n\r\nSource: [CFTC market-risk rule, 17 CFR risk-management provisions](https://www.cftc.gov/LawRegulation/FederalRegister/finalrules/2012-5317.html).\r\n\r\n**Major universe limitation:** LazyAlpha previously centered on SPY/QQQ, whose high correlation makes correlation caps and the original diversification mechanism nearly meaningless. These ten ETFs deliberately add rates, metals, commodities, and a dollar proxy, but remain US-listed proxies. This is a faithful mechanical replication of published rules on real ETF data, not a replication of the original edge, which depended on roughly two dozen genuinely different futures markets across asset classes and geographies.\r\n\r\n"
+            },
+            {
+              "heading": "Realized units, leverage, and reconciliation",
+              "classification": "extra",
+              "raw_markdown_body": "\n\r\n- Peak aggregate gross leverage: 1.0679x\r\n- Average aggregate gross leverage: 0.7603x\r\n- Maximum concurrent units: 6\r\n- Cap-skipped entry/add signals: 6093 (market=3, close-group=0, loose-group=0, direction=0, insufficient-margin=0, leverage-ceiling=6090)\r\n- Same-symbol/same-direction System 1/System 2 concentration-reduced units: 47\r\n- System 1 filter skips: 348; initial entries: 236; pyramid additions: 40\r\n- Internal-equity versus the reported 5.00-bps `run_backtest` maximum absolute difference: 5.58793544769e-09; required tolerance: 0.0001; confirmed: `True`.\r\n- The internal loop deducts the same one-session-lagged LazyAlpha turnover charge as the reported backtest before sizing that close's new units. Current simulated equity is therefore the strategy's own net marked-to-market equity, including modeled transaction costs.\r\n- The leverage ceiling is checked immediately before additions; ordinary price moves can subsequently carry existing gross leverage slightly above 1.0x until positions exit. LazyAlpha still does not model financing/collateral yield, contract-specific or changing exchange margins, or portfolio offsets. Cash return is zero.\r\n\r\n"
+            },
+            {
+              "heading": "OHLC construction",
+              "classification": "extra",
+              "raw_markdown_body": "\n\r\n- Raw fields: `high`, `low`, `close`, and `adj_close` from `market-data-hub prices_daily`, with live rows excluded.\r\n- Back-adjustment: on every symbol/date, multiply raw high and low by `adj_close / close`; use `adj_close` as the close. Thus ATR and breakout channels share the corporate-action-consistent price scale used for returns.\r\n- Validated OHLC common panel: 2010-01-04 to 2026-09-10 (4196 sessions). Dates with an incomplete cross-symbol row are excluded from the common panel, exactly as in the standard adjusted-close adapter; nothing is imputed. Missing required columns/symbols, duplicates, non-finite present values, or non-positive present values are fatal.\r\n\r\n"
+            },
+            {
+              "heading": "Data provenance",
+              "classification": "provenance",
+              "raw_markdown_body": "\n\r\n- Source: `market-data-hub` (`adj_close`; live rows included: `False`)\r\n- Requested symbols: SPY, QQQ, IWM, TLT, IEF, GLD, SLV, DBC, USO, UUP\r\n- Validated common panel: 2010-01-04 to 2026-09-10; 4196 rows\r\n- Database: `market-data-hub configured default`\r\n\r\n| Symbol | Last date | Status | Coverage score | Stalled |\r\n|---|---:|---|---:|---|\r\n| DBC | 2026-09-10 00:00:00 | ok | 95.50 | False |\r\n| GLD | 2026-09-10 00:00:00 | ok | 95.50 | False |\r\n| IEF | 2026-09-10 00:00:00 | ok | 98.50 | False |\r\n| IWM | 2026-09-10 00:00:00 | ok | 98.50 | False |\r\n| QQQ | 2026-09-10 00:00:00 | ok | 98.50 | False |\r\n| SLV | 2026-09-10 00:00:00 | ok | 95.50 | False |\r\n| SPY | 2026-09-10 00:00:00 | ok | 98.52 | False |\r\n| TLT | 2026-09-10 00:00:00 | ok | 98.51 | False |\r\n| USO | 2026-09-10 00:00:00 | ok | 95.50 | False |\r\n| UUP | 2026-09-10 00:00:00 | ok | 95.51 | False |\r\n\r\n"
+            },
+            {
+              "heading": "Research rationale",
+              "classification": "rationale",
+              "raw_markdown_body": "\n\r\nVolatility-normalized breakouts across genuinely diverse markets may capture infrequent persistent trends, while 2N stops, pyramiding rules, and layered portfolio heat limits constrain failed breakouts.\r\n\r\nRun the published 20/10-day filtered System 1 and unfiltered 55/20-day System 2 together; size every unit at 1% of current equity per N, add at 0.5N, tighten stops, and enforce all four unit-cap layers.\r\n\r\nSources:\r\n\r\n- [The Original Turtle Trading Rules Explained](https://www.theturtletrader.com/turtle-trading-rules/) — Corroborates N/ATR sizing, 20/55-day entries, the System 1 winner filter and failsafe, 10/20-day exits, 2N stops, 0.5N adds, and the 4/6/10/12 unit limits.\r\n- [Way of the Turtle: Original Turtle Trading Rules](https://www.brookstradingcourse.com/wp-content/uploads/wpforo/attachments/12514/3508-CurtisFaith-WayoftheTurtle-1.pdf) — Original Turtle Curtis Faith describes the two systems, the 0.5N pyramid sequence, prior-breakout filter, and direction-specific correlated-market unit limits.\r\n- [The Original Turtle Rules](https://tradingblox.com/originalturtles/originalturtlerules.htm) — Hosts the freely published complete rules covering entries, position sizing, adds, stops, exits, and portfolio limits.\r\n\r\nKnown risks:\r\n\r\n- ten US-listed ETFs only partially approximate the original global futures diversification\r\n- close-based ETF execution differs from intraday stop orders and futures contract mechanics\r\n- the fixed margin proxy omits contract-specific and changing exchange requirements, portfolio offsets, and financing/collateral yield\n- borrow availability, short fees, slippage, taxes, and market impact are not modeled\r\n- one historical sample and one fixed universe are not evidence of future profitability\r\n\r\n"
+            },
+            {
+              "heading": "Net backtest metrics",
+              "classification": "metrics",
+              "raw_markdown_body": "\n\r\n| Metric | Strategy | Benchmark |\r\n|---|---:|---:|\r\n| Gross cumulative return | 52.31% | 265.80% |\r\n| Cumulative return | 30.63% | 265.62% |\r\n| CAGR | 1.62% | 8.10% |\r\n| Annualized volatility | 20.90% | 10.62% |\r\n| Annualized Sharpe (rf=0) | 0.18 | 0.79 |\r\n| Maximum drawdown | -51.34% | -23.48% |\r\n| Annualized turnover | 1843.83% | 6.01% |\r\n| Transaction-cost drag (sum of daily rates) | 15.35% | 0.05% |\r\n\r\n"
+            },
+            {
+              "heading": "Walk-forward / out-of-sample validation",
+              "classification": "walkforward",
+              "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2010-01-04 to 2020-01-02 | 2517 | 12.69% | 1.20% | 18.26% | 0.16 | -51.34% | 68.40% | 0.62 | -55.71% | -0.46 |\r\n| oos_1 | out_of_sample | 2020-01-03 to 2026-09-10 | 1679 | 1.99% | 0.30% | 24.20% | 0.14 | -48.19% | 115.74% | 0.98 | -113.75% | -0.84 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n"
+            },
+            {
+              "heading": "Giudizio / conclusion",
+              "classification": "verdict",
+              "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.\r\n"
+            }
+          ]
+        }
+      ]
+    },
+    "volatility_managed_ma_crossover_50_200": {
+      "slug": "volatility-managed-ma-crossover-50-200",
+      "variants": [
+        {
+          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260911_230108_volatility_managed_ma_crossover_50_200.md",
+          "filename": "20260911_230108_volatility_managed_ma_crossover_50_200.md",
+          "family": "volatility_managed_ma_crossover_50_200",
+          "slug": "volatility-managed-ma-crossover-50-200",
+          "variant_index": 1,
+          "generated_at": "2026-09-11T23:01:08+00:00",
+          "generated_at_source": "2026-09-11T23:01:08+00:00",
+          "params_line": "fast=50, slow=200, volatility_lookback=126, target_annual_vol=0.12, max_leverage=1.0",
+          "verdict_text": "Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.",
+          "verdict_category": "fail",
+          "verdict_label": "FAIL",
+          "badge_class": "verdict-badge--fail",
+          "registered": true,
+          "registry_matches": [
+            {
+              "timestamp": "2026-09-11T23:01:38+00:00",
+              "walk_forward_passed": false,
+              "params": {
+                "fast": 50,
+                "max_leverage": 1.0,
+                "sample": "extended_2010_2026",
+                "slow": 200,
+                "target_annual_vol": 0.12,
+                "volatility_lookback": 126
+              }
+            }
+          ],
+          "chart_filename": "volatility-managed-ma-crossover-50-200__variant-1.svg",
+          "sections": [
+            {
+              "heading": "Experiment",
+              "classification": "experiment",
+              "raw_markdown_body": "\n\r\n- Period: 2010-01-04 to 2026-08-14 (4179 sessions)\r\n- Execution rule: close-derived weights are applied one session later\r\n- Transaction costs: 5.00 bps per unit of turnover\r\n- Cash return: 0%; taxes, slippage and market impact: not modeled\r\n- Parameters: fast=50, slow=200, volatility_lookback=126, target_annual_vol=0.12, max_leverage=1.0\r\n\r\n"
+            },
+            {
+              "heading": "Frozen volatility-management parameters",
+              "classification": "extra",
+              "raw_markdown_body": "\n\r\n- Trailing realized-volatility lookback: 126 trading-day returns (six months). This exactly matches Barroso and Santa-Clara (2015) and was not tuned on this run.\r\n- Target annualized volatility: 12.00%. This is the paper's round, conventional risk target, fixed before observing this run rather than selected to maximize its results.\r\n- Maximum leverage: 1.00x of the existing MA allocation. This conservative retail-ETF cap permits only de-risking and never levering above the ungated strategy's allocation.\r\n- Missing-history rule: exposure is explicitly zero until all trailing daily returns required by the volatility lookback exist; no volatility or position weight is imputed.\r\n- Overlay rule: the existing MA trend direction and equal-weight active allocation are unchanged; each active allocation is multiplied by `min(max_leverage, target_annual_vol / trailing_realized_vol)`.\r\n\r\n"
+            },
+            {
+              "heading": "Data provenance",
+              "classification": "provenance",
+              "raw_markdown_body": "\n\r\n- Source: `market-data-hub` (`adj_close`; live rows included: `False`)\r\n- Requested symbols: SPY, QQQ\r\n- Validated common panel: 2010-01-04 to 2026-08-14; 4179 rows\r\n- Database: `C:\\Users\\Administrator\\Documents\\GitHub\\market-data-hub\\market_data.duckdb`\r\n\r\n| Symbol | Last date | Status | Coverage score | Stalled |\r\n|---|---:|---|---:|---|\r\n| QQQ | 2026-08-14 00:00:00 | ok | 97.31 | False |\r\n| SPY | 2026-08-14 00:00:00 | ok | 97.33 | False |\r\n\r\n"
+            },
+            {
+              "heading": "Research rationale",
+              "classification": "rationale",
+              "raw_markdown_body": "\n\r\nScaling down an active 50/200 moving-average allocation when its recent realized volatility is high may reduce crash exposure and improve risk-adjusted returns without changing the trend signal.\r\n\r\nReuse the existing 50/200 MA direction and equal-weight active allocation unchanged. For each ETF with an active allocation, multiply that allocation by min(1.0, 12% / its annualized realized volatility over the trailing 126 daily returns). Hold cash until the complete volatility window exists.\r\n\r\nSources:\r\n\r\n- [Barroso, P. and Santa-Clara, P. (2015), \"Momentum has its moments\", Journal of Financial Economics, 116(1), 111-120.](https://doi.org/10.1016/j.jfineco.2014.11.010) — Scaling a momentum/trend strategy's exposure by the inverse of its own trailing 6-month realized volatility, targeting a constant volatility level, took the (unmanaged) strategy's Sharpe ratio from 0.53 to 0.97 and \"virtually eliminated\" crashes -- volatility risk is itself predictable by recent realized volatility, and high recent volatility predicts poor subsequent returns, which is exactly what scaling down in high-vol periods avoids. Also available on IDEAS/RePEc: https://ideas.repec.org/a/eee/jfinec/v116y2015i1p111-120.html\r\n- [Hurst, B., Ooi, Y.H. and Pedersen, L.H. (2017), \"A Century of Evidence on Trend-Following Investing\", Journal of Portfolio Management, 44(1), 15-29.](https://www.aqr.com/Insights/Research/Journal-Article/A-Century-of-Evidence-on-Trend-Following-Investing) — Time-series trend-following delivered positive average returns in every decade since 1880 across markets (average Sharpe ~0.4) and performed well in 8 of the 10 largest drawdown periods for a 60/40 portfolio over the last century -- i.e. trend-following's edge shows up especially in crisis/high-volatility periods, which is exactly when a volatility-scaling overlay reduces exposure, making the two ideas complementary rather than in tension.\r\n\r\nKnown risks:\r\n\r\n- scaling down can sacrifice returns when a profitable crisis trend coincides with high realized volatility\r\n- realized volatility can change faster than a six-month estimator\r\n- the unlevered cap prevents calm-period risk normalization upward\r\n- cash return is modeled as zero and execution frictions are incomplete\r\n- one historical sample is not evidence of future profitability\r\n\r\n"
+            },
+            {
+              "heading": "Net backtest metrics",
+              "classification": "metrics",
+              "raw_markdown_body": "\n\r\n| Metric | Strategy | Ungated MA | Benchmark |\r\n|---|---:|---:|---:|\r\n| Cumulative return | 297.79% | 633.33% | 1207.31% |\r\n| CAGR | 8.68% | 12.77% | 16.77% |\r\n| Annualized volatility | 11.37% | 16.03% | 18.56% |\r\n| Annualized Sharpe (rf=0) | 0.79 | 0.83 | 0.93 |\r\n| Maximum drawdown | -20.44% | -30.86% | -30.86% |\r\n| Annualized turnover | 184.19% | 186.93% | 6.03% |\r\n| Transaction-cost drag (sum of daily rates) | 1.53% | 1.55% | 0.05% |\r\n\r\n"
+            },
+            {
+              "heading": "Walk-forward / out-of-sample validation",
+              "classification": "walkforward",
+              "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2010-01-04 to 2019-12-17 | 2507 | 121.57% | 8.33% | 10.79% | 0.80 | -17.62% | 315.92% | 0.99 | -194.36% | -0.20 |\r\n| oos_1 | out_of_sample | 2019-12-18 to 2026-08-14 | 1672 | 82.95% | 9.53% | 10.59% | 0.91 | -15.30% | 214.03% | 0.89 | -131.08% | 0.02 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n"
+            },
+            {
+              "heading": "Giudizio / conclusion",
+              "classification": "verdict",
+              "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.\r\n\r\n"
+            },
+            {
+              "heading": "Ecosystem review",
+              "classification": "ecosystem",
+              "raw_markdown_body": "\n\r\n- **LazyFin:** Do not recreate hierarchical portfolio optimization in LazyAlpha; the line was moved/retired from LazyFin and belongs to LazyPortfolio. (`C:\\Users\\Administrator\\Documents\\GitHub\\LazyFin\\docs\\status.md`)\r\n- **investmentcommittee:** Keep B0/P0/Sa/PH/PF as methodological reference: same data, folds, costs and rebalance rules for honest comparisons; do not clone it 1:1. (`C:\\Users\\Administrator\\Documents\\GitHub\\investment-process-top-down-etf.md`)\r\n"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

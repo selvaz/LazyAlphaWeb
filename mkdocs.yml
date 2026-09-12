@@ -39,3 +39,14 @@ extra_css:
 nav:
   - Home: index.md
   - Methodology: methodology.md
+  - Leaderboard: leaderboard.md
+  - Changelog: changelog.md
+  - Notes: notes.md
+  - Models:
+      - 'ma_crossover_50_200': models/ma-crossover-50-200.md
+      - 'ma_crossover_5_20': models/ma-crossover-5-20.md
+      - 'policy_conditional_ma_50_200_6m': models/policy-conditional-ma-50-200-6m.md
+      - 'regime_conditional_ma_50_200_state_0': models/regime-conditional-ma-50-200-state-0.md
+      - 'sentiment_conditional_ma_50_200_3d': models/sentiment-conditional-ma-50-200-3d.md
+      - 'turtle_systems_1_and_2': models/turtle-systems-1-and-2.md
+      - 'volatility_managed_ma_crossover_50_200': models/volatility-managed-ma-crossover-50-200.md

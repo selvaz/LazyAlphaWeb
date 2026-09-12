@@ -15,9 +15,9 @@ description: Honest, documented backtests of systematic trading strategy researc
 
 <!-- STATS:START -->
 <div class="la-stat-row">
-  <div class="la-stat"><span class="la-stat__value">0</span><span class="la-stat__label">Experiments documented</span></div>
-  <div class="la-stat"><span class="la-stat__value">0</span><span class="la-stat__label">Walk-forward PASS</span></div>
-  <div class="la-stat"><span class="la-stat__value">0</span><span class="la-stat__label">FAIL / inconclusive / blocked</span></div>
+  <div class="la-stat"><span class="la-stat__value">10</span><span class="la-stat__label">Experiments documented</span></div>
+  <div class="la-stat"><span class="la-stat__value">1</span><span class="la-stat__label">Walk-forward PASS</span></div>
+  <div class="la-stat"><span class="la-stat__value">9</span><span class="la-stat__label">FAIL / inconclusive / blocked</span></div>
 </div>
 <!-- STATS:END -->
 
@@ -25,4 +25,4 @@ description: Honest, documented backtests of systematic trading strategy researc
 
 Read the [Methodology](methodology.md) for the verdict definitions, backtest conventions, and honest-reporting standard applied throughout this site.
 
-Models and a comparative leaderboard will be added as experiments are documented.
+Compare every documented strategy variant on the [Leaderboard](leaderboard.md) (individual model pages are listed under "Models" in the navigation), follow the [Changelog](changelog.md) for LazyAlpha's own append-only experiment registry, or read the [Research notes](notes.md) for comparative write-ups that don't fit a single model card.
