@@ -559,10 +559,113 @@
       ],
       "timestamp": "2026-09-12T15:36:34+00:00",
       "walk_forward_passed": true
+    },
+    {
+      "params": {
+        "cointegration_alpha": 0.05,
+        "dependent": "TLT",
+        "entry_z": 2.0,
+        "exit_z": 0.5,
+        "gross_exposure": 1.0,
+        "independent": "IEF",
+        "lookback": 252,
+        "screen": "development_only_bidirectional_engle_granger_log_prices"
+      },
+      "period_end": "2026-08-14",
+      "period_start": "2010-01-04",
+      "report_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260913_081146_cointegration_pairs_tlt_ief.md",
+      "strategy_name": "cointegration_pairs_tlt_ief",
+      "symbols": [
+        "IEF",
+        "TLT"
+      ],
+      "timestamp": "2026-09-13T08:11:46+00:00",
+      "walk_forward_passed": true
     }
   ],
-  "duplicate_reruns_discarded": 6,
+  "duplicate_reruns_discarded": 10,
   "families": {
+    "cointegration_pairs_tlt_ief": {
+      "slug": "cointegration-pairs-tlt-ief",
+      "variants": [
+        {
+          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260913_081146_cointegration_pairs_tlt_ief.md",
+          "filename": "20260913_081146_cointegration_pairs_tlt_ief.md",
+          "family": "cointegration_pairs_tlt_ief",
+          "slug": "cointegration-pairs-tlt-ief",
+          "variant_index": 1,
+          "generated_at": "2026-09-13T08:11:46+00:00",
+          "generated_at_source": "2026-09-13T08:11:46+00:00",
+          "params_line": "dependent=TLT, independent=IEF, lookback=252, entry_z=2.0, exit_z=0.5, cointegration_alpha=0.05, screen=development_only_bidirectional_engle_granger_log_prices, gross_exposure=1.0",
+          "period_string": "2010-01-04 to 2026-08-14",
+          "verdict_text": "Final validation judgment: PASS: coherent between development and OOS; the frozen strategy matches or beats the benchmark on return and Sharpe in every OOS window.",
+          "verdict_category": "pass",
+          "verdict_label": "PASS",
+          "badge_class": "verdict-badge--pass",
+          "registered": true,
+          "registry_matches": [
+            {
+              "timestamp": "2026-09-13T08:11:46+00:00",
+              "walk_forward_passed": true,
+              "params": {
+                "cointegration_alpha": 0.05,
+                "dependent": "TLT",
+                "entry_z": 2.0,
+                "exit_z": 0.5,
+                "gross_exposure": 1.0,
+                "independent": "IEF",
+                "lookback": 252,
+                "screen": "development_only_bidirectional_engle_granger_log_prices"
+              }
+            }
+          ],
+          "chart_filename": "cointegration-pairs-tlt-ief__variant-1.svg",
+          "equity_companion_found": true,
+          "sections": [
+            {
+              "heading": "Experiment",
+              "classification": "experiment",
+              "raw_markdown_body": "\n\r\n- Period: 2010-01-04 to 2026-08-14 (4178 sessions)\r\n- Execution rule: close-derived weights are applied one session later\r\n- Transaction costs: 5.00 bps per unit of turnover\r\n- Cash return: 0%; taxes, slippage and market impact: not modeled\r\n- Parameters: dependent=TLT, independent=IEF, lookback=252, entry_z=2.0, exit_z=0.5, cointegration_alpha=0.05, screen=development_only_bidirectional_engle_granger_log_prices, gross_exposure=1.0\r\n\r\n"
+            },
+            {
+              "heading": "Pair selection and cointegration diagnostics",
+              "classification": "extra",
+              "raw_markdown_body": "\n\r\n- Pair: `TLT/IEF`. Both are highly liquid US Treasury ETFs already covered by the repository's Turtle experiment; they share Treasury-rate exposure but differ in duration.\r\n- Frozen eligibility rule: both Engle-Granger regression directions p < 0.05 on development only.\r\n- Development window: 2010-01-04 to 2019-12-16 (2506 sessions). `TLT ~ IEF` statistic `-3.414703`, p-value `0.040743`; reverse statistic `-3.518998`, p-value `0.030748`. **Eligibility: PASS.**\r\n- Full-sample stability diagnostic (never used to select the pair): 2010-01-04 to 2026-08-14 (4178 sessions). Forward statistic `0.222329`, p-value `0.989922`; reverse statistic `0.531894`, p-value `0.992850`. **Full-sample cointegration: FAIL / structural instability.**\r\n- Method: natural-log adjusted closes; Engle-Granger two-step test with a constant and ADF lag selected by AIC (`statsmodels.tsa.stattools.coint`). The regression direction is material, so eligibility requires both directions.\r\n- Trading rule: rolling OLS and z-score calculations use only the trailing window through close t. A positive spread is long the dependent ETF and short the OLS hedge-ratio exposure in the independent ETF; absolute leg weights sum to 1. The common engine executes those weights on session t+1.\r\n\r\n"
+            },
+            {
+              "heading": "Data provenance",
+              "classification": "provenance",
+              "raw_markdown_body": "\n\r\n- Source: `market-data-hub` (`adj_close`; live rows included: `False`)\r\n- Requested symbols: TLT, IEF\r\n- Validated common panel: 2010-01-04 to 2026-08-14; 4178 rows\r\n- Database: `C:\\Users\\Administrator\\Documents\\GitHub\\market-data-hub\\market_data.duckdb`\r\n\r\n| Symbol | Last date | Status | Coverage score | Stalled |\r\n|---|---:|---|---:|---|\r\n| IEF | 2026-08-14 00:00:00 | ok | 97.31 | False |\r\n| TLT | 2026-08-14 00:00:00 | ok | 97.32 | False |\r\n\r\n"
+            },
+            {
+              "heading": "Research rationale",
+              "classification": "rationale",
+              "raw_markdown_body": "\n\r\nA long/short TLT/IEF spread may mean-revert because both funds represent the US Treasury curve, while their different durations create temporary relative-value dislocations. Cointegration must be demonstrated on development data rather than assumed from correlation.\r\n\r\nTest log adjusted closes with the Engle-Granger two-step method on the development window. If the pair passes at 5%, estimate a 252-session rolling OLS hedge ratio, enter against residual z-scores at +/-2, exit inside +/-0.5, normalize the two hedge legs to one unit of gross exposure, and retain the common one-session lag.\r\n\r\nSources:\r\n\r\n- [Pairs Trading: Performance of a Relative-Value Arbitrage Rule](https://academic.oup.com/rfs/article-abstract/19/3/797/1646694) — Gatev, Goetzmann, and Rouwenhorst formalize a self-financing relative-value rule with separate formation and trading periods.\r\n- [Pairs Trading: Quantitative Methods and Analysis](https://www.wiley-vch.de/en/areas-interest/finance-economics-law/pairs-trading-978-0-471-46067-1) — Vidyamurthy develops the cointegration, hedge-ratio, and market-neutral statistical-arbitrage framework.\r\n- [Pre-selection in cointegration-based pairs trading](https://doi.org/10.1007/s10260-023-00702-4) — Documents the log-price OLS residual/ADF Engle-Granger workflow, +/-2-sigma entries, and sensitivity to pair selection.\r\n- [Cointegration-based pairs trading: identifying and exploiting similar exchange-traded funds](https://doi.org/10.1057/s41260-025-00416-0) — Finds that ETF pairs-trading results depend on cointegration stability and that shorter stable windows limit long-run profitability.\r\n- [Gold Standard Pairs Trading Rules: Are They Valid?](https://arxiv.org/abs/2010.01157) — Reports declining modern profitability and strong sensitivity to transaction costs, execution lag, and parameter choices.\r\n\r\nKnown risks:\r\n\r\n- cointegration can break after the formation period\r\n- Engle-Granger results depend on the regression direction\r\n- rolling estimation does not guarantee a stationary future spread\r\n- borrow fees, financing, bid/ask spread, slippage and market impact are absent\r\n- a single pair supplies little diversification and one historical test is not evidence of future profitability\r\n\r\n"
+            },
+            {
+              "heading": "Net backtest metrics",
+              "classification": "metrics",
+              "raw_markdown_body": "\n\r\n| Metric | Strategy | Benchmark |\r\n|---|---:|---:|\r\n| Gross cumulative return | 6.78% | 52.43% |\r\n| Cumulative return | 3.12% | 52.35% |\r\n| CAGR | 0.19% | 2.57% |\r\n| Annualized volatility | 1.50% | 10.55% |\r\n| Annualized Sharpe (rf=0) | 0.13 | 0.29 |\r\n| Maximum drawdown | -5.91% | -37.05% |\r\n| Annualized turnover | 421.07% | 6.03% |\r\n| Transaction-cost drag (sum of daily rates) | 3.49% | 0.05% |\r\n\r\n"
+            },
+            {
+              "heading": "Walk-forward / out-of-sample validation",
+              "classification": "walkforward",
+              "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2010-01-04 to 2019-12-16 | 2506 | 0.73% | 0.07% | 1.07% | 0.07 | -2.35% | 78.89% | 0.65 | -78.16% | -0.58 |\r\n| oos_1 | out_of_sample | 2019-12-17 to 2026-08-14 | 1672 | -1.03% | -0.16% | 1.76% | -0.08 | -5.91% | -14.82% | -0.15 | 13.79% | 0.07 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: PASS: coherent between development and OOS; the frozen strategy matches or beats the benchmark on return and Sharpe in every OOS window.**\r\n\r\n"
+            },
+            {
+              "heading": "Giudizio / conclusion",
+              "classification": "verdict",
+              "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: PASS: coherent between development and OOS; the frozen strategy matches or beats the benchmark on return and Sharpe in every OOS window.**\n\n**Outcome classification: WALK-FORWARD PASS / FULL-SAMPLE FAIL / COINTEGRATION BREAKDOWN.** Interpret the mechanical validation verdict together with absolute returns and the ex-post stability diagnostic; a broken formation-period relationship is not promotable.\n\nThis remains historical research, not evidence of tradability or a recommendation. There is still no parameter-search correction or project-level multiple-testing adjustment for this strategy; promotion also requires a live paper period.\n\r\n"
+            },
+            {
+              "heading": "Ecosystem review",
+              "classification": "ecosystem",
+              "raw_markdown_body": "\n\r\n- **LazyFin:** Reference not found; manual review required. (`C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\LazyFin\\docs\\status.md`)\r\n- **investmentcommittee:** Reference not found; manual review required. (`C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\investment-process-top-down-etf.md`)\r\n"
+            }
+          ]
+        }
+      ]
+    },
     "factor_momentum_gated_ma_50_200": {
       "slug": "factor-momentum-gated-ma-50-200",
       "variants": [
@@ -716,13 +819,13 @@
       "slug": "ma-crossover-5-20",
       "variants": [
         {
-          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260913_063439_ma_crossover_5_20.md",
-          "filename": "20260913_063439_ma_crossover_5_20.md",
+          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260913_085906_ma_crossover_5_20.md",
+          "filename": "20260913_085906_ma_crossover_5_20.md",
           "family": "ma_crossover_5_20",
           "slug": "ma-crossover-5-20",
           "variant_index": 1,
-          "generated_at": "2026-09-13T06:34:39+00:00",
-          "generated_at_source": "2026-09-13T06:34:39+00:00",
+          "generated_at": "2026-09-13T08:59:06+00:00",
+          "generated_at_source": "2026-09-13T08:59:06+00:00",
           "params_line": "fast=5, slow=20",
           "period_string": "2020-01-01 to 2022-11-23",
           "verdict_text": "Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.",

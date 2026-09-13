@@ -43,6 +43,7 @@ nav:
   - Changelog: changelog.md
   - Notes: notes.md
   - Models:
+      - 'cointegration_pairs_tlt_ief': models/cointegration-pairs-tlt-ief.md
       - 'factor_momentum_gated_ma_50_200': models/factor-momentum-gated-ma-50-200.md
       - 'ma_crossover_50_200': models/ma-crossover-50-200.md
       - 'ma_crossover_5_20': models/ma-crossover-5-20.md

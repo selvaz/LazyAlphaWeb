@@ -4,7 +4,7 @@
 
 | Variant | Generated | Registered | Verdict |
 |---|---|---:|---|
-| <a href="#variant-1" title="fast=5, slow=20"><code>fast=5, slow=20</code></a> | 2026-09-13T06:34:39+00:00 | — | <span class="verdict-badge verdict-badge--fail">FAIL</span> |
+| <a href="#variant-1" title="fast=5, slow=20"><code>fast=5, slow=20</code></a> | 2026-09-13T08:59:06+00:00 | — | <span class="verdict-badge verdict-badge--fail">FAIL</span> |
 
 ### Variant 1 {: #variant-1 }
 
@@ -20,8 +20,8 @@
 </figure>
 </div>
 
-**Generated:** 2026-09-13T06:34:39+00:00  
-**Source report:** `20260913_063439_ma_crossover_5_20.md`  
+**Generated:** 2026-09-13T08:59:06+00:00  
+**Source report:** `20260913_085906_ma_crossover_5_20.md`  
 **Registered:** —
 #### Experiment
 

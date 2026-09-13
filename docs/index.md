@@ -20,8 +20,8 @@ description: Honest, documented backtests of systematic trading strategy researc
 
 <!-- STATS:START -->
 <div class="la-stat-row">
-  <div class="la-stat"><span class="la-stat__value">14</span><span class="la-stat__label">Experiments documented</span></div>
-  <div class="la-stat"><span class="la-stat__value">2</span><span class="la-stat__label">Walk-forward PASS</span></div>
+  <div class="la-stat"><span class="la-stat__value">15</span><span class="la-stat__label">Experiments documented</span></div>
+  <div class="la-stat"><span class="la-stat__value">3</span><span class="la-stat__label">Walk-forward PASS</span></div>
   <div class="la-stat"><span class="la-stat__value">11</span><span class="la-stat__label">FAIL</span></div>
   <div class="la-stat"><span class="la-stat__value">1</span><span class="la-stat__label">NOT EVALUABLE</span></div>
 </div>
@@ -35,6 +35,21 @@ description: Honest, documented backtests of systematic trading strategy researc
 
 <!-- FEATURED_CHARTS:START -->
 <div class="la-featured-grid">
+<article class="la-featured-card">
+<div class="la-featured-card__header">
+<div>
+<span class="la-kicker">Walk-forward result</span>
+<h3><a href="models/cointegration-pairs-tlt-ief/#variant-1">cointegration_pairs_tlt_ief</a></h3>
+</div>
+<span class="verdict-badge verdict-badge--pass">PASS</span>
+</div>
+<figure class="la-chart la-chart--equity la-chart--compact" data-chart-kind="equity">
+  <div class="la-chart__label">Equity time series</div>
+  <img src="assets/charts/cointegration-pairs-tlt-ief__variant-1.svg" alt="cointegration_pairs_tlt_ief variant 1 growth-of-one-dollar equity line" width="576" height="241" decoding="async">
+  <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
+</figure>
+<a class="la-card-link" href="models/cointegration-pairs-tlt-ief/#variant-1">Inspect evidence <span aria-hidden="true">→</span></a>
+</article>
 <article class="la-featured-card">
 <div class="la-featured-card__header">
 <div>

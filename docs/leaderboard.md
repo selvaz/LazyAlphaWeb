@@ -6,7 +6,7 @@
 <article class="la-result-card la-result-card--fail" data-model="ma-crossover-5-20" data-variant="variant-1">
 <div class="la-result-card__header">
 <div>
-<span class="la-kicker">Variant 1 · 2026-09-13T06:34:39+00:00</span>
+<span class="la-kicker">Variant 1 · 2026-09-13T08:59:06+00:00</span>
 <h2><a href="../models/ma-crossover-5-20/#variant-1">ma_crossover_5_20</a></h2>
 </div>
 <span class="verdict-badge verdict-badge--fail">FAIL</span>
@@ -20,6 +20,26 @@
 <span><b>Parameters</b><span title="fast=5, slow=20"><code>fast=5, slow=20</code></span></span>
 <span><b>Registry</b>—</span>
 <a class="la-card-link" href="../models/ma-crossover-5-20/#variant-1">Open full record <span aria-hidden="true">→</span></a>
+</div>
+</article>
+
+<article class="la-result-card la-result-card--pass" data-model="cointegration-pairs-tlt-ief" data-variant="variant-1">
+<div class="la-result-card__header">
+<div>
+<span class="la-kicker">Variant 1 · 2026-09-13T08:11:46+00:00</span>
+<h2><a href="../models/cointegration-pairs-tlt-ief/#variant-1">cointegration_pairs_tlt_ief</a></h2>
+</div>
+<span class="verdict-badge verdict-badge--pass">PASS</span>
+</div>
+<figure class="la-chart la-chart--equity la-chart--compact" data-chart-kind="equity">
+  <div class="la-chart__label">Equity time series</div>
+  <img src="../assets/charts/cointegration-pairs-tlt-ief__variant-1.svg" alt="cointegration_pairs_tlt_ief variant 1 growth-of-one-dollar equity line" width="576" height="241" decoding="async">
+  <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
+</figure>
+<div class="la-result-card__meta">
+<span><b>Parameters</b><span title="dependent=TLT, independent=IEF, lookback=252, entry_z=2.0, exit_z=0.5, cointegration_alpha=0.05, screen=development_only_bidirectional_engle_granger_log_prices, gross_exposure=1.0"><code>dependent=TLT, independent=IEF, lookback=252, entry_z=2.0, exit_z=0.5, cointegration_alpha=0.05, screen=development_onl…</code></span></span>
+<span><b>Registry</b>✓</span>
+<a class="la-card-link" href="../models/cointegration-pairs-tlt-ief/#variant-1">Open full record <span aria-hidden="true">→</span></a>
 </div>
 </article>
 
