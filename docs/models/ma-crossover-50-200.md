@@ -1,16 +1,16 @@
 # Strategy: ma_crossover_50_200
 
-1 variant(s) documented · earliest 2026-09-11 · latest 2026-09-11.
+1 variant(s) documented · earliest 2026-09-12 · latest 2026-09-12.
 
 | Variant | Generated | Registered | Verdict |
 |---|---|---:|---|
-| <a href="#variant-1" title="fast=50, slow=200"><code>fast=50, slow=200</code></a> | 2026-09-11T16:38:20+00:00 | ✓ | <span class="verdict-badge verdict-badge--pass">PASS</span> |
+| <a href="#variant-1" title="fast=50, slow=200"><code>fast=50, slow=200</code></a> | 2026-09-12T15:36:34+00:00 | ✓ | <span class="verdict-badge verdict-badge--pass">PASS</span> |
 
 ### Variant 1 {: #variant-1 }
 
-**Generated:** 2026-09-11T16:38:20+00:00  
-**Source report:** `20260911_163820_ma_crossover_50_200.md`  
-**Registered:** ✓ — 2026-09-11T16:38:20+00:00 (walk_forward_passed=True)
+**Generated:** 2026-09-12T15:36:34+00:00  
+**Source report:** `20260912_153634_ma_crossover_50_200.md`  
+**Registered:** ✓ — 2026-09-12T15:36:34+00:00 (walk_forward_passed=True)
 
 <span class="verdict-badge verdict-badge--pass">PASS</span>
 
@@ -26,12 +26,13 @@
 #### Data provenance
 
 - Source: `market-data-hub` (`adj_close`; live rows included: `False`)
-- Requested symbols: SPY, QQQ
+- Requested symbols: SPY, QQQ, IWM
 - Validated common panel: 2015-01-02 to 2026-08-14; 2921 rows
 - Database: `C:\Users\Administrator\Documents\GitHub\market-data-hub\market_data.duckdb`
 
 | Symbol | Last date | Status | Coverage score | Stalled |
 |---|---:|---|---:|---|
+| IWM | 2026-08-14 00:00:00 | ok | 97.31 | False |
 | QQQ | 2026-08-14 00:00:00 | ok | 97.31 | False |
 | SPY | 2026-08-14 00:00:00 | ok | 97.33 | False |
 
@@ -58,13 +59,14 @@ Known risks:
 
 | Metric | Strategy | Benchmark |
 |---|---:|---:|
-| Cumulative return | 318.82% | 500.62% |
-| CAGR | 13.15% | 16.73% |
-| Annualized volatility | 16.74% | 19.44% |
-| Annualized Sharpe (rf=0) | 0.82 | 0.89 |
-| Maximum drawdown | -30.86% | -30.86% |
-| Annualized turnover | 189.80% | 8.63% |
-| Transaction-cost drag (sum of daily rates) | 1.10% | 0.05% |
+| Gross cumulative return | 252.54% | 385.29% |
+| Cumulative return | 246.93% | 385.04% |
+| CAGR | 11.33% | 14.59% |
+| Annualized volatility | 16.86% | 19.57% |
+| Annualized Sharpe (rf=0) | 0.72 | 0.79 |
+| Maximum drawdown | -34.61% | -34.25% |
+| Annualized turnover | 276.07% | 8.63% |
+| Transaction-cost drag (sum of daily rates) | 1.60% | 0.05% |
 
 #### Walk-forward / out-of-sample validation
 
@@ -72,8 +74,8 @@ Parameters were frozen before the chronological split. Each window is non-overla
 
 | Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |
 |---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| development | development | 2015-01-02 to 2021-12-15 | 1752 | 144.26% | 13.71% | 17.40% | 0.83 | -30.86% | 227.51% | 1.00 | -83.25% | -0.17 |
-| oos_1 | out_of_sample | 2021-12-16 to 2026-08-14 | 1169 | 90.74% | 14.94% | 14.65% | 1.02 | -20.78% | 86.52% | 0.77 | 4.22% | 0.26 |
+| development | development | 2015-01-02 to 2021-12-15 | 1752 | 114.91% | 11.63% | 17.46% | 0.72 | -34.61% | 181.44% | 0.87 | -66.53% | -0.15 |
+| oos_1 | out_of_sample | 2021-12-16 to 2026-08-14 | 1169 | 80.25% | 13.54% | 14.87% | 0.93 | -21.18% | 75.46% | 0.70 | 4.79% | 0.22 |
 
 Pass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.
 
@@ -85,7 +87,7 @@ Pass criterion: in every OOS window, strategy cumulative return and annualized S
 
 **Final validation judgment: PASS: coherent between development and OOS; the frozen strategy matches or beats the benchmark on return and Sharpe in every OOS window.**
 
-This remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.
+This remains historical research, not evidence of tradability or a recommendation. There is still no parameter-search correction or project-level multiple-testing adjustment for this strategy; promotion also requires a live paper period.
 
 #### Ecosystem review
 

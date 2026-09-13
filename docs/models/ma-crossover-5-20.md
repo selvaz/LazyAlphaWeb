@@ -1,15 +1,15 @@
 # Strategy: ma_crossover_5_20
 
-1 variant(s) documented · earliest 2026-09-12 · latest 2026-09-12.
+1 variant(s) documented · earliest 2026-09-13 · latest 2026-09-13.
 
 | Variant | Generated | Registered | Verdict |
 |---|---|---:|---|
-| <a href="#variant-1" title="fast=5, slow=20"><code>fast=5, slow=20</code></a> | 2026-09-12T12:43:28+00:00 | — | <span class="verdict-badge verdict-badge--fail">FAIL</span> |
+| <a href="#variant-1" title="fast=5, slow=20"><code>fast=5, slow=20</code></a> | 2026-09-13T06:34:39+00:00 | — | <span class="verdict-badge verdict-badge--fail">FAIL</span> |
 
 ### Variant 1 {: #variant-1 }
 
-**Generated:** 2026-09-12T12:43:28+00:00  
-**Source report:** `20260912_124328_ma_crossover_5_20.md`  
+**Generated:** 2026-09-13T06:34:39+00:00  
+**Source report:** `20260913_063439_ma_crossover_5_20.md`  
 **Registered:** —
 
 <span class="verdict-badge verdict-badge--fail">FAIL</span>
@@ -81,7 +81,7 @@ Pass criterion: in every OOS window, strategy cumulative return and annualized S
 
 **Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**
 
-This remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.
+This remains historical research, not evidence of tradability or a recommendation. There is still no parameter-search correction or project-level multiple-testing adjustment for this strategy; promotion also requires a live paper period.
 
 #### Ecosystem review
 

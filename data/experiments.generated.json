@@ -481,21 +481,177 @@
       ],
       "timestamp": "2026-09-12T08:37:15+00:00",
       "walk_forward_passed": false
+    },
+    {
+      "params": {
+        "active_threshold": 1.0,
+        "fast": 50,
+        "ratio": "^VIX3M/^VIX",
+        "slow": 200,
+        "term_symbols": [
+          "^VIX",
+          "^VIX3M"
+        ]
+      },
+      "period_end": "2026-07-02",
+      "period_start": "2015-01-02",
+      "report_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260912_140538_vix_term_structure_gated_ma_50_200.md",
+      "strategy_name": "vix_term_structure_gated_ma_50_200",
+      "symbols": [
+        "QQQ",
+        "SPY"
+      ],
+      "timestamp": "2026-09-12T14:05:38+00:00",
+      "walk_forward_passed": true
+    },
+    {
+      "params": {
+        "fast": 10,
+        "grid_size": 9,
+        "selection_method": "development_only_grid_search",
+        "selection_metric": "sharpe_annualized",
+        "slow": 150
+      },
+      "period_end": "2026-08-14",
+      "period_start": "2015-01-02",
+      "report_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260912_141611_ma_crossover_grid_searched.md",
+      "strategy_name": "ma_crossover_grid_searched",
+      "symbols": [
+        "QQQ",
+        "SPY"
+      ],
+      "timestamp": "2026-09-12T14:16:11+00:00",
+      "walk_forward_passed": false
+    },
+    {
+      "params": {
+        "active_threshold": 0.0,
+        "factor": "Mom",
+        "factor_set": "MOM_daily",
+        "fast": 50,
+        "lookback_days": 252,
+        "slow": 200
+      },
+      "period_end": "2026-06-30",
+      "period_start": "2015-01-02",
+      "report_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260912_153633_factor_momentum_gated_ma_50_200.md",
+      "strategy_name": "factor_momentum_gated_ma_50_200",
+      "symbols": [
+        "QQQ",
+        "SPY"
+      ],
+      "timestamp": "2026-09-12T15:36:33+00:00",
+      "walk_forward_passed": false
+    },
+    {
+      "params": {
+        "fast": 50,
+        "slow": 200
+      },
+      "period_end": "2026-08-14",
+      "period_start": "2015-01-02",
+      "report_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260912_153634_ma_crossover_50_200.md",
+      "strategy_name": "ma_crossover_50_200",
+      "symbols": [
+        "IWM",
+        "QQQ",
+        "SPY"
+      ],
+      "timestamp": "2026-09-12T15:36:34+00:00",
+      "walk_forward_passed": true
     }
   ],
-  "duplicate_reruns_discarded": 33,
+  "duplicate_reruns_discarded": 6,
   "families": {
+    "factor_momentum_gated_ma_50_200": {
+      "slug": "factor-momentum-gated-ma-50-200",
+      "variants": [
+        {
+          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260912_153633_factor_momentum_gated_ma_50_200.md",
+          "filename": "20260912_153633_factor_momentum_gated_ma_50_200.md",
+          "family": "factor_momentum_gated_ma_50_200",
+          "slug": "factor-momentum-gated-ma-50-200",
+          "variant_index": 1,
+          "generated_at": "2026-09-12T15:36:33+00:00",
+          "generated_at_source": "2026-09-12T15:36:33+00:00",
+          "params_line": "fast=50, slow=200, lookback_days=252, factor_set=MOM_daily, factor=Mom, active_threshold=0.0",
+          "period_string": "2015-01-02 to 2026-06-30",
+          "verdict_text": "Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.",
+          "verdict_category": "fail",
+          "verdict_label": "FAIL",
+          "badge_class": "verdict-badge--fail",
+          "registered": true,
+          "registry_matches": [
+            {
+              "timestamp": "2026-09-12T15:36:33+00:00",
+              "walk_forward_passed": false,
+              "params": {
+                "active_threshold": 0.0,
+                "factor": "Mom",
+                "factor_set": "MOM_daily",
+                "fast": 50,
+                "lookback_days": 252,
+                "slow": 200
+              }
+            }
+          ],
+          "chart_filename": "factor-momentum-gated-ma-50-200__variant-1.svg",
+          "sections": [
+            {
+              "heading": "Experiment",
+              "classification": "experiment",
+              "raw_markdown_body": "\n\r\n- Period: 2015-01-02 to 2026-06-30 (2889 sessions)\r\n- Execution rule: close-derived weights are applied one session later\r\n- Transaction costs: 5.00 bps per unit of turnover\r\n- Cash return: 0%; taxes, slippage and market impact: not modeled\r\n- Parameters: fast=50, slow=200, lookback_days=252, factor_set=MOM_daily, factor=Mom, active_threshold=0.0\r\n\r\n"
+            },
+            {
+              "heading": "Factor-momentum data provenance and action rule",
+              "classification": "extra",
+              "raw_markdown_body": "\n\r\n- Source: `market-data-hub factor_returns`\r\n- Series: factor set `MOM_daily`, factor `Mom`\r\n- Available raw factor history through the experiment end: 1990-01-02 to 2026-06-30; 9190 non-null daily rows\r\n- Database: `C:\\Users\\Administrator\\Documents\\GitHub\\market-data-hub\\market_data.duckdb`\r\n- Frozen horizon: 252 factor sessions, matching the approximately one-year horizon in Ehsani and Linnainmaa (2022); it was pre-specified and not fitted to these strategy returns\r\n- Frozen gate: compound `Mom` daily returns over the trailing window; a return `>= 0` applies the existing MA weights and a negative return zeros them, never creating a short position\r\n- Timing: the factor return through session D enters the close-derived gate for D, and the common backtest engine applies that weight one session later\r\n- Any missing required factor date or incomplete trailing window raises `FactorMomentumDataUnavailable`; no unconditional fallback, forward fill, or invented value is allowed\r\n- Research scope caveat: this is inspired by the paper, not a replication. The paper tests cross-sectional factor rotation and individual-stock momentum, not a temporal on/off gate for an unrelated ETF trend strategy. The market-wide gate used here is a motivated extrapolation that the paper did not test.\r\n\r\n"
+            },
+            {
+              "heading": "Data provenance",
+              "classification": "provenance",
+              "raw_markdown_body": "\n\r\n- Source: `market-data-hub` (`adj_close`; live rows included: `False`)\r\n- Requested symbols: SPY, QQQ\r\n- Validated common panel: 2015-01-02 to 2026-06-30; 2889 rows\r\n- Database: `C:\\Users\\Administrator\\Documents\\GitHub\\market-data-hub\\market_data.duckdb`\r\n\r\n| Symbol | Last date | Status | Coverage score | Stalled |\r\n|---|---:|---|---:|---|\r\n| QQQ | 2026-08-14 00:00:00 | ok | 97.31 | False |\r\n| SPY | 2026-08-14 00:00:00 | ok | 97.33 | False |\r\n\r\n"
+            },
+            {
+              "heading": "Research rationale",
+              "classification": "rationale",
+              "raw_markdown_body": "\n\r\nThe momentum factor's own trailing annual return may indicate whether factor-level momentum is currently working, providing a motivated on/off condition for the existing equity trend allocation.\r\n\r\nCompound the daily Mom factor over a frozen 252-session trailing window. Apply the existing 50/200 SPY/QQQ moving-average weights when that return is nonnegative and otherwise hold cash; retain the backtest engine's one-session execution lag. The 252-session horizon matches the paper's approximately one-year horizon and was pre-specified rather than fitted to this backtest.\r\n\r\nSources:\r\n\r\n- [Factor Momentum and the Momentum Factor](https://www.nber.org/papers/w25551) — Ehsani and Linnainmaa find positive factor-return autocorrelation at roughly a one-year horizon: factors with a losing trailing year subsequently earn about 6 basis points per month versus about 51 basis points after a winning year, and factor momentum explains most individual-stock momentum.\r\n- [Factor Momentum and the Momentum Factor (journal record)](https://onlinelibrary.wiley.com/doi/abs/10.1111/jofi.13131) — The peer-reviewed journal version documents the same factor-momentum evidence and its relation to stock momentum.\r\n\r\nKnown risks:\r\n\r\n- inspired-by, not a replication: the paper studies cross-sectional factor rotation and individual-stock momentum, not a temporal on/off gate applied to an unrelated ETF trend strategy\r\n- using the sign of the momentum factor's own trailing return as a market-wide gate is a motivated extrapolation that the paper did not test\r\n- factor returns are close-derived and only affect positions after the backtest engine's one-session execution lag\r\n- cash return is modeled as zero and execution frictions are incomplete\r\n- one historical sample is not evidence of future profitability\r\n\r\n"
+            },
+            {
+              "heading": "Net backtest metrics",
+              "classification": "metrics",
+              "raw_markdown_body": "\n\r\n| Metric | Strategy | Ungated MA | Benchmark |\r\n|---|---:|---:|---:|\r\n| Gross cumulative return | 52.72% | 316.71% | 491.34% |\r\n| Cumulative return | 47.32% | 312.14% | 491.04% |\r\n| CAGR | 3.44% | 13.15% | 16.76% |\r\n| Annualized volatility | 14.36% | 16.74% | 19.47% |\r\n| Annualized Sharpe (rf=0) | 0.31 | 0.82 | 0.89 |\r\n| Maximum drawdown | -30.86% | -30.86% | -30.86% |\r\n| Annualized turnover | 628.04% | 191.90% | 8.72% |\r\n| Transaction-cost drag (sum of daily rates) | 3.60% | 1.10% | 0.05% |\r\n\r\n"
+            },
+            {
+              "heading": "Walk-forward / out-of-sample validation",
+              "classification": "walkforward",
+              "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2015-01-02 to 2021-11-17 | 1733 | 2.22% | 0.32% | 15.11% | 0.10 | -30.86% | 226.86% | 1.01 | -224.64% | -0.91 |\r\n| oos_1 | out_of_sample | 2021-11-18 to 2026-06-30 | 1156 | 45.01% | 8.44% | 12.92% | 0.69 | -20.78% | 79.50% | 0.73 | -34.49% | -0.04 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n"
+            },
+            {
+              "heading": "Giudizio / conclusion",
+              "classification": "verdict",
+              "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. There is still no parameter-search correction or project-level multiple-testing adjustment for this strategy; promotion also requires a live paper period.\r\n\r\n"
+            },
+            {
+              "heading": "Ecosystem review",
+              "classification": "ecosystem",
+              "raw_markdown_body": "\n\r\n- **LazyFin:** Do not recreate hierarchical portfolio optimization in LazyAlpha; the line was moved/retired from LazyFin and belongs to LazyPortfolio. (`C:\\Users\\Administrator\\Documents\\GitHub\\LazyFin\\docs\\status.md`)\r\n- **investmentcommittee:** Keep B0/P0/Sa/PH/PF as methodological reference: same data, folds, costs and rebalance rules for honest comparisons; do not clone it 1:1. (`C:\\Users\\Administrator\\Documents\\GitHub\\investment-process-top-down-etf.md`)\r\n"
+            }
+          ]
+        }
+      ]
+    },
     "ma_crossover_50_200": {
       "slug": "ma-crossover-50-200",
       "variants": [
         {
-          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260911_163820_ma_crossover_50_200.md",
-          "filename": "20260911_163820_ma_crossover_50_200.md",
+          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260912_153634_ma_crossover_50_200.md",
+          "filename": "20260912_153634_ma_crossover_50_200.md",
           "family": "ma_crossover_50_200",
           "slug": "ma-crossover-50-200",
           "variant_index": 1,
-          "generated_at": "2026-09-11T16:38:20+00:00",
-          "generated_at_source": "2026-09-11T16:38:20+00:00",
+          "generated_at": "2026-09-12T15:36:34+00:00",
+          "generated_at_source": "2026-09-12T15:36:34+00:00",
           "params_line": "fast=50, slow=200",
           "period_string": "2015-01-02 to 2026-08-14",
           "verdict_text": "Final validation judgment: PASS: coherent between development and OOS; the frozen strategy matches or beats the benchmark on return and Sharpe in every OOS window.",
@@ -505,7 +661,7 @@
           "registered": true,
           "registry_matches": [
             {
-              "timestamp": "2026-09-11T16:38:20+00:00",
+              "timestamp": "2026-09-12T15:36:34+00:00",
               "walk_forward_passed": true,
               "params": {
                 "fast": 50,
@@ -523,7 +679,7 @@
             {
               "heading": "Data provenance",
               "classification": "provenance",
-              "raw_markdown_body": "\n\r\n- Source: `market-data-hub` (`adj_close`; live rows included: `False`)\r\n- Requested symbols: SPY, QQQ\r\n- Validated common panel: 2015-01-02 to 2026-08-14; 2921 rows\r\n- Database: `C:\\Users\\Administrator\\Documents\\GitHub\\market-data-hub\\market_data.duckdb`\r\n\r\n| Symbol | Last date | Status | Coverage score | Stalled |\r\n|---|---:|---|---:|---|\r\n| QQQ | 2026-08-14 00:00:00 | ok | 97.31 | False |\r\n| SPY | 2026-08-14 00:00:00 | ok | 97.33 | False |\r\n\r\n"
+              "raw_markdown_body": "\n\r\n- Source: `market-data-hub` (`adj_close`; live rows included: `False`)\r\n- Requested symbols: SPY, QQQ, IWM\r\n- Validated common panel: 2015-01-02 to 2026-08-14; 2921 rows\r\n- Database: `C:\\Users\\Administrator\\Documents\\GitHub\\market-data-hub\\market_data.duckdb`\r\n\r\n| Symbol | Last date | Status | Coverage score | Stalled |\r\n|---|---:|---|---:|---|\r\n| IWM | 2026-08-14 00:00:00 | ok | 97.31 | False |\r\n| QQQ | 2026-08-14 00:00:00 | ok | 97.31 | False |\r\n| SPY | 2026-08-14 00:00:00 | ok | 97.33 | False |\r\n\r\n"
             },
             {
               "heading": "Research rationale",
@@ -533,17 +689,17 @@
             {
               "heading": "Net backtest metrics",
               "classification": "metrics",
-              "raw_markdown_body": "\n\r\n| Metric | Strategy | Benchmark |\r\n|---|---:|---:|\r\n| Cumulative return | 318.82% | 500.62% |\r\n| CAGR | 13.15% | 16.73% |\r\n| Annualized volatility | 16.74% | 19.44% |\r\n| Annualized Sharpe (rf=0) | 0.82 | 0.89 |\r\n| Maximum drawdown | -30.86% | -30.86% |\r\n| Annualized turnover | 189.80% | 8.63% |\r\n| Transaction-cost drag (sum of daily rates) | 1.10% | 0.05% |\r\n\r\n"
+              "raw_markdown_body": "\n\r\n| Metric | Strategy | Benchmark |\r\n|---|---:|---:|\r\n| Gross cumulative return | 252.54% | 385.29% |\r\n| Cumulative return | 246.93% | 385.04% |\r\n| CAGR | 11.33% | 14.59% |\r\n| Annualized volatility | 16.86% | 19.57% |\r\n| Annualized Sharpe (rf=0) | 0.72 | 0.79 |\r\n| Maximum drawdown | -34.61% | -34.25% |\r\n| Annualized turnover | 276.07% | 8.63% |\r\n| Transaction-cost drag (sum of daily rates) | 1.60% | 0.05% |\r\n\r\n"
             },
             {
               "heading": "Walk-forward / out-of-sample validation",
               "classification": "walkforward",
-              "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2015-01-02 to 2021-12-15 | 1752 | 144.26% | 13.71% | 17.40% | 0.83 | -30.86% | 227.51% | 1.00 | -83.25% | -0.17 |\r\n| oos_1 | out_of_sample | 2021-12-16 to 2026-08-14 | 1169 | 90.74% | 14.94% | 14.65% | 1.02 | -20.78% | 86.52% | 0.77 | 4.22% | 0.26 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: PASS: coherent between development and OOS; the frozen strategy matches or beats the benchmark on return and Sharpe in every OOS window.**\r\n\r\n"
+              "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2015-01-02 to 2021-12-15 | 1752 | 114.91% | 11.63% | 17.46% | 0.72 | -34.61% | 181.44% | 0.87 | -66.53% | -0.15 |\r\n| oos_1 | out_of_sample | 2021-12-16 to 2026-08-14 | 1169 | 80.25% | 13.54% | 14.87% | 0.93 | -21.18% | 75.46% | 0.70 | 4.79% | 0.22 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: PASS: coherent between development and OOS; the frozen strategy matches or beats the benchmark on return and Sharpe in every OOS window.**\r\n\r\n"
             },
             {
               "heading": "Giudizio / conclusion",
               "classification": "verdict",
-              "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: PASS: coherent between development and OOS; the frozen strategy matches or beats the benchmark on return and Sharpe in every OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.\r\n\r\n"
+              "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: PASS: coherent between development and OOS; the frozen strategy matches or beats the benchmark on return and Sharpe in every OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. There is still no parameter-search correction or project-level multiple-testing adjustment for this strategy; promotion also requires a live paper period.\r\n\r\n"
             },
             {
               "heading": "Ecosystem review",
@@ -558,13 +714,13 @@
       "slug": "ma-crossover-5-20",
       "variants": [
         {
-          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260912_124328_ma_crossover_5_20.md",
-          "filename": "20260912_124328_ma_crossover_5_20.md",
+          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260913_063439_ma_crossover_5_20.md",
+          "filename": "20260913_063439_ma_crossover_5_20.md",
           "family": "ma_crossover_5_20",
           "slug": "ma-crossover-5-20",
           "variant_index": 1,
-          "generated_at": "2026-09-12T12:43:28+00:00",
-          "generated_at_source": "2026-09-12T12:43:28+00:00",
+          "generated_at": "2026-09-13T06:34:39+00:00",
+          "generated_at_source": "2026-09-13T06:34:39+00:00",
           "params_line": "fast=5, slow=20",
           "period_string": "2020-01-01 to 2022-11-23",
           "verdict_text": "Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.",
@@ -603,7 +759,84 @@
             {
               "heading": "Giudizio / conclusion",
               "classification": "verdict",
-              "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.\r\n\r\n"
+              "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. There is still no parameter-search correction or project-level multiple-testing adjustment for this strategy; promotion also requires a live paper period.\r\n\r\n"
+            },
+            {
+              "heading": "Ecosystem review",
+              "classification": "ecosystem",
+              "raw_markdown_body": "\n\r\n- **LazyFin:** Do not recreate hierarchical portfolio optimization in LazyAlpha; the line was moved/retired from LazyFin and belongs to LazyPortfolio. (`C:\\Users\\Administrator\\Documents\\GitHub\\LazyFin\\docs\\status.md`)\r\n- **investmentcommittee:** Keep B0/P0/Sa/PH/PF as methodological reference: same data, folds, costs and rebalance rules for honest comparisons; do not clone it 1:1. (`C:\\Users\\Administrator\\Documents\\GitHub\\investment-process-top-down-etf.md`)\r\n"
+            }
+          ]
+        }
+      ]
+    },
+    "ma_crossover_grid_searched": {
+      "slug": "ma-crossover-grid-searched",
+      "variants": [
+        {
+          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260912_141611_ma_crossover_grid_searched.md",
+          "filename": "20260912_141611_ma_crossover_grid_searched.md",
+          "family": "ma_crossover_grid_searched",
+          "slug": "ma-crossover-grid-searched",
+          "variant_index": 1,
+          "generated_at": "2026-09-12T14:16:11+00:00",
+          "generated_at_source": "2026-09-12T14:16:11+00:00",
+          "params_line": "fast=10, slow=150, selection_method=development_only_grid_search, selection_metric=sharpe_annualized, grid_size=9",
+          "period_string": "2015-01-02 to 2026-08-14",
+          "verdict_text": "Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.",
+          "verdict_category": "fail",
+          "verdict_label": "FAIL",
+          "badge_class": "verdict-badge--fail",
+          "registered": true,
+          "registry_matches": [
+            {
+              "timestamp": "2026-09-12T14:16:11+00:00",
+              "walk_forward_passed": false,
+              "params": {
+                "fast": 10,
+                "grid_size": 9,
+                "selection_method": "development_only_grid_search",
+                "selection_metric": "sharpe_annualized",
+                "slow": 150
+              }
+            }
+          ],
+          "chart_filename": "ma-crossover-grid-searched__variant-1.svg",
+          "sections": [
+            {
+              "heading": "Experiment",
+              "classification": "experiment",
+              "raw_markdown_body": "\n\r\n- Period: 2015-01-02 to 2026-08-14 (2921 sessions)\r\n- Execution rule: close-derived weights are applied one session later\r\n- Transaction costs: 5.00 bps per unit of turnover\r\n- Cash return: 0%; taxes, slippage and market impact: not modeled\r\n- Parameters: fast=10, slow=150, selection_method=development_only_grid_search, selection_metric=sharpe_annualized, grid_size=9\r\n\r\n"
+            },
+            {
+              "heading": "Data provenance",
+              "classification": "provenance",
+              "raw_markdown_body": "\n\r\n- Source: `market-data-hub` (`adj_close`; live rows included: `False`)\r\n- Requested symbols: SPY, QQQ\r\n- Validated common panel: 2015-01-02 to 2026-08-14; 2921 rows\r\n- Database: `C:\\Users\\Administrator\\Documents\\GitHub\\market-data-hub\\market_data.duckdb`\r\n\r\n| Symbol | Last date | Status | Coverage score | Stalled |\r\n|---|---:|---|---:|---|\r\n| QQQ | 2026-08-14 00:00:00 | ok | 97.31 | False |\r\n| SPY | 2026-08-14 00:00:00 | ok | 97.33 | False |\r\n\r\n"
+            },
+            {
+              "heading": "Research rationale",
+              "classification": "rationale",
+              "raw_markdown_body": "\n\r\nA slow trend filter may reduce severe drawdowns, but after costs it need not beat passive exposure.\r\n\r\nFor each ETF, hold it when its 50-day moving average is above its 200-day average; equal-weight active ETFs; otherwise cash.\r\n\r\nSources:\r\n\r\n- [A Quantitative Approach to Tactical Asset Allocation](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=962461) — Motivates a simple trend-following tactical allocation rule across asset classes.\r\n- [A Quantitative Approach to Faber's Tactical Asset Allocation](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1476225) — Warns that attractive rule-based results require statistical caution and bootstrap-style robustness tests.\r\n- [Momentum Trading, Return Chasing, and Predictable Crashes](https://www.nber.org/papers/w20660) — Documents high historical momentum returns alongside material and sometimes predictable crash risk.\r\n\r\nKnown risks:\r\n\r\n- whipsaw and repeated transaction costs in sideways markets\r\n- parameter/data-mining sensitivity\r\n- cash return is modeled as zero in the MVP\r\n- one historical sample is not evidence of future profitability\r\n\r\n"
+            },
+            {
+              "heading": "Parameter search and multiple-testing",
+              "classification": "extra",
+              "raw_markdown_body": "\n\r\n### Development-only grid search\r\n\r\n- Development window used for every candidate and for selection: 2015-01-02 to 2021-12-15 (1752 sessions). No OOS observation was passed to a candidate backtest or selection calculation.\r\n- Pre-specified grid: fast in {10, 20, 50}, slow in {100, 150, 200} (9 combinations).\r\n- Selection metric: `sharpe_annualized`; selected parameters: **fast=10, slow=150**.\r\n\r\n| Parameters | Selected | Development return | Development CAGR | Development Sharpe | Development max drawdown |\r\n|---|:---:|---:|---:|---:|---:|\r\n| fast=10, slow=100 |  | 112.85% | 11.48% | 0.8456 | -18.98% |\r\n| fast=10, slow=150 | yes | 143.38% | 13.65% | 0.9205 | -25.15% |\r\n| fast=10, slow=200 |  | 128.38% | 12.61% | 0.8302 | -31.72% |\r\n| fast=20, slow=100 |  | 86.63% | 9.39% | 0.6449 | -29.19% |\r\n| fast=20, slow=150 |  | 109.70% | 11.24% | 0.7357 | -29.29% |\r\n| fast=20, slow=200 |  | 120.47% | 12.04% | 0.7883 | -29.13% |\r\n| fast=50, slow=100 |  | 99.83% | 10.47% | 0.6700 | -29.99% |\r\n| fast=50, slow=150 |  | 121.60% | 12.13% | 0.7415 | -30.86% |\r\n| fast=50, slow=200 |  | 144.26% | 13.71% | 0.8258 | -30.86% |\r\n\r\n### Within-family White Reality Check\r\n\r\n- Benchmark-relative null: no grid candidate has positive expected net daily return relative to buy_and_hold.\r\n- Observed maximum statistic across all 9 candidates: -0.007474.\r\n- Stationary bootstrap: 2000 replications, mean block length 20 sessions, fixed NumPy random seed `1729`.\r\n- **Reality-check p-value: 0.992504.** This is a familywise test of the entire searched grid, not an unadjusted p-value for only the winning cell.\r\n- Method sources: [White (2000), *A Reality Check for Data Snooping*](https://doi.org/10.1111/1468-0262.00152); [Politis and Romano (1994), *The Stationary Bootstrap*](https://doi.org/10.1080/01621459.1994.10476870).\r\n\r\n### Project-level multiplicity disclosure (not a formal correction)\r\n\r\n- **14 independent hypotheses have now been tested in this project including this experiment.** Each append-only registry record is counted as one tested experiment, including distinct cost-model iterations. This count is disclosed separately and is not folded into the within-grid reality-check p-value.\r\n\r\n"
+            },
+            {
+              "heading": "Net backtest metrics",
+              "classification": "metrics",
+              "raw_markdown_body": "\n\r\n| Metric | Strategy | Benchmark |\r\n|---|---:|---:|\r\n| Gross cumulative return | 250.27% | 500.92% |\r\n| Cumulative return | 241.25% | 500.62% |\r\n| CAGR | 11.17% | 16.73% |\r\n| Annualized volatility | 14.59% | 19.44% |\r\n| Annualized Sharpe (rf=0) | 0.80 | 0.89 |\r\n| Maximum drawdown | -28.39% | -30.86% |\r\n| Annualized turnover | 448.61% | 8.63% |\r\n| Transaction-cost drag (sum of daily rates) | 2.60% | 0.05% |\r\n\r\n"
+            },
+            {
+              "heading": "Walk-forward / out-of-sample validation",
+              "classification": "walkforward",
+              "raw_markdown_body": "\n\r\nThe development window was used for parameter selection; the selected parameters were then frozen before any OOS window was evaluated. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2015-01-02 to 2021-12-15 | 1752 | 143.38% | 13.65% | 15.16% | 0.92 | -25.15% | 227.51% | 1.00 | -84.14% | -0.08 |\r\n| oos_1 | out_of_sample | 2021-12-16 to 2026-08-14 | 1169 | 66.18% | 11.57% | 13.25% | 0.89 | -13.64% | 86.52% | 0.77 | -20.34% | 0.13 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n"
+            },
+            {
+              "heading": "Giudizio / conclusion",
+              "classification": "verdict",
+              "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. The within-grid correction and project-level multiplicity disclosure above are now computed; promotion still requires a live paper period and a defensible result on both the reality check and frozen OOS validation.\r\n\r\n"
             },
             {
               "heading": "Ecosystem review",
@@ -1293,6 +1526,86 @@
               "heading": "Giudizio / conclusion",
               "classification": "verdict",
               "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.\r\n"
+            }
+          ]
+        }
+      ]
+    },
+    "vix_term_structure_gated_ma_50_200": {
+      "slug": "vix-term-structure-gated-ma-50-200",
+      "variants": [
+        {
+          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260912_140538_vix_term_structure_gated_ma_50_200.md",
+          "filename": "20260912_140538_vix_term_structure_gated_ma_50_200.md",
+          "family": "vix_term_structure_gated_ma_50_200",
+          "slug": "vix-term-structure-gated-ma-50-200",
+          "variant_index": 1,
+          "generated_at": "2026-09-12T14:05:38+00:00",
+          "generated_at_source": "2026-09-12T14:05:38+00:00",
+          "params_line": "fast=50, slow=200, term_symbols=['^VIX', '^VIX3M'], ratio=^VIX3M/^VIX, active_threshold=1.0",
+          "period_string": "2015-01-02 to 2026-07-02",
+          "verdict_text": "Final validation judgment: PASS: coherent between development and OOS; the frozen strategy matches or beats the benchmark on return and Sharpe in every OOS window.",
+          "verdict_category": "pass",
+          "verdict_label": "PASS",
+          "badge_class": "verdict-badge--pass",
+          "registered": true,
+          "registry_matches": [
+            {
+              "timestamp": "2026-09-12T14:05:38+00:00",
+              "walk_forward_passed": true,
+              "params": {
+                "active_threshold": 1.0,
+                "fast": 50,
+                "ratio": "^VIX3M/^VIX",
+                "slow": 200,
+                "term_symbols": [
+                  "^VIX",
+                  "^VIX3M"
+                ]
+              }
+            }
+          ],
+          "chart_filename": "vix-term-structure-gated-ma-50-200__variant-1.svg",
+          "sections": [
+            {
+              "heading": "Experiment",
+              "classification": "experiment",
+              "raw_markdown_body": "\n\r\n- Period: 2015-01-02 to 2026-07-02 (2891 sessions)\n- Data-availability truncation: the requested sample intentionally ends on 2026-07-02, the last trading session before the first missing non-live `^VIX3M` row (2026-07-06) in the upstream market-data-hub database. Later `^VIX3M` coverage is incomplete/sparse, so this report must not be read as running through the present.\n- Execution rule: close-derived weights are applied one session later\n- Transaction costs: 5.00 bps per unit of turnover\r\n- Cash return: 0%; taxes, slippage and market impact: not modeled\r\n- Parameters: fast=50, slow=200, term_symbols=['^VIX', '^VIX3M'], ratio=^VIX3M/^VIX, active_threshold=1.0\r\n\r\n"
+            },
+            {
+              "heading": "VIX term-structure provenance and action rule",
+              "classification": "extra",
+              "raw_markdown_body": "\n\r\n- Source: `market-data-hub` (`adj_close`; live rows included: `False`)\r\n- Symbols: ^VIX, ^VIX3M\r\n- Validated exact trading-session coverage: 2015-01-02 to 2026-07-02; 2891 rows\r\n- Database: `C:\\Users\\Administrator\\Documents\\GitHub\\market-data-hub\\market_data.duckdb`\r\n- Frozen ratio and gate: `^VIX3M / ^VIX >= 1.0` is contango/active; a ratio below 1.0 is backwardation/risk-off and zeros the existing MA weights\r\n- Official end-of-day VIX-family closes are unrevised; the backtest engine applies every close-derived weight one session later\r\n- Any missing required VIX-family observation raises `VixTermStructureDataUnavailable`; no unconditional fallback or invented value is allowed\r\n\r\n"
+            },
+            {
+              "heading": "Data provenance",
+              "classification": "provenance",
+              "raw_markdown_body": "\n\r\n- Source: `market-data-hub` (`adj_close`; live rows included: `False`)\r\n- Requested symbols: SPY, QQQ\r\n- Validated common panel: 2015-01-02 to 2026-07-02; 2891 rows\r\n- Database: `C:\\Users\\Administrator\\Documents\\GitHub\\market-data-hub\\market_data.duckdb`\r\n\r\n| Symbol | Last date | Status | Coverage score | Stalled |\r\n|---|---:|---|---:|---|\r\n| QQQ | 2026-08-14 00:00:00 | ok | 97.31 | False |\r\n| SPY | 2026-08-14 00:00:00 | ok | 97.33 | False |\r\n\r\n"
+            },
+            {
+              "heading": "Research rationale",
+              "classification": "rationale",
+              "raw_markdown_body": "\n\r\nConditioning the existing equity trend allocation on the VIX term structure may reduce exposure during acute volatility shocks: contango is treated as the active/calm state and backwardation as the risk-off state.\r\n\r\nCompute the official end-of-day close ratio ^VIX3M / ^VIX for every SPY/QQQ session. Apply the frozen 50/200 moving-average weights when the ratio is at least 1.0 and otherwise hold cash; retain the backtest engine's one-session execution lag.\r\n\r\nSources:\r\n\r\n- [A tactical asset allocation strategy that exploits variations in VIX](https://www.businessperspectives.org/index.php/journals/investment-management-and-financial-innovations/issue-247/a-tactical-asset-allocation-strategy-that-exploits-variations-in-vix) — Cloutier, Djatej, and Kiefer provide academic evidence that VIX-derived conditioning changes tactical equity allocation risk-adjusted outcomes.\r\n- [Using VIX Futures Term Structure](https://harbourfrontquant.substack.com/p/using-vix-futures-term-structure) — Documents empirically that VIX-curve backwardation has coincided with acute S&P 500 stress and drawdowns, while contango is the normal calmer state.\r\n\r\nKnown risks:\r\n\r\n- backwardation is a stress-confirmation signal, not a precise entry or exit timer, and it can persist for weeks\r\n- the gate is better suited to sharp volatility shocks such as 2008/2020 than slow grinding bear markets such as 2022\r\n- cash return is modeled as zero and execution frictions are incomplete\r\n- one historical sample is not evidence of future profitability\r\n\r\n"
+            },
+            {
+              "heading": "Net backtest metrics",
+              "classification": "metrics",
+              "raw_markdown_body": "\n\r\n| Metric | Strategy | Ungated MA | Benchmark |\r\n|---|---:|---:|---:|\r\n| Gross cumulative return | 215.47% | 309.40% | 480.96% |\r\n| Cumulative return | 196.51% | 304.91% | 480.67% |\r\n| CAGR | 9.94% | 12.96% | 16.57% |\r\n| Annualized volatility | 12.67% | 16.73% | 19.47% |\r\n| Annualized Sharpe (rf=0) | 0.81 | 0.81 | 0.89 |\r\n| Maximum drawdown | -21.13% | -30.86% | -30.86% |\r\n| Annualized turnover | 1080.87% | 191.77% | 8.72% |\r\n| Transaction-cost drag (sum of daily rates) | 6.20% | 1.10% | 0.05% |\r\n\r\n"
+            },
+            {
+              "heading": "Walk-forward / out-of-sample validation",
+              "classification": "walkforward",
+              "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2015-01-02 to 2021-11-18 | 1734 | 100.51% | 10.64% | 12.22% | 0.89 | -21.13% | 229.11% | 1.01 | -128.60% | -0.12 |\r\n| oos_1 | out_of_sample | 2021-11-19 to 2026-07-02 | 1157 | 77.59% | 13.32% | 11.99% | 1.10 | -10.89% | 76.01% | 0.71 | 1.57% | 0.39 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: PASS: coherent between development and OOS; the frozen strategy matches or beats the benchmark on return and Sharpe in every OOS window.**\r\n\r\n"
+            },
+            {
+              "heading": "Giudizio / conclusion",
+              "classification": "verdict",
+              "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: PASS: coherent between development and OOS; the frozen strategy matches or beats the benchmark on return and Sharpe in every OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.\r\n\r\n"
+            },
+            {
+              "heading": "Ecosystem review",
+              "classification": "ecosystem",
+              "raw_markdown_body": "\n\r\n- **LazyFin:** Do not recreate hierarchical portfolio optimization in LazyAlpha; the line was moved/retired from LazyFin and belongs to LazyPortfolio. (`C:\\Users\\Administrator\\Documents\\GitHub\\LazyFin\\docs\\status.md`)\r\n- **investmentcommittee:** Keep B0/P0/Sa/PH/PF as methodological reference: same data, folds, costs and rebalance rules for honest comparisons; do not clone it 1:1. (`C:\\Users\\Administrator\\Documents\\GitHub\\investment-process-top-down-etf.md`)\r\n"
             }
           ]
         }

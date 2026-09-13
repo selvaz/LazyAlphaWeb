@@ -2,15 +2,17 @@
 
 from __future__ import annotations
 
+import csv
 import html
 import io
 import json
+import math
 import ntpath
 import re
 import sys
 from collections import Counter, defaultdict
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 from typing import Any
 
@@ -79,6 +81,8 @@ class Report:
     badge_class: str
     registry_matches: list[dict[str, Any]]
     registered: bool
+    equity_companion_found: bool = False
+    equity_series: list[tuple[date, float, float]] | None = None
     slug: str = ""
     variant_index: int = 0
     chart_filename: str | None = None
@@ -300,7 +304,7 @@ def parse_report(path: Path, registry: list[RegistryEntry]) -> Report:
         for entry in registry
         if normalized_windows_path(str(entry.raw["report_path"])) == report_key
     ]
-    return Report(
+    report = Report(
         source_path=path,
         filename=path.name,
         family=family,
@@ -316,6 +320,8 @@ def parse_report(path: Path, registry: list[RegistryEntry]) -> Report:
         registry_matches=registry_matches,
         registered=bool(registry_matches),
     )
+    report.equity_companion_found, report.equity_series = load_equity_series(report)
+    return report
 
 
 def parse_research_note(path: Path, text: str) -> ResearchNote:
@@ -518,6 +524,167 @@ def parse_number(value: str) -> float | None:
         return None
 
 
+def parse_equity_row(
+    raw_date: Any, raw_strategy: Any, raw_benchmark: Any, row_label: str
+) -> tuple[date, float, float]:
+    try:
+        parsed_date = date.fromisoformat(str(raw_date).strip())
+    except (TypeError, ValueError) as exc:
+        raise ValueError(f"{row_label}: invalid date {raw_date!r}") from exc
+    try:
+        strategy = float(raw_strategy)
+        benchmark = float(raw_benchmark)
+    except (TypeError, ValueError) as exc:
+        raise ValueError(f"{row_label}: strategy/benchmark values must be numeric") from exc
+    if not math.isfinite(strategy) or not math.isfinite(benchmark):
+        raise ValueError(f"{row_label}: strategy/benchmark values must be finite")
+    return parsed_date, strategy, benchmark
+
+
+def parse_equity_csv(path: Path) -> list[tuple[date, float, float]]:
+    text = read_source_text(path)
+    reader = csv.DictReader(io.StringIO(text))
+    if reader.fieldnames is None:
+        raise ValueError("missing CSV header")
+    columns: dict[str, str] = {}
+    for fieldname in reader.fieldnames:
+        normalized = fieldname.strip().casefold()
+        if normalized in columns:
+            raise ValueError(f"duplicate CSV column {fieldname!r}")
+        columns[normalized] = fieldname
+    missing = {"date", "strategy", "benchmark"} - columns.keys()
+    if missing:
+        raise ValueError(f"missing CSV column(s): {', '.join(sorted(missing))}")
+    rows = [
+        parse_equity_row(
+            row[columns["date"]],
+            row[columns["strategy"]],
+            row[columns["benchmark"]],
+            f"data row {row_number}",
+        )
+        for row_number, row in enumerate(reader, start=2)
+    ]
+    if len(rows) < 2:
+        raise ValueError("fewer than 2 data rows")
+    return rows
+
+
+def parse_equity_json(path: Path) -> list[tuple[date, float, float]]:
+    try:
+        raw = json.loads(read_source_text(path))
+    except json.JSONDecodeError as exc:
+        raise ValueError(f"invalid JSON: {exc}") from exc
+
+    rows: list[tuple[date, float, float]]
+    if isinstance(raw, list):
+        rows = []
+        for row_number, item in enumerate(raw, start=1):
+            if not isinstance(item, dict):
+                raise ValueError(f"item {row_number}: expected an object")
+            normalized = {str(key).strip().casefold(): value for key, value in item.items()}
+            missing = {"date", "strategy", "benchmark"} - normalized.keys()
+            if missing:
+                raise ValueError(
+                    f"item {row_number}: missing field(s): {', '.join(sorted(missing))}"
+                )
+            rows.append(
+                parse_equity_row(
+                    normalized["date"],
+                    normalized["strategy"],
+                    normalized["benchmark"],
+                    f"item {row_number}",
+                )
+            )
+    elif isinstance(raw, dict):
+        normalized = {str(key).strip().casefold(): value for key, value in raw.items()}
+        missing = {"dates", "strategy", "benchmark"} - normalized.keys()
+        if missing:
+            raise ValueError(f"missing array(s): {', '.join(sorted(missing))}")
+        dates = normalized["dates"]
+        strategies = normalized["strategy"]
+        benchmarks = normalized["benchmark"]
+        if not all(isinstance(values, list) for values in (dates, strategies, benchmarks)):
+            raise ValueError("dates/strategy/benchmark must all be arrays")
+        if len(dates) != len(strategies) or len(dates) != len(benchmarks):
+            raise ValueError("dates/strategy/benchmark arrays have different lengths")
+        rows = [
+            parse_equity_row(raw_date, strategy, benchmark, f"item {index}")
+            for index, (raw_date, strategy, benchmark) in enumerate(
+                zip(dates, strategies, benchmarks), start=1
+            )
+        ]
+    else:
+        raise ValueError("expected a list of row objects or an object containing parallel arrays")
+    if len(rows) < 2:
+        raise ValueError("fewer than 2 data rows")
+    return rows
+
+
+def cumulative_return_metrics(report: Report) -> tuple[float, float | None] | None:
+    for metrics in (section for section in report.sections if section.classification == "metrics"):
+        for table in markdown_table_rows(metrics.body):
+            if len(table) < 3:
+                continue
+            header = [value.strip().casefold() for value in table[0]]
+            try:
+                strategy_index = header.index("strategy")
+            except ValueError:
+                continue
+            benchmark_index = header.index("benchmark") if "benchmark" in header else None
+            for row in table[2:]:
+                if len(row) != len(header) or row[0].strip().casefold() != "cumulative return":
+                    continue
+                strategy = parse_number(row[strategy_index])
+                benchmark = (
+                    parse_number(row[benchmark_index]) if benchmark_index is not None else None
+                )
+                if strategy is not None and (benchmark_index is None or benchmark is not None):
+                    return strategy, benchmark
+    return None
+
+
+def load_equity_series(report: Report) -> tuple[bool, list[tuple[date, float, float]] | None]:
+    csv_path = report.source_path.with_suffix(".equity.csv")
+    json_path = report.source_path.with_suffix(".equity.json")
+    if csv_path.is_file():
+        companion_path = csv_path
+        parser = parse_equity_csv
+    elif json_path.is_file():
+        companion_path = json_path
+        parser = parse_equity_json
+    else:
+        return False, None
+
+    try:
+        series = parser(companion_path)
+        metrics = cumulative_return_metrics(report)
+        if metrics is None:
+            raise ValueError("could not find the report's Strategy cumulative return")
+        strategy_return, benchmark_return = metrics
+        implied_strategy = (series[-1][1] - 1.0) * 100.0
+        if abs(implied_strategy - strategy_return) > 0.02:
+            raise ValueError(
+                "final strategy value implies "
+                f"{implied_strategy:.2f}% cumulative return, report publishes {strategy_return:.2f}%"
+            )
+        if benchmark_return is not None:
+            implied_benchmark = (series[-1][2] - 1.0) * 100.0
+            if abs(implied_benchmark - benchmark_return) > 0.02:
+                raise ValueError(
+                    "final benchmark value implies "
+                    f"{implied_benchmark:.2f}% cumulative return, "
+                    f"report publishes {benchmark_return:.2f}%"
+                )
+    except Exception as exc:
+        print(
+            f"WARNING: {report.filename}: equity companion file present but unparseable, "
+            f"falling back to bar chart: {exc}",
+            file=sys.stderr,
+        )
+        return True, None
+    return True, series
+
+
 def chart_values(report: Report) -> tuple[float, float, float, float] | None:
     metrics = next((s for s in report.sections if s.classification == "metrics"), None)
     if metrics is None:
@@ -580,6 +747,47 @@ def render_chart_svg(values: tuple[float, float, float, float]) -> bytes:
         axis.spines["right"].set_visible(False)
         axis.spines["bottom"].set_color(text_color)
         axis.spines["left"].set_color(text_color)
+    figure.tight_layout()
+    output = io.BytesIO()
+    figure.savefig(output, format="svg", transparent=True, metadata={"Date": None})
+    plt.close(figure)
+    return output.getvalue()
+
+
+def render_equity_line_svg(equity_series: list[tuple[date, float, float]]) -> bytes:
+    import matplotlib
+
+    matplotlib.use("Agg")
+    import matplotlib.dates as mdates
+    import matplotlib.pyplot as plt
+
+    dates = [row[0] for row in equity_series]
+    strategy = [row[1] for row in equity_series]
+    benchmark = [row[2] for row in equity_series]
+    text_color = "#172033"
+    figure, axis = plt.subplots(figsize=(8, 3.35))
+    figure.patch.set_alpha(0)
+    axis.patch.set_alpha(0)
+    strategy_line = axis.plot(
+        dates, strategy, color="#6958d8", linewidth=1.6, label="Strategy"
+    )[0]
+    benchmark_line = axis.plot(
+        dates, benchmark, color="#98a1b4", linewidth=1.6, label="Benchmark"
+    )[0]
+    strategy_line.get_path().should_simplify = False
+    benchmark_line.get_path().should_simplify = False
+    axis.set_ylabel("Growth of $1", color=text_color)
+    locator = mdates.AutoDateLocator(minticks=4, maxticks=8)
+    axis.xaxis.set_major_locator(locator)
+    axis.xaxis.set_major_formatter(mdates.ConciseDateFormatter(locator))
+    axis.tick_params(colors=text_color)
+    axis.spines["top"].set_visible(False)
+    axis.spines["right"].set_visible(False)
+    axis.spines["bottom"].set_color(text_color)
+    axis.spines["left"].set_color(text_color)
+    legend = axis.legend(frameon=False)
+    for label in legend.get_texts():
+        label.set_color(text_color)
     figure.tight_layout()
     output = io.BytesIO()
     figure.savefig(output, format="svg", transparent=True, metadata={"Date": None})
@@ -871,10 +1079,14 @@ def build() -> None:
     mkdocs_newline = detect_newline(mkdocs_text)
     chart_outputs: dict[str, bytes] = {}
     for report in variants:
-        values = chart_values(report)
-        if values is not None:
+        if report.equity_series is not None:
             report.chart_filename = f"{report.slug}__variant-{report.variant_index}.svg"
-            chart_outputs[report.chart_filename] = render_chart_svg(values)
+            chart_outputs[report.chart_filename] = render_equity_line_svg(report.equity_series)
+        else:
+            values = chart_values(report)
+            if values is not None:
+                report.chart_filename = f"{report.slug}__variant-{report.variant_index}.svg"
+                chart_outputs[report.chart_filename] = render_chart_svg(values)
 
     model_outputs = {
         f"{variants_for_family[0].slug}.md": render_model_page(
@@ -933,6 +1145,9 @@ def build() -> None:
     print(f"Duplicate reruns discarded: {duplicate_count}")
     print(f"Registered variants: {registered}")
     print(f"Unregistered variants: {len(variants) - registered}")
+    equity_chart_count = sum(report.equity_series is not None for report in variants)
+    print(f"Equity-line charts: {equity_chart_count}")
+    print(f"Bar-chart fallbacks: {len(chart_outputs) - equity_chart_count}")
     print(f"Verdicts: {breakdown}")
 
 

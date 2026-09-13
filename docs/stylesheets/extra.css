@@ -234,6 +234,14 @@ body {
 }
 
 .md-typeset__table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.md-typeset__table table {
+  display: table;
   width: 100%;
 }
 
@@ -276,6 +284,15 @@ body {
 }
 
 @media (max-width: 720px) {
+  .md-typeset table:not([class]) {
+    font-size: 0.82rem;
+  }
+
+  .md-typeset table:not([class]) th,
+  .md-typeset table:not([class]) td {
+    padding: 0.45rem 0.55rem;
+  }
+
   .la-hero {
     padding: 2.75rem 0 2rem;
     text-align: left;
