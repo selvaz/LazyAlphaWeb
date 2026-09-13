@@ -9,13 +9,21 @@
 
 ### Variant 1 {: #variant-1 }
 
+<div class="la-model-result">
+<div class="la-model-result__headline">
+<span class="la-kicker">Recorded outcome</span>
+<span class="verdict-badge verdict-badge--fail">FAIL</span>
+</div>
+<figure class="la-chart la-chart--equity" data-chart-kind="equity">
+  <div class="la-chart__label">Equity time series</div>
+  <img src="../../assets/charts/volatility-managed-ma-crossover-50-200__variant-1.svg" alt="volatility_managed_ma_crossover_50_200 variant 1 growth-of-one-dollar equity line" loading="lazy">
+  <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
+</figure>
+</div>
+
 **Generated:** 2026-09-11T20:49:34+00:00  
 **Source report:** `20260911_204934_volatility_managed_ma_crossover_50_200.md`  
 **Registered:** ✓ — 2026-09-11T20:49:34+00:00 (walk_forward_passed=False)
-
-<span class="verdict-badge verdict-badge--fail">FAIL</span>
-
-<img src="../assets/charts/volatility-managed-ma-crossover-50-200__variant-1.svg" alt="volatility_managed_ma_crossover_50_200 variant 1 return and Sharpe comparison">
 #### Experiment
 
 - Period: 2015-01-02 to 2026-08-14 (2921 sessions)
@@ -103,13 +111,21 @@ This remains historical research, not evidence of tradability or a recommendatio
 
 ### Variant 2 {: #variant-2 }
 
+<div class="la-model-result">
+<div class="la-model-result__headline">
+<span class="la-kicker">Recorded outcome</span>
+<span class="verdict-badge verdict-badge--fail">FAIL</span>
+</div>
+<figure class="la-chart la-chart--equity" data-chart-kind="equity">
+  <div class="la-chart__label">Equity time series</div>
+  <img src="../../assets/charts/volatility-managed-ma-crossover-50-200__variant-2.svg" alt="volatility_managed_ma_crossover_50_200 variant 2 growth-of-one-dollar equity line" loading="lazy">
+  <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
+</figure>
+</div>
+
 **Generated:** 2026-09-11T23:01:08+00:00  
 **Source report:** `20260911_230108_volatility_managed_ma_crossover_50_200.md`  
 **Registered:** ✓ — 2026-09-11T23:01:38+00:00 (walk_forward_passed=False)
-
-<span class="verdict-badge verdict-badge--fail">FAIL</span>
-
-<img src="../assets/charts/volatility-managed-ma-crossover-50-200__variant-2.svg" alt="volatility_managed_ma_crossover_50_200 variant 2 return and Sharpe comparison">
 #### Experiment
 
 - Period: 2010-01-04 to 2026-08-14 (4179 sessions)

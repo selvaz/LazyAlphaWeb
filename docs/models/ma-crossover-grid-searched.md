@@ -8,13 +8,21 @@
 
 ### Variant 1 {: #variant-1 }
 
+<div class="la-model-result">
+<div class="la-model-result__headline">
+<span class="la-kicker">Recorded outcome</span>
+<span class="verdict-badge verdict-badge--fail">FAIL</span>
+</div>
+<figure class="la-chart la-chart--equity" data-chart-kind="equity">
+  <div class="la-chart__label">Equity time series</div>
+  <img src="../../assets/charts/ma-crossover-grid-searched__variant-1.svg" alt="ma_crossover_grid_searched variant 1 growth-of-one-dollar equity line" loading="lazy">
+  <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
+</figure>
+</div>
+
 **Generated:** 2026-09-12T14:16:11+00:00  
 **Source report:** `20260912_141611_ma_crossover_grid_searched.md`  
 **Registered:** ✓ — 2026-09-12T14:16:11+00:00 (walk_forward_passed=False)
-
-<span class="verdict-badge verdict-badge--fail">FAIL</span>
-
-<img src="../assets/charts/ma-crossover-grid-searched__variant-1.svg" alt="ma_crossover_grid_searched variant 1 return and Sharpe comparison">
 #### Experiment
 
 - Period: 2015-01-02 to 2026-08-14 (2921 sessions)

@@ -8,13 +8,21 @@
 
 ### Variant 1 {: #variant-1 }
 
+<div class="la-model-result">
+<div class="la-model-result__headline">
+<span class="la-kicker">Recorded outcome</span>
+<span class="verdict-badge verdict-badge--fail">FAIL</span>
+</div>
+<figure class="la-chart la-chart--equity" data-chart-kind="equity">
+  <div class="la-chart__label">Equity time series</div>
+  <img src="../../assets/charts/regime-conditional-ma-50-200-state-0__variant-1.svg" alt="regime_conditional_ma_50_200_state_0 variant 1 growth-of-one-dollar equity line" loading="lazy">
+  <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
+</figure>
+</div>
+
 **Generated:** 2026-09-11T18:02:41+00:00  
 **Source report:** `20260911_180241_regime_conditional_ma_50_200_state_0.md`  
 **Registered:** ✓ — 2026-09-11T18:02:41+00:00 (walk_forward_passed=False)
-
-<span class="verdict-badge verdict-badge--fail">FAIL</span>
-
-<img src="../assets/charts/regime-conditional-ma-50-200-state-0__variant-1.svg" alt="regime_conditional_ma_50_200_state_0 variant 1 return and Sharpe comparison">
 #### Experiment
 
 - Period: 2015-01-02 to 2026-08-14 (2921 sessions)

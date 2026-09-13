@@ -596,6 +596,7 @@
             }
           ],
           "chart_filename": "factor-momentum-gated-ma-50-200__variant-1.svg",
+          "equity_companion_found": true,
           "sections": [
             {
               "heading": "Experiment",
@@ -670,6 +671,7 @@
             }
           ],
           "chart_filename": "ma-crossover-50-200__variant-1.svg",
+          "equity_companion_found": true,
           "sections": [
             {
               "heading": "Experiment",
@@ -730,6 +732,7 @@
           "registered": false,
           "registry_matches": [],
           "chart_filename": "ma-crossover-5-20__variant-1.svg",
+          "equity_companion_found": true,
           "sections": [
             {
               "heading": "Experiment",
@@ -802,6 +805,7 @@
             }
           ],
           "chart_filename": "ma-crossover-grid-searched__variant-1.svg",
+          "equity_companion_found": true,
           "sections": [
             {
               "heading": "Experiment",
@@ -879,6 +883,7 @@
             }
           ],
           "chart_filename": "policy-conditional-ma-50-200-6m__variant-1.svg",
+          "equity_companion_found": true,
           "sections": [
             {
               "heading": "Experiment",
@@ -951,6 +956,7 @@
             }
           ],
           "chart_filename": "policy-conditional-ma-50-200-6m__variant-2.svg",
+          "equity_companion_found": true,
           "sections": [
             {
               "heading": "Experiment",
@@ -1027,6 +1033,7 @@
             }
           ],
           "chart_filename": "regime-conditional-ma-50-200-state-0__variant-1.svg",
+          "equity_companion_found": true,
           "sections": [
             {
               "heading": "Experiment",
@@ -1092,6 +1099,7 @@
           "registered": false,
           "registry_matches": [],
           "chart_filename": "sentiment-conditional-ma-50-200-3d__variant-1.svg",
+          "equity_companion_found": false,
           "sections": [
             {
               "heading": "Experiment",
@@ -1200,6 +1208,7 @@
             }
           ],
           "chart_filename": "turtle-systems-1-and-2__variant-1.svg",
+          "equity_companion_found": false,
           "sections": [
             {
               "heading": "Experiment",
@@ -1358,6 +1367,7 @@
             }
           ],
           "chart_filename": "turtle-systems-1-and-2__variant-2.svg",
+          "equity_companion_found": false,
           "sections": [
             {
               "heading": "Experiment",
@@ -1476,6 +1486,7 @@
             }
           ],
           "chart_filename": "turtle-systems-1-and-2__variant-3.svg",
+          "equity_companion_found": false,
           "sections": [
             {
               "heading": "Experiment",
@@ -1566,6 +1577,7 @@
             }
           ],
           "chart_filename": "vix-term-structure-gated-ma-50-200__variant-1.svg",
+          "equity_companion_found": true,
           "sections": [
             {
               "heading": "Experiment",
@@ -1643,6 +1655,7 @@
             }
           ],
           "chart_filename": "volatility-managed-ma-crossover-50-200__variant-1.svg",
+          "equity_companion_found": true,
           "sections": [
             {
               "heading": "Experiment",
@@ -1716,6 +1729,7 @@
             }
           ],
           "chart_filename": "volatility-managed-ma-crossover-50-200__variant-2.svg",
+          "equity_companion_found": true,
           "sections": [
             {
               "heading": "Experiment",

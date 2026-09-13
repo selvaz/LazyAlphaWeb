@@ -10,13 +10,21 @@
 
 ### Variant 1 {: #variant-1 }
 
+<div class="la-model-result">
+<div class="la-model-result__headline">
+<span class="la-kicker">Recorded outcome</span>
+<span class="verdict-badge verdict-badge--fail">FAIL</span>
+</div>
+<figure class="la-chart la-chart--fallback" data-chart-kind="fallback">
+  <div class="la-chart__label">Metrics-only summary</div>
+  <img src="../../assets/charts/turtle-systems-1-and-2__variant-1.svg" alt="turtle_systems_1_and_2 variant 1 metrics-only bar chart; no equity time series available" loading="lazy">
+  <figcaption>No equity time series available for this run · return and Sharpe bars only</figcaption>
+</figure>
+</div>
+
 **Generated:** 2026-09-11T23:24:01+00:00  
 **Source report:** `turtle_systems_1_and_2_2010_present.md`  
 **Registered:** ✓ — 2026-09-11T23:24:01+00:00 (walk_forward_passed=False)
-
-<span class="verdict-badge verdict-badge--fail">FAIL</span>
-
-<img src="../assets/charts/turtle-systems-1-and-2__variant-1.svg" alt="turtle_systems_1_and_2 variant 1 return and Sharpe comparison">
 #### Experiment
 
 - Period: 2010-01-04 to 2026-08-14 (4178 sessions)
@@ -142,13 +150,21 @@ This remains historical research, not evidence of tradability or a recommendatio
 
 ### Variant 2 {: #variant-2 }
 
+<div class="la-model-result">
+<div class="la-model-result__headline">
+<span class="la-kicker">Recorded outcome</span>
+<span class="verdict-badge verdict-badge--fail">FAIL</span>
+</div>
+<figure class="la-chart la-chart--fallback" data-chart-kind="fallback">
+  <div class="la-chart__label">Metrics-only summary</div>
+  <img src="../../assets/charts/turtle-systems-1-and-2__variant-2.svg" alt="turtle_systems_1_and_2 variant 2 metrics-only bar chart; no equity time series available" loading="lazy">
+  <figcaption>No equity time series available for this run · return and Sharpe bars only</figcaption>
+</figure>
+</div>
+
 **Generated:** 2026-09-11T23:32:31+00:00  
 **Source report:** `turtle_systems_1_and_2_2010_2026-09-10.md`  
 **Registered:** ✓ (2 entries) — 2026-09-11T23:26:29+00:00 (walk_forward_passed=False); 2026-09-11T23:32:31+00:00 (walk_forward_passed=False)
-
-<span class="verdict-badge verdict-badge--fail">FAIL</span>
-
-<img src="../assets/charts/turtle-systems-1-and-2__variant-2.svg" alt="turtle_systems_1_and_2 variant 2 return and Sharpe comparison">
 #### Experiment
 
 - Period: 2010-01-04 to 2026-09-10 (4196 sessions)
@@ -275,13 +291,21 @@ This remains historical research, not evidence of tradability or a recommendatio
 
 ### Variant 3 {: #variant-3 }
 
+<div class="la-model-result">
+<div class="la-model-result__headline">
+<span class="la-kicker">Recorded outcome</span>
+<span class="verdict-badge verdict-badge--fail">FAIL</span>
+</div>
+<figure class="la-chart la-chart--fallback" data-chart-kind="fallback">
+  <div class="la-chart__label">Metrics-only summary</div>
+  <img src="../../assets/charts/turtle-systems-1-and-2__variant-3.svg" alt="turtle_systems_1_and_2 variant 3 metrics-only bar chart; no equity time series available" loading="lazy">
+  <figcaption>No equity time series available for this run · return and Sharpe bars only</figcaption>
+</figure>
+</div>
+
 **Generated:** 2026-09-12T08:35:39+00:00  
 **Source report:** `turtle_core_risk_corrected_classic_2010-01-04_2026-09-10.md`  
 **Registered:** ✓ — 2026-09-12T08:35:39+00:00 (walk_forward_passed=False)
-
-<span class="verdict-badge verdict-badge--fail">FAIL</span>
-
-<img src="../assets/charts/turtle-systems-1-and-2__variant-3.svg" alt="turtle_systems_1_and_2 variant 3 return and Sharpe comparison">
 #### Experiment
 
 - Period: 2010-01-04 to 2026-09-10 (4196 sessions)

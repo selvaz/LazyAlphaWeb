@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import re
 from pathlib import Path
 
@@ -141,34 +142,71 @@ def test_every_research_note_body_traces_to_source() -> None:
 
 def test_leaderboard_badges_match_model_card_badges() -> None:
     leaderboard = _read(SITE_ROOT / "docs" / "leaderboard.md")
-    row_re = re.compile(
-        r"^\| \[[^]]+\]\(models/([^)#]+\.md)#(variant-\d+)\).*?"
-        r"(<span class=\"verdict-badge [^\"]+\">[^<]+</span>) \|$",
-        re.MULTILINE,
+    card_re = re.compile(
+        r'<article class="la-result-card [^"]+" data-model="([^"]+)" '
+        r'data-variant="(variant-\d+)">(.*?)</article>',
+        re.DOTALL,
     )
-    rows = list(row_re.finditer(leaderboard))
-    assert rows, "leaderboard contained no model variant rows"
+    cards = list(card_re.finditer(leaderboard))
+    assert cards, "leaderboard contained no model variant cards"
 
-    for row in rows:
-        model_name, anchor, leaderboard_badge_html = row.groups()
-        model_page = _read(SITE_ROOT / "docs" / "models" / model_name)
+    for card in cards:
+        model_slug, anchor, card_html = card.groups()
+        model_page = _read(SITE_ROOT / "docs" / "models" / f"{model_slug}.md")
         variant = next(
             (match.group(3) for match in VARIANT_RE.finditer(model_page) if match.group(2) == anchor),
             None,
         )
-        assert variant is not None, f"{model_name}#{anchor}: linked variant anchor not found"
-        assert _badge(leaderboard_badge_html) == _badge(variant), (
-            f"{model_name}#{anchor}: leaderboard and model-card badges differ"
+        assert variant is not None, f"{model_slug}#{anchor}: linked variant anchor not found"
+        assert _badge(card_html) == _badge(variant), (
+            f"{model_slug}#{anchor}: leaderboard and model-card badges differ"
         )
 
 
-def test_no_dark_theme_leftovers() -> None:
+def test_charts_are_discoverable_and_truthfully_labeled() -> None:
+    leaderboard = _read(SITE_ROOT / "docs" / "leaderboard.md")
+    homepage = _read(SITE_ROOT / "docs" / "index.md")
+    dataset = json.loads(_read(SITE_ROOT / "data" / "experiments.generated.json"))
+    variants = [
+        variant
+        for family in dataset["families"].values()
+        for variant in family["variants"]
+    ]
+
+    assert leaderboard.count('<article class="la-result-card ') == len(variants)
+    assert leaderboard.count("<img ") == len(variants)
+    equity_count = sum(variant["equity_companion_found"] for variant in variants)
+    fallback_count = len(variants) - equity_count
+    assert leaderboard.count('data-chart-kind="equity"') == equity_count
+    assert leaderboard.count('data-chart-kind="fallback"') == fallback_count
+    assert leaderboard.count("No equity time series available for this run") == fallback_count
+
+    passes = [variant for variant in variants if variant["verdict_category"] == "pass"]
+    assert homepage.count('<article class="la-featured-card">') == len(passes)
+    assert homepage.count('data-chart-kind="equity"') == len(passes)
+
+    for variant in variants:
+        model_page = _read(SITE_ROOT / "docs" / "models" / f"{variant['slug']}.md")
+        section = next(
+            match.group(3)
+            for match in VARIANT_RE.finditer(model_page)
+            if match.group(2) == f"variant-{variant['variant_index']}"
+        )
+        assert section.index('<figure class="la-chart') < section.index("**Generated:**")
+        assert section.index('<figure class="la-chart') < section.index("#### Experiment")
+        expected_kind = "equity" if variant["equity_companion_found"] else "fallback"
+        assert f'data-chart-kind="{expected_kind}"' in section
+
+
+def test_research_terminal_theme_tokens_are_present() -> None:
     css = _read(SITE_ROOT / "docs" / "stylesheets" / "extra.css")
-    old_colors = ("#101318", "#d9e0ea", "#45c56c", "#bc4d55", "#daa841", "#25303c")
-    for color in old_colors:
-        assert re.search(re.escape(color) + r"(?![0-9a-f])", css, re.IGNORECASE) is None, (
-            f"old dark-theme color remains in extra.css: {color}"
-        )
+    for token in (
+        "--la-bg: #080d14",
+        "--la-green: #69e6a6",
+        ".la-result-card",
+        ".la-chart--fallback",
+    ):
+        assert token in css
 
 
 def test_generator_exits_zero_on_current_state() -> None:

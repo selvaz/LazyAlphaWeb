@@ -9,13 +9,21 @@
 
 ### Variant 1 {: #variant-1 }
 
+<div class="la-model-result">
+<div class="la-model-result__headline">
+<span class="la-kicker">Recorded outcome</span>
+<span class="verdict-badge verdict-badge--fail">FAIL</span>
+</div>
+<figure class="la-chart la-chart--equity" data-chart-kind="equity">
+  <div class="la-chart__label">Equity time series</div>
+  <img src="../../assets/charts/policy-conditional-ma-50-200-6m__variant-1.svg" alt="policy_conditional_ma_50_200_6m variant 1 growth-of-one-dollar equity line" loading="lazy">
+  <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
+</figure>
+</div>
+
 **Generated:** 2026-09-11T22:27:46+00:00  
 **Source report:** `20260911_222746_policy_conditional_ma_50_200_6m.md`  
 **Registered:** ✓ — 2026-09-11T22:27:46+00:00 (walk_forward_passed=False)
-
-<span class="verdict-badge verdict-badge--fail">FAIL</span>
-
-<img src="../assets/charts/policy-conditional-ma-50-200-6m__variant-1.svg" alt="policy_conditional_ma_50_200_6m variant 1 return and Sharpe comparison">
 #### Experiment
 
 - Period: 2015-01-02 to 2026-08-14 (2921 sessions)
@@ -106,13 +114,21 @@ This remains historical research, not evidence of tradability or a recommendatio
 
 ### Variant 2 {: #variant-2 }
 
+<div class="la-model-result">
+<div class="la-model-result__headline">
+<span class="la-kicker">Recorded outcome</span>
+<span class="verdict-badge verdict-badge--fail">FAIL</span>
+</div>
+<figure class="la-chart la-chart--equity" data-chart-kind="equity">
+  <div class="la-chart__label">Equity time series</div>
+  <img src="../../assets/charts/policy-conditional-ma-50-200-6m__variant-2.svg" alt="policy_conditional_ma_50_200_6m variant 2 growth-of-one-dollar equity line" loading="lazy">
+  <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
+</figure>
+</div>
+
 **Generated:** 2026-09-11T22:57:37+00:00  
 **Source report:** `20260911_225737_policy_conditional_ma_50_200_6m.md`  
 **Registered:** ✓ — 2026-09-11T22:57:37+00:00 (walk_forward_passed=False)
-
-<span class="verdict-badge verdict-badge--fail">FAIL</span>
-
-<img src="../assets/charts/policy-conditional-ma-50-200-6m__variant-2.svg" alt="policy_conditional_ma_50_200_6m variant 2 return and Sharpe comparison">
 #### Experiment
 
 - Period: 2015-01-02 to 2026-08-14 (2921 sessions)

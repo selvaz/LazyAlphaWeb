@@ -8,13 +8,21 @@
 
 ### Variant 1 {: #variant-1 }
 
+<div class="la-model-result">
+<div class="la-model-result__headline">
+<span class="la-kicker">Recorded outcome</span>
+<span class="verdict-badge verdict-badge--warn">NOT EVALUABLE</span>
+</div>
+<figure class="la-chart la-chart--fallback" data-chart-kind="fallback">
+  <div class="la-chart__label">Metrics-only summary</div>
+  <img src="../../assets/charts/sentiment-conditional-ma-50-200-3d__variant-1.svg" alt="sentiment_conditional_ma_50_200_3d variant 1 metrics-only bar chart; no equity time series available" loading="lazy">
+  <figcaption>No equity time series available for this run · return and Sharpe bars only</figcaption>
+</figure>
+</div>
+
 **Generated:** 2026-09-11T19:16:46+00:00  
 **Source report:** `20260911_191646_sentiment_conditional_ma_50_200_3d.md`  
 **Registered:** —
-
-<span class="verdict-badge verdict-badge--warn">NOT EVALUABLE</span>
-
-<img src="../assets/charts/sentiment-conditional-ma-50-200-3d__variant-1.svg" alt="sentiment_conditional_ma_50_200_3d variant 1 return and Sharpe comparison">
 #### Experiment
 
 - Period: 2026-08-10 to 2026-08-14 (5 sessions)

@@ -8,9 +8,9 @@ docs_dir: docs
 theme:
   name: material
   palette:
-    scheme: default
-    primary: deep purple
-    accent: deep purple
+    scheme: slate
+    primary: black
+    accent: green
   font:
     text: Inter
     code: JetBrains Mono

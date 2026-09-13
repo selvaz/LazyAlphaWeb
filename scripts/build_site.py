@@ -727,11 +727,12 @@ def render_chart_svg(values: tuple[float, float, float, float]) -> bytes:
     import matplotlib
 
     matplotlib.use("Agg")
+    matplotlib.rcParams["svg.hashsalt"] = "lazyalpha"
     import matplotlib.pyplot as plt
 
     strategy_return, benchmark_return, strategy_sharpe, benchmark_sharpe = values
-    text_color = "#172033"
-    colors = ["#6958d8", "#98a1b4"]
+    text_color = "#a8b3c7"
+    colors = ["#69e6a6", "#71809a"]
     figure, axes = plt.subplots(1, 2, figsize=(8, 3.35))
     figure.patch.set_alpha(0)
     for axis, plotted, ylabel in (
@@ -751,28 +752,29 @@ def render_chart_svg(values: tuple[float, float, float, float]) -> bytes:
     output = io.BytesIO()
     figure.savefig(output, format="svg", transparent=True, metadata={"Date": None})
     plt.close(figure)
-    return output.getvalue()
+    return re.sub(rb"[ \t]+\r?\n", b"\n", output.getvalue())
 
 
 def render_equity_line_svg(equity_series: list[tuple[date, float, float]]) -> bytes:
     import matplotlib
 
     matplotlib.use("Agg")
+    matplotlib.rcParams["svg.hashsalt"] = "lazyalpha"
     import matplotlib.dates as mdates
     import matplotlib.pyplot as plt
 
     dates = [row[0] for row in equity_series]
     strategy = [row[1] for row in equity_series]
     benchmark = [row[2] for row in equity_series]
-    text_color = "#172033"
+    text_color = "#a8b3c7"
     figure, axis = plt.subplots(figsize=(8, 3.35))
     figure.patch.set_alpha(0)
     axis.patch.set_alpha(0)
     strategy_line = axis.plot(
-        dates, strategy, color="#6958d8", linewidth=1.6, label="Strategy"
+        dates, strategy, color="#69e6a6", linewidth=2.0, label="Strategy"
     )[0]
     benchmark_line = axis.plot(
-        dates, benchmark, color="#98a1b4", linewidth=1.6, label="Benchmark"
+        dates, benchmark, color="#71809a", linewidth=1.5, label="Benchmark"
     )[0]
     strategy_line.get_path().should_simplify = False
     benchmark_line.get_path().should_simplify = False
@@ -792,7 +794,35 @@ def render_equity_line_svg(equity_series: list[tuple[date, float, float]]) -> by
     output = io.BytesIO()
     figure.savefig(output, format="svg", transparent=True, metadata={"Date": None})
     plt.close(figure)
-    return output.getvalue()
+    return re.sub(rb"[ \t]+\r?\n", b"\n", output.getvalue())
+
+
+def chart_figure(report: Report, src_prefix: str, compact: bool = False) -> list[str]:
+    """Render an honest chart figure with its data availability stated explicitly."""
+    if report.chart_filename is None:
+        return []
+    is_equity = report.equity_series is not None
+    chart_kind = "Equity time series" if is_equity else "Metrics-only summary"
+    caption = (
+        "Real growth-of-$1 series · strategy vs benchmark"
+        if is_equity
+        else "No equity time series available for this run · return and Sharpe bars only"
+    )
+    alt = (
+        f"{report.family} variant {report.variant_index} growth-of-one-dollar equity line"
+        if is_equity
+        else f"{report.family} variant {report.variant_index} metrics-only bar chart; no equity time series available"
+    )
+    classes = "la-chart la-chart--equity" if is_equity else "la-chart la-chart--fallback"
+    if compact:
+        classes += " la-chart--compact"
+    return [
+        f'<figure class="{classes}" data-chart-kind="{"equity" if is_equity else "fallback"}">',
+        f'  <div class="la-chart__label">{chart_kind}</div>',
+        f'  <img src="{src_prefix}{report.chart_filename}" alt="{html.escape(alt, quote=True)}" loading="lazy">',
+        f'  <figcaption>{caption}</figcaption>',
+        "</figure>",
+    ]
 
 
 def render_model_page(family: str, variants: list[Report], newline: str) -> str:
@@ -825,20 +855,19 @@ def render_model_page(family: str, variants: list[Report], newline: str) -> str:
             "",
             f"### Variant {report.variant_index} {{: #variant-{report.variant_index} }}",
             "",
+            '<div class="la-model-result">',
+            '<div class="la-model-result__headline">',
+            '<span class="la-kicker">Recorded outcome</span>',
+            badge(report.badge_class, report.verdict_label),
+            "</div>",
+            *chart_figure(report, "../../assets/charts/"),
+            "</div>",
+            "",
             f"**Generated:** {report.generated_at_source}  ",
             f"**Source report:** `{report.filename}`  ",
             f"**Registered:** {registered_detail(report)}",
             "",
-            badge(report.badge_class, report.verdict_label),
-            "",
         ]
-        if report.chart_filename:
-            variant_lines.extend(
-                [
-                    f'<img src="../assets/charts/{report.chart_filename}" alt="{html.escape(family, quote=True)} variant {report.variant_index} return and Sharpe comparison">',
-                    "",
-                ]
-            )
         output += newline.join(variant_lines)
         raw_sections = "".join(f"#### {section.heading}{section.body}" for section in report.sections)
         # Append source section bodies without normalizing any of their bytes.
@@ -886,18 +915,34 @@ def render_leaderboard(grouped: dict[str, list[Report]], newline: str) -> str:
     lines = [
         "# Leaderboard",
         "",
-        "This lists every documented experiment variant — one row per distinct parameter set and sample period that was actually run (exact-duplicate reruns collapse to their latest occurrence) — passing and failing alike, sourced directly from the individual reports.",
+        '<p class="la-page-lede">Every documented experiment, with its outcome and evidence in view. Exact duplicate reruns collapse to their latest occurrence; passes and failures receive the same space.</p>',
         "",
-        "| Strategy | Params | Generated | Registered | Verdict |",
-        "|---|---|---|---:|---|",
+        '<div class="la-leaderboard">',
     ]
     for report in variants:
-        strategy = html.escape(report.family).replace("|", "&#124;")
-        lines.append(
-            f"| [{strategy}](models/{report.slug}.md#variant-{report.variant_index}) | "
-            f"{code_html(report.params_line, 80)} | {html.escape(report.generated_at_source)} | "
-            f"{registered_short(report)} | {badge(report.badge_class, report.verdict_label)} |"
+        strategy = html.escape(report.family)
+        href = f"../models/{report.slug}/#variant-{report.variant_index}"
+        lines.extend(
+            [
+                f'<article class="la-result-card la-result-card--{report.verdict_category}" data-model="{report.slug}" data-variant="variant-{report.variant_index}">',
+                '<div class="la-result-card__header">',
+                '<div>',
+                f'<span class="la-kicker">Variant {report.variant_index} · {html.escape(report.generated_at_source)}</span>',
+                f'<h2><a href="{href}">{strategy}</a></h2>',
+                "</div>",
+                badge(report.badge_class, report.verdict_label),
+                "</div>",
+                *chart_figure(report, "../assets/charts/", compact=True),
+                '<div class="la-result-card__meta">',
+                f'<span><b>Parameters</b>{code_html(report.params_line, 120)}</span>',
+                f'<span><b>Registry</b>{registered_short(report)}</span>',
+                f'<a class="la-card-link" href="{href}">Open full record <span aria-hidden="true">→</span></a>',
+                "</div>",
+                "</article>",
+                "",
+            ]
         )
+    lines.append("</div>")
     return newline.join(lines) + newline
 
 
@@ -967,7 +1012,7 @@ def detect_newline(text: str) -> str:
     return "\r\n" if "\r\n" in text else "\n"
 
 
-def updated_index(index_text: str, categories: Counter[str]) -> str:
+def updated_index(index_text: str, categories: Counter[str], variants: list[Report]) -> str:
     newline = detect_newline(index_text)
     start_marker = "<!-- STATS:START -->"
     end_marker = "<!-- STATS:END -->"
@@ -988,7 +1033,42 @@ def updated_index(index_text: str, categories: Counter[str]) -> str:
     )
     stat_lines.append("</div>")
     replacement = newline + newline.join(stat_lines) + newline
-    return index_text[:content_start] + replacement + index_text[content_end:]
+    updated = index_text[:content_start] + replacement + index_text[content_end:]
+
+    charts_start_marker = "<!-- FEATURED_CHARTS:START -->"
+    charts_end_marker = "<!-- FEATURED_CHARTS:END -->"
+    charts_start = updated.find(charts_start_marker)
+    charts_end = updated.find(charts_end_marker)
+    if charts_start < 0 or charts_end < 0 or charts_end <= charts_start:
+        raise BuildError("docs/index.md: missing or misordered literal FEATURED_CHARTS markers")
+    featured = [report for report in variants if report.verdict_category == "pass"]
+    featured.sort(key=lambda report: report.generated_at, reverse=True)
+    chart_lines = ['<div class="la-featured-grid">']
+    for report in featured:
+        href = f"models/{report.slug}/#variant-{report.variant_index}"
+        chart_lines.extend(
+            [
+                '<article class="la-featured-card">',
+                '<div class="la-featured-card__header">',
+                '<div>',
+                '<span class="la-kicker">Walk-forward result</span>',
+                f'<h3><a href="{href}">{html.escape(report.family)}</a></h3>',
+                "</div>",
+                badge(report.badge_class, report.verdict_label),
+                "</div>",
+                *chart_figure(report, "assets/charts/", compact=True),
+                f'<a class="la-card-link" href="{href}">Inspect evidence <span aria-hidden="true">→</span></a>',
+                "</article>",
+            ]
+        )
+    chart_lines.append("</div>")
+    charts_content_start = charts_start + len(charts_start_marker)
+    charts_replacement = newline + newline.join(chart_lines) + newline
+    return (
+        updated[:charts_content_start]
+        + charts_replacement
+        + updated[charts_end:]
+    )
 
 
 def yaml_single_quote(value: str) -> str:
@@ -1039,6 +1119,7 @@ def report_as_json(report: Report) -> dict[str, Any]:
         "registered": report.registered,
         "registry_matches": report.registry_matches,
         "chart_filename": report.chart_filename,
+        "equity_companion_found": report.equity_companion_found,
         "sections": [
             {
                 "heading": section.heading,
@@ -1102,7 +1183,7 @@ def build() -> None:
     leaderboard = render_leaderboard(grouped, index_newline)
     changelog = render_changelog(registry, report_path_statuses, index_newline)
     categories = Counter(report.verdict_category for report in variants)
-    new_index = updated_index(index_text, categories)
+    new_index = updated_index(index_text, categories, variants)
     new_mkdocs = updated_mkdocs(mkdocs_text, grouped)
     dataset = {
         "source_root": str(LAZYALPHA_ROOT),
