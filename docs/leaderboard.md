@@ -6,7 +6,7 @@
 <article class="la-result-card la-result-card--fail" data-model="ma-crossover-5-20" data-variant="variant-1">
 <div class="la-result-card__header">
 <div>
-<span class="la-kicker">Variant 1 · 2026-09-13T08:59:06+00:00</span>
+<span class="la-kicker">Variant 1 · 2026-09-13T09:32:49+00:00</span>
 <h2><a href="../models/ma-crossover-5-20/#variant-1">ma_crossover_5_20</a></h2>
 </div>
 <span class="verdict-badge verdict-badge--fail">FAIL</span>
@@ -20,6 +20,46 @@
 <span><b>Parameters</b><span title="fast=5, slow=20"><code>fast=5, slow=20</code></span></span>
 <span><b>Registry</b>—</span>
 <a class="la-card-link" href="../models/ma-crossover-5-20/#variant-1">Open full record <span aria-hidden="true">→</span></a>
+</div>
+</article>
+
+<article class="la-result-card la-result-card--fail" data-model="minimum-variance-portfolio" data-variant="variant-1">
+<div class="la-result-card__header">
+<div>
+<span class="la-kicker">Variant 1 · 2026-09-13T09:25:35+00:00</span>
+<h2><a href="../models/minimum-variance-portfolio/#variant-1">minimum_variance_portfolio</a></h2>
+</div>
+<span class="verdict-badge verdict-badge--fail">FAIL</span>
+</div>
+<figure class="la-chart la-chart--equity la-chart--compact" data-chart-kind="equity">
+  <div class="la-chart__label">Equity time series</div>
+  <img src="../assets/charts/minimum-variance-portfolio__variant-1.svg" alt="minimum_variance_portfolio variant 1 growth-of-one-dollar equity line" width="576" height="241" decoding="async">
+  <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
+</figure>
+<div class="la-result-card__meta">
+<span><b>Parameters</b><span title="lookback=252, rebalance=monthly_first_trading_session_close, constraints=long_only_fully_invested, solver=exact_support_enumeration, covariance=sample_covariance, ridge=1e-08"><code>lookback=252, rebalance=monthly_first_trading_session_close, constraints=long_only_fully_invested, solver=exact_support…</code></span></span>
+<span><b>Registry</b>✓</span>
+<a class="la-card-link" href="../models/minimum-variance-portfolio/#variant-1">Open full record <span aria-hidden="true">→</span></a>
+</div>
+</article>
+
+<article class="la-result-card la-result-card--fail" data-model="cross-sectional-momentum-12-1-long-short" data-variant="variant-1">
+<div class="la-result-card__header">
+<div>
+<span class="la-kicker">Variant 1 · 2026-09-13T09:24:17+00:00</span>
+<h2><a href="../models/cross-sectional-momentum-12-1-long-short/#variant-1">cross_sectional_momentum_12_1_long_short</a></h2>
+</div>
+<span class="verdict-badge verdict-badge--fail">FAIL</span>
+</div>
+<figure class="la-chart la-chart--equity la-chart--compact" data-chart-kind="equity">
+  <div class="la-chart__label">Equity time series</div>
+  <img src="../assets/charts/cross-sectional-momentum-12-1-long-short__variant-1.svg" alt="cross_sectional_momentum_12_1_long_short variant 1 growth-of-one-dollar equity line" width="576" height="241" decoding="async">
+  <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
+</figure>
+<div class="la-result-card__meta">
+<span><b>Parameters</b><span title="lookback_days=252, skip_days=21, n_select=3, rebalance=calendar_month_end, rule=equal_weight_top_and_bottom, gross_exposure=1.0, long_gross=0.5, short_gross=0.5"><code>lookback_days=252, skip_days=21, n_select=3, rebalance=calendar_month_end, rule=equal_weight_top_and_bottom, gross_expo…</code></span></span>
+<span><b>Registry</b>✓</span>
+<a class="la-card-link" href="../models/cross-sectional-momentum-12-1-long-short/#variant-1">Open full record <span aria-hidden="true">→</span></a>
 </div>
 </article>
 

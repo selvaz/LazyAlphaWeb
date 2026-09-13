@@ -4,7 +4,7 @@
 
 | Variant | Generated | Registered | Verdict |
 |---|---|---:|---|
-| <a href="#variant-1" title="fast=5, slow=20"><code>fast=5, slow=20</code></a> | 2026-09-13T08:59:06+00:00 | — | <span class="verdict-badge verdict-badge--fail">FAIL</span> |
+| <a href="#variant-1" title="fast=5, slow=20"><code>fast=5, slow=20</code></a> | 2026-09-13T09:32:49+00:00 | — | <span class="verdict-badge verdict-badge--fail">FAIL</span> |
 
 ### Variant 1 {: #variant-1 }
 
@@ -20,8 +20,8 @@
 </figure>
 </div>
 
-**Generated:** 2026-09-13T08:59:06+00:00  
-**Source report:** `20260913_085906_ma_crossover_5_20.md`  
+**Generated:** 2026-09-13T09:32:49+00:00  
+**Source report:** `20260913_093249_ma_crossover_5_20.md`  
 **Registered:** —
 #### Experiment
 
@@ -83,7 +83,7 @@ Pass criterion: in every OOS window, strategy cumulative return and annualized S
 
 **Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**
 
-#### Giudizio / conclusion
+#### Conclusion
 
 **Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**
 

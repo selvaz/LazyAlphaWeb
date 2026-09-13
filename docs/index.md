@@ -20,9 +20,9 @@ description: Honest, documented backtests of systematic trading strategy researc
 
 <!-- STATS:START -->
 <div class="la-stat-row">
-  <div class="la-stat"><span class="la-stat__value">15</span><span class="la-stat__label">Experiments documented</span></div>
+  <div class="la-stat"><span class="la-stat__value">17</span><span class="la-stat__label">Experiments documented</span></div>
   <div class="la-stat"><span class="la-stat__value">3</span><span class="la-stat__label">Walk-forward PASS</span></div>
-  <div class="la-stat"><span class="la-stat__value">11</span><span class="la-stat__label">FAIL</span></div>
+  <div class="la-stat"><span class="la-stat__value">13</span><span class="la-stat__label">FAIL</span></div>
   <div class="la-stat"><span class="la-stat__value">1</span><span class="la-stat__label">NOT EVALUABLE</span></div>
 </div>
 <!-- STATS:END -->

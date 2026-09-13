@@ -132,7 +132,7 @@ def classify_section(heading: str) -> str:
         return "metrics"
     if heading.startswith("Walk-forward"):
         return "walkforward"
-    if heading.startswith("Giudizio"):
+    if heading.startswith(("Conclusion", "Giudizio")):
         return "verdict"
     if heading.startswith("Ecosystem review"):
         return "ecosystem"

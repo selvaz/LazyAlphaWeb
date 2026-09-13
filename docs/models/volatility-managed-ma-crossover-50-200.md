@@ -96,7 +96,7 @@ Pass criterion: in every OOS window, strategy cumulative return and annualized S
 
 **Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**
 
-#### Giudizio / conclusion
+#### Conclusion
 
 **Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**
 
@@ -198,7 +198,7 @@ Pass criterion: in every OOS window, strategy cumulative return and annualized S
 
 **Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**
 
-#### Giudizio / conclusion
+#### Conclusion
 
 **Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**
 

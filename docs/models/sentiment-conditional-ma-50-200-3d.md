@@ -96,7 +96,7 @@ Known risks:
 
 **Walk-forward verdict: NOT RUN / NOT EVALUABLE.** The real digest history is too short for a statistically meaningful development/OOS split. These metrics are a short-sample infrastructure smoke test only, not a PASS/FAIL verdict.
 
-#### Giudizio / conclusion
+#### Conclusion
 
 **INFORMATIONAL ONLY / NON-CONCLUSIVE.** The observed return, Sharpe, and drawdown differences are descriptive metrics from a very short overlap, not evidence for promotion and not a strategy verdict.
 

@@ -89,7 +89,7 @@ Pass criterion: in every OOS window, strategy cumulative return and annualized S
 
 **Walk-forward verdict: PASS: coherent between development and OOS; the frozen strategy matches or beats the benchmark on return and Sharpe in every OOS window.**
 
-#### Giudizio / conclusion
+#### Conclusion
 
 **Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**
 

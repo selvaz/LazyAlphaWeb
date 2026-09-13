@@ -581,9 +581,67 @@
       ],
       "timestamp": "2026-09-13T08:11:46+00:00",
       "walk_forward_passed": true
+    },
+    {
+      "params": {
+        "constraints": "long_only_fully_invested",
+        "covariance": "sample_covariance",
+        "lookback": 252,
+        "rebalance": "monthly_first_trading_session_close",
+        "ridge": 1e-08,
+        "solver": "exact_support_enumeration"
+      },
+      "period_end": "2026-08-14",
+      "period_start": "2010-01-04",
+      "report_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260913_092243_minimum_variance_portfolio.md",
+      "strategy_name": "minimum_variance_portfolio",
+      "symbols": [
+        "DBC",
+        "GLD",
+        "IEF",
+        "IWM",
+        "QQQ",
+        "SLV",
+        "SPY",
+        "TLT",
+        "USO",
+        "UUP"
+      ],
+      "timestamp": "2026-09-13T09:22:44+00:00",
+      "walk_forward_passed": false
+    },
+    {
+      "params": {
+        "gross_exposure": 1.0,
+        "long_gross": 0.5,
+        "lookback_days": 252,
+        "n_select": 3,
+        "rebalance": "calendar_month_end",
+        "rule": "equal_weight_top_and_bottom",
+        "short_gross": 0.5,
+        "skip_days": 21
+      },
+      "period_end": "2026-08-14",
+      "period_start": "2010-01-04",
+      "report_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260913_092417_cross_sectional_momentum_12_1_long_short.md",
+      "strategy_name": "cross_sectional_momentum_12_1_long_short",
+      "symbols": [
+        "DBC",
+        "GLD",
+        "IEF",
+        "IWM",
+        "QQQ",
+        "SLV",
+        "SPY",
+        "TLT",
+        "USO",
+        "UUP"
+      ],
+      "timestamp": "2026-09-13T09:24:17+00:00",
+      "walk_forward_passed": false
     }
   ],
-  "duplicate_reruns_discarded": 10,
+  "duplicate_reruns_discarded": 14,
   "families": {
     "cointegration_pairs_tlt_ief": {
       "slug": "cointegration-pairs-tlt-ief",
@@ -653,7 +711,7 @@
               "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2010-01-04 to 2019-12-16 | 2506 | 0.73% | 0.07% | 1.07% | 0.07 | -2.35% | 78.89% | 0.65 | -78.16% | -0.58 |\r\n| oos_1 | out_of_sample | 2019-12-17 to 2026-08-14 | 1672 | -1.03% | -0.16% | 1.76% | -0.08 | -5.91% | -14.82% | -0.15 | 13.79% | 0.07 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: PASS: coherent between development and OOS; the frozen strategy matches or beats the benchmark on return and Sharpe in every OOS window.**\r\n\r\n"
             },
             {
-              "heading": "Giudizio / conclusion",
+              "heading": "Conclusion",
               "classification": "verdict",
               "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: PASS: coherent between development and OOS; the frozen strategy matches or beats the benchmark on return and Sharpe in every OOS window.**\n\n**Outcome classification: WALK-FORWARD PASS / FULL-SAMPLE FAIL / COINTEGRATION BREAKDOWN.** Interpret the mechanical validation verdict together with absolute returns and the ex-post stability diagnostic; a broken formation-period relationship is not promotable.\n\nThis remains historical research, not evidence of tradability or a recommendation. There is still no parameter-search correction or project-level multiple-testing adjustment for this strategy; promotion also requires a live paper period.\n\r\n"
             },
@@ -661,6 +719,87 @@
               "heading": "Ecosystem review",
               "classification": "ecosystem",
               "raw_markdown_body": "\n\r\n- **LazyFin:** Reference not found; manual review required. (`C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\LazyFin\\docs\\status.md`)\r\n- **investmentcommittee:** Reference not found; manual review required. (`C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\investment-process-top-down-etf.md`)\r\n"
+            }
+          ]
+        }
+      ]
+    },
+    "cross_sectional_momentum_12_1_long_short": {
+      "slug": "cross-sectional-momentum-12-1-long-short",
+      "variants": [
+        {
+          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260913_092417_cross_sectional_momentum_12_1_long_short.md",
+          "filename": "20260913_092417_cross_sectional_momentum_12_1_long_short.md",
+          "family": "cross_sectional_momentum_12_1_long_short",
+          "slug": "cross-sectional-momentum-12-1-long-short",
+          "variant_index": 1,
+          "generated_at": "2026-09-13T09:24:17+00:00",
+          "generated_at_source": "2026-09-13T09:24:17+00:00",
+          "params_line": "lookback_days=252, skip_days=21, n_select=3, rebalance=calendar_month_end, rule=equal_weight_top_and_bottom, gross_exposure=1.0, long_gross=0.5, short_gross=0.5",
+          "period_string": "2010-01-04 to 2026-08-14",
+          "verdict_text": "Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.",
+          "verdict_category": "fail",
+          "verdict_label": "FAIL",
+          "badge_class": "verdict-badge--fail",
+          "registered": true,
+          "registry_matches": [
+            {
+              "timestamp": "2026-09-13T09:24:17+00:00",
+              "walk_forward_passed": false,
+              "params": {
+                "gross_exposure": 1.0,
+                "long_gross": 0.5,
+                "lookback_days": 252,
+                "n_select": 3,
+                "rebalance": "calendar_month_end",
+                "rule": "equal_weight_top_and_bottom",
+                "short_gross": 0.5,
+                "skip_days": 21
+              }
+            }
+          ],
+          "chart_filename": "cross-sectional-momentum-12-1-long-short__variant-1.svg",
+          "equity_companion_found": true,
+          "sections": [
+            {
+              "heading": "Experiment",
+              "classification": "experiment",
+              "raw_markdown_body": "\n\r\n- Period: 2010-01-04 to 2026-08-14 (4178 sessions)\r\n- Execution rule: close-derived weights are applied one session later\r\n- Transaction costs: 5.00 bps per unit of turnover\r\n- Cash return: 0%; taxes, slippage and market impact: not modeled\r\n- Parameters: lookback_days=252, skip_days=21, n_select=3, rebalance=calendar_month_end, rule=equal_weight_top_and_bottom, gross_exposure=1.0, long_gross=0.5, short_gross=0.5\r\n\r\n"
+            },
+            {
+              "heading": "Cross-sectional momentum construction",
+              "classification": "extra",
+              "raw_markdown_body": "\n\r\n- Frozen universe: SPY, QQQ, IWM, TLT, IEF, GLD, SLV, DBC, USO, UUP.\r\n- Ranking score: `adjusted-close total return P[t-21] / P[t-252] - 1`.\r\n- Rebalance: last observed session of each calendar month; execution: ranking close t applied by run_backtest on session t+1.\r\n- Portfolio: equal-weight the top three at +0.5 total long exposure and the bottom three at -0.5 total short exposure. The remaining four assets are flat; gross exposure is 1.0 and net exposure is zero.\r\n- The 252-session lookback, 21-session skip, and three assets per leg were frozen from the cited 12-minus-1-month, three-assets-per-quartile cross-asset construction before this sample was evaluated.\r\n\r\n### Ex-post breadth sensitivity (diagnostic only)\r\n\r\nThe neighboring two-, three-, and four-assets-per-leg variants were run after the frozen verdict. They were not used to select the reported rule.\r\n\r\n| Assets per leg | Frozen | Full-sample CAGR | Full-sample Sharpe | Full-sample max drawdown | OOS CAGR | OOS Sharpe | OOS max drawdown |\r\n|---:|:---:|---:|---:|---:|---:|---:|---:|\r\n| 2 |  | 4.52% | 0.39 | -31.28% | 4.08% | 0.36 | -25.31% |\r\n| 3 | yes | 2.90% | 0.31 | -27.19% | 2.51% | 0.28 | -26.38% |\r\n| 4 |  | 3.42% | 0.41 | -23.01% | 2.67% | 0.34 | -23.01% |\r\n\r\nThis sensitivity check addresses concentration stability only. It does not correct survivorship bias in the fixed ETF universe, supply a longer pre-ETF history, or model short borrow and financing costs.\r\n\r\n"
+            },
+            {
+              "heading": "Data provenance",
+              "classification": "provenance",
+              "raw_markdown_body": "\n\r\n- Source: `market-data-hub` (`adj_close`; live rows included: `False`)\r\n- Requested symbols: SPY, QQQ, IWM, TLT, IEF, GLD, SLV, DBC, USO, UUP\r\n- Validated common panel: 2010-01-04 to 2026-08-14; 4178 rows\r\n- Database: `C:\\Users\\Administrator\\Documents\\GitHub\\market-data-hub\\market_data.duckdb`\r\n\r\n| Symbol | Last date | Status | Coverage score | Stalled |\r\n|---|---:|---|---:|---|\r\n| DBC | 2026-08-14 00:00:00 | ok | 94.31 | False |\r\n| GLD | 2026-08-14 00:00:00 | ok | 94.32 | False |\r\n| IEF | 2026-08-14 00:00:00 | ok | 97.31 | False |\r\n| IWM | 2026-08-14 00:00:00 | ok | 97.31 | False |\r\n| QQQ | 2026-08-14 00:00:00 | ok | 97.31 | False |\r\n| SLV | 2026-08-14 00:00:00 | ok | 94.31 | False |\r\n| SPY | 2026-08-14 00:00:00 | ok | 97.33 | False |\r\n| TLT | 2026-08-14 00:00:00 | ok | 97.32 | False |\r\n| USO | 2026-08-14 00:00:00 | ok | 94.31 | False |\r\n| UUP | 2026-08-14 00:00:00 | ok | 94.31 | False |\r\n\r\n"
+            },
+            {
+              "heading": "Research rationale",
+              "classification": "rationale",
+              "raw_markdown_body": "\n\r\nAssets with the strongest intermediate-horizon relative returns may continue to outperform the weakest assets. Ranking the whole multi-asset panel makes this a cross-sectional allocation rule, distinct from a directional trend signal on each ETF.\r\n\r\nAt each calendar month-end, rank the ten confirmed Turtle-universe ETFs by adjusted-close total return from 252 sessions ago through 21 sessions ago. Hold equal-weight long positions in the top three and equal-weight shorts in the bottom three, with 0.5 gross on each side, until the next month-end. The common engine executes the new weights one session after the ranking close.\r\n\r\nSources:\r\n\r\n- [Returns to Buying Winners and Selling Losers: Implications for Stock Market Efficiency](https://doi.org/10.1111/j.1540-6261.1993.tb04702.x) — Jegadeesh and Titman establish the classic relative-strength winner-minus-loser portfolio and document intermediate-horizon momentum while motivating omission of the short reversal horizon.\r\n- [Global Tactical Cross-Asset Allocation: Applying Value and Momentum Across Asset Classes](https://doi.org/10.3905/JPM.2008.35.1.23) — Blitz and van Vliet test 12-minus-1-month momentum across twelve liquid asset classes, rebalance monthly, and form equal-weight top and bottom quartiles of three assets each.\r\n- [Empirical evidence on the profitability of momentum trading strategies using ETFs](https://doi.org/10.1108/MF-01-2019-0046) — Yu and Webb apply traditional total-return rankings to plain-equity ETFs and find that past momentum is not a strong predictor over their full 2007-June 2018 sample, an important modern caution.\r\n- [Momentum Crashes](https://doi.org/10.1016/j.jfineco.2015.12.002) — Daniel and Moskowitz document infrequent, persistent momentum crashes, especially after market declines and during rebounds.\r\n\r\nKnown risks:\r\n\r\n- momentum can crash during sharp market rebounds and regime changes\r\n- ten ETFs provide a small cross-section and several share common risk exposures\r\n- the ETF history fixes today's surviving universe and does not test delisted funds\r\n- short borrow fees, financing, bid/ask spread, slippage and market impact are absent\r\n- recent ETF evidence finds total-return momentum can be weak over some samples\r\n- one historical test is not evidence of future profitability\r\n\r\n"
+            },
+            {
+              "heading": "Net backtest metrics",
+              "classification": "metrics",
+              "raw_markdown_body": "\n\r\n| Metric | Strategy | Benchmark |\r\n|---|---:|---:|\r\n| Gross cumulative return | 66.20% | 259.55% |\r\n| Cumulative return | 60.63% | 259.37% |\r\n| CAGR | 2.90% | 8.02% |\r\n| Annualized volatility | 11.11% | 10.63% |\r\n| Annualized Sharpe (rf=0) | 0.31 | 0.78 |\r\n| Maximum drawdown | -27.19% | -23.48% |\r\n| Annualized turnover | 412.16% | 6.03% |\r\n| Transaction-cost drag (sum of daily rates) | 3.42% | 0.05% |\r\n\r\n"
+            },
+            {
+              "heading": "Walk-forward / out-of-sample validation",
+              "classification": "walkforward",
+              "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2010-01-04 to 2019-12-16 | 2506 | 21.72% | 2.00% | 9.91% | 0.25 | -27.19% | 65.32% | 0.60 | -43.61% | -0.35 |\r\n| oos_1 | out_of_sample | 2019-12-17 to 2026-08-14 | 1672 | 17.88% | 2.51% | 10.86% | 0.28 | -26.38% | 116.86% | 0.99 | -98.98% | -0.71 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n"
+            },
+            {
+              "heading": "Conclusion",
+              "classification": "verdict",
+              "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. There is still no parameter-search correction or project-level multiple-testing adjustment for this strategy; promotion also requires a live paper period.\r\n\r\n"
+            },
+            {
+              "heading": "Ecosystem review",
+              "classification": "ecosystem",
+              "raw_markdown_body": "\n\r\n- **LazyFin:** Do not recreate hierarchical portfolio optimization in LazyAlpha; the line was moved/retired from LazyFin and belongs to LazyPortfolio. (`C:\\Users\\Administrator\\Documents\\GitHub\\LazyFin\\docs\\status.md`)\r\n- **investmentcommittee:** Keep B0/P0/Sa/PH/PF as methodological reference: same data, folds, costs and rebalance rules for honest comparisons; do not clone it 1:1. (`C:\\Users\\Administrator\\Documents\\GitHub\\investment-process-top-down-etf.md`)\r\n"
             }
           ]
         }
@@ -732,7 +871,7 @@
               "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2015-01-02 to 2021-11-17 | 1733 | 2.22% | 0.32% | 15.11% | 0.10 | -30.86% | 226.86% | 1.01 | -224.64% | -0.91 |\r\n| oos_1 | out_of_sample | 2021-11-18 to 2026-06-30 | 1156 | 45.01% | 8.44% | 12.92% | 0.69 | -20.78% | 79.50% | 0.73 | -34.49% | -0.04 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n"
             },
             {
-              "heading": "Giudizio / conclusion",
+              "heading": "Conclusion",
               "classification": "verdict",
               "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. There is still no parameter-search correction or project-level multiple-testing adjustment for this strategy; promotion also requires a live paper period.\r\n\r\n"
             },
@@ -802,7 +941,7 @@
               "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2015-01-02 to 2021-12-15 | 1752 | 114.91% | 11.63% | 17.46% | 0.72 | -34.61% | 181.44% | 0.87 | -66.53% | -0.15 |\r\n| oos_1 | out_of_sample | 2021-12-16 to 2026-08-14 | 1169 | 80.25% | 13.54% | 14.87% | 0.93 | -21.18% | 75.46% | 0.70 | 4.79% | 0.22 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: PASS: coherent between development and OOS; the frozen strategy matches or beats the benchmark on return and Sharpe in every OOS window.**\r\n\r\n"
             },
             {
-              "heading": "Giudizio / conclusion",
+              "heading": "Conclusion",
               "classification": "verdict",
               "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: PASS: coherent between development and OOS; the frozen strategy matches or beats the benchmark on return and Sharpe in every OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. There is still no parameter-search correction or project-level multiple-testing adjustment for this strategy; promotion also requires a live paper period.\r\n\r\n"
             },
@@ -819,13 +958,13 @@
       "slug": "ma-crossover-5-20",
       "variants": [
         {
-          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260913_085906_ma_crossover_5_20.md",
-          "filename": "20260913_085906_ma_crossover_5_20.md",
+          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260913_093249_ma_crossover_5_20.md",
+          "filename": "20260913_093249_ma_crossover_5_20.md",
           "family": "ma_crossover_5_20",
           "slug": "ma-crossover-5-20",
           "variant_index": 1,
-          "generated_at": "2026-09-13T08:59:06+00:00",
-          "generated_at_source": "2026-09-13T08:59:06+00:00",
+          "generated_at": "2026-09-13T09:32:49+00:00",
+          "generated_at_source": "2026-09-13T09:32:49+00:00",
           "params_line": "fast=5, slow=20",
           "period_string": "2020-01-01 to 2022-11-23",
           "verdict_text": "Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.",
@@ -863,7 +1002,7 @@
               "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2020-01-01 to 2021-09-24 | 453 | -12.65% | -7.25% | 11.98% | -0.57 | -19.66% | -9.38% | -0.55 | -3.28% | -0.02 |\r\n| oos_1 | out_of_sample | 2021-09-27 to 2022-11-23 | 303 | -1.89% | -1.58% | 11.49% | -0.08 | -15.01% | 3.72% | 0.38 | -5.61% | -0.46 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n"
             },
             {
-              "heading": "Giudizio / conclusion",
+              "heading": "Conclusion",
               "classification": "verdict",
               "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. There is still no parameter-search correction or project-level multiple-testing adjustment for this strategy; promotion also requires a live paper period.\r\n\r\n"
             },
@@ -941,9 +1080,88 @@
               "raw_markdown_body": "\n\r\nThe development window was used for parameter selection; the selected parameters were then frozen before any OOS window was evaluated. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2015-01-02 to 2021-12-15 | 1752 | 143.38% | 13.65% | 15.16% | 0.92 | -25.15% | 227.51% | 1.00 | -84.14% | -0.08 |\r\n| oos_1 | out_of_sample | 2021-12-16 to 2026-08-14 | 1169 | 66.18% | 11.57% | 13.25% | 0.89 | -13.64% | 86.52% | 0.77 | -20.34% | 0.13 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n"
             },
             {
-              "heading": "Giudizio / conclusion",
+              "heading": "Conclusion",
               "classification": "verdict",
               "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. The within-grid correction and project-level multiplicity disclosure above are now computed; promotion still requires a live paper period and a defensible result on both the reality check and frozen OOS validation.\r\n\r\n"
+            },
+            {
+              "heading": "Ecosystem review",
+              "classification": "ecosystem",
+              "raw_markdown_body": "\n\r\n- **LazyFin:** Do not recreate hierarchical portfolio optimization in LazyAlpha; the line was moved/retired from LazyFin and belongs to LazyPortfolio. (`C:\\Users\\Administrator\\Documents\\GitHub\\LazyFin\\docs\\status.md`)\r\n- **investmentcommittee:** Keep B0/P0/Sa/PH/PF as methodological reference: same data, folds, costs and rebalance rules for honest comparisons; do not clone it 1:1. (`C:\\Users\\Administrator\\Documents\\GitHub\\investment-process-top-down-etf.md`)\r\n"
+            }
+          ]
+        }
+      ]
+    },
+    "minimum_variance_portfolio": {
+      "slug": "minimum-variance-portfolio",
+      "variants": [
+        {
+          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260913_092243_minimum_variance_portfolio.md",
+          "filename": "20260913_092243_minimum_variance_portfolio.md",
+          "family": "minimum_variance_portfolio",
+          "slug": "minimum-variance-portfolio",
+          "variant_index": 1,
+          "generated_at": "2026-09-13T09:25:35+00:00",
+          "generated_at_source": "2026-09-13T09:25:35+00:00",
+          "params_line": "lookback=252, rebalance=monthly_first_trading_session_close, constraints=long_only_fully_invested, solver=exact_support_enumeration, covariance=sample_covariance, ridge=1e-08",
+          "period_string": "2010-01-04 to 2026-09-11",
+          "verdict_text": "Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.",
+          "verdict_category": "fail",
+          "verdict_label": "FAIL",
+          "badge_class": "verdict-badge--fail",
+          "registered": true,
+          "registry_matches": [
+            {
+              "timestamp": "2026-09-13T09:22:44+00:00",
+              "walk_forward_passed": false,
+              "params": {
+                "constraints": "long_only_fully_invested",
+                "covariance": "sample_covariance",
+                "lookback": 252,
+                "rebalance": "monthly_first_trading_session_close",
+                "ridge": 1e-08,
+                "solver": "exact_support_enumeration"
+              }
+            }
+          ],
+          "chart_filename": "minimum-variance-portfolio__variant-1.svg",
+          "equity_companion_found": true,
+          "sections": [
+            {
+              "heading": "Experiment",
+              "classification": "experiment",
+              "raw_markdown_body": "\n\r\n- Period: 2010-01-04 to 2026-09-11 (4197 sessions)\r\n- Execution rule: close-derived weights are applied one session later\r\n- Transaction costs: 5.00 bps per unit of turnover\r\n- Cash return: 0%; taxes, slippage and market impact: not modeled\r\n- Parameters: lookback=252, rebalance=monthly_first_trading_session_close, constraints=long_only_fully_invested, solver=exact_support_enumeration, covariance=sample_covariance, ridge=1e-08\r\n\r\n"
+            },
+            {
+              "heading": "Portfolio-construction method",
+              "classification": "extra",
+              "raw_markdown_body": "\n\r\n- Objective: minimize `w'Σw` subject to `w_i >= 0` and `sum(w) = 1`; there is no directional or long/short signal.\r\n- Universe: SPY, QQQ, IWM, TLT, IEF, GLD, SLV, DBC, USO, UUP; this is the exact ten-ETF universe with verified Turtle experiment coverage.\r\n- Covariance input: trailing 252 daily close-to-close returns through each rebalance close; exposure remains zero until a complete window exists.\r\n- Rebalance timing: first trading-session close of each month; the central backtester applies the new weights one session later.\r\n- Solver: enumerate every non-empty support in the ten-asset universe, solve the equality-constrained global minimum on that support, discard negative-weight solutions, and retain the feasible portfolio with the lowest variance. This is an exact solution of the small long-only problem and avoids an undeclared QP dependency.\r\n- Numerical stabilization: add `1e-08` times the mean covariance diagonal to the diagonal. This fixed numerical ridge is not a fitted shrinkage model.\r\n- Primary benchmark: monthly strategy versus continuously equal-weighted 1/N on the same ten ETFs. SPY/QQQ equal-weight buy-and-hold is retained as a continuity benchmark.\r\n\r\n"
+            },
+            {
+              "heading": "Data provenance",
+              "classification": "provenance",
+              "raw_markdown_body": "\n\r\n- Source: `market-data-hub` (`adj_close`; live rows included: `False`)\r\n- Requested symbols: SPY, QQQ, IWM, TLT, IEF, GLD, SLV, DBC, USO, UUP\r\n- Validated common panel: 2010-01-04 to 2026-09-11; 4197 rows\r\n- Database: `market-data-hub configured default`\r\n\r\n| Symbol | Last date | Status | Coverage score | Stalled |\r\n|---|---:|---|---:|---|\r\n| DBC | 2026-09-11 00:00:00 | ok | 95.50 | False |\r\n| GLD | 2026-09-11 00:00:00 | ok | 95.50 | False |\r\n| IEF | 2026-09-11 00:00:00 | ok | 98.50 | False |\r\n| IWM | 2026-09-11 00:00:00 | ok | 98.50 | False |\r\n| QQQ | 2026-09-11 00:00:00 | ok | 98.50 | False |\r\n| SLV | 2026-09-11 00:00:00 | ok | 95.50 | False |\r\n| SPY | 2026-09-11 00:00:00 | ok | 98.52 | False |\r\n| TLT | 2026-09-11 00:00:00 | ok | 98.51 | False |\r\n| USO | 2026-09-11 00:00:00 | ok | 95.50 | False |\r\n| UUP | 2026-09-11 00:00:00 | ok | 95.51 | False |\r\n\r\n"
+            },
+            {
+              "heading": "Research rationale",
+              "classification": "rationale",
+              "raw_markdown_body": "\n\r\nA covariance-only allocation across the already-covered ETF universe may reduce portfolio volatility and drawdowns relative to equal capital weights, without forecasting return direction.\r\n\r\nAt the first close of each month, estimate the covariance matrix from the trailing 252 daily returns and minimize w'Cov(w) subject to every weight being non-negative and weights summing to one.\r\n\r\nSources:\r\n\r\n- [Portfolio Selection](https://doi.org/10.1111/j.1540-6261.1952.tb01525.x) — Establishes portfolio selection through joint expected return and variance rather than evaluating assets alone.\r\n- [Minimum-Variance Portfolios in the U.S. Equity Market](https://doi.org/10.3905/jpm.2006.661366) — Shows that the global minimum-variance portfolio depends on covariance estimates and not expected-return forecasts.\r\n- [Optimal Versus Naive Diversification: How Inefficient is the 1/N Portfolio Strategy?](https://doi.org/10.1093/rfs/hhm075) — Finds optimized portfolios did not consistently beat 1/N out of sample, making equal weight the necessary benchmark.\r\n- [Estimating portfolio risk for tail risk protection strategies](https://doi.org/10.1111/eufm.12256) — Evaluates portfolio-risk estimation on a global data set spanning equities, fixed income, commodities and currencies.\r\n- [Portfolio Protection? It's a Long (Term) Story](https://www.aqr.com/-/media/AQR/Documents/Journal-Articles/Portfolio-Protection-Its-a-Long-Term-Story.pdf) — Recent practitioner research evaluates risk-balanced exposure across global stocks, bonds and commodities and reports results net of estimated transaction costs.\r\n\r\nKnown risks:\r\n\r\n- sample covariances are noisy and optimized weights can concentrate\r\n- the 252-session estimate can react slowly to regime changes\r\n- monthly re-optimization creates turnover and transaction costs\r\n- ETF history has survivorship and proxy limitations\r\n- one historical sample is not evidence of future performance\r\n\r\n"
+            },
+            {
+              "heading": "Net backtest metrics",
+              "classification": "metrics",
+              "raw_markdown_body": "\n\r\n| Metric | Strategy | SPY/QQQ buy-and-hold | Equal-weight same-universe benchmark |\r\n|---|---:|---:|---:|\r\n| Gross cumulative return | 86.09% | 1183.39% | 265.92% |\r\n| Cumulative return | 84.98% | 1182.75% | 265.74% |\r\n| CAGR | 3.76% | 16.56% | 8.10% |\r\n| Annualized volatility | 3.19% | 18.53% | 10.62% |\r\n| Annualized Sharpe (rf=0) | 1.17 | 0.92 | 0.79 |\r\n| Maximum drawdown | -5.12% | -30.86% | -23.48% |\r\n| Annualized turnover | 72.28% | 6.00% | 6.00% |\r\n| Transaction-cost drag (sum of daily rates) | 0.60% | 0.05% | 0.05% |\r\n\r\n"
+            },
+            {
+              "heading": "Walk-forward / out-of-sample validation",
+              "classification": "walkforward",
+              "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2010-01-04 to 2020-01-03 | 2518 | 39.95% | 3.42% | 2.90% | 1.17 | -5.12% | 69.39% | 0.63 | -29.44% | 0.55 |\r\n| oos_1 | out_of_sample | 2020-01-06 to 2026-09-11 | 1679 | 31.61% | 4.21% | 3.11% | 1.34 | -4.35% | 115.40% | 0.98 | -83.78% | 0.36 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n### Continuity benchmark: SPY/QQQ buy-and-hold\r\n\r\nThe identical frozen strategy windows are compared with equal-weight SPY/QQQ exposure held inside the same full panel.\r\n\r\n| Window | Role | Period | Strategy return | Strategy Sharpe | SPY/QQQ return | SPY/QQQ Sharpe |\r\n|---|---|---|---:|---:|---:|---:|\r\n| development | development | 2010-01-04 to 2020-01-03 | 39.95% | 1.17 | 324.02% | 1.00 |\r\n| oos_1 | out_of_sample | 2020-01-06 to 2026-09-11 | 31.61% | 1.34 | 200.83% | 0.86 |\r\n\r\nThe same return-and-Sharpe criterion is applied to every OOS window.\r\n\r\n**SPY/QQQ walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n### OOS risk and implementation metrics by benchmark\r\n\r\n| Window | Portfolio | CAGR | Sharpe | Max drawdown | Annualized turnover |\r\n|---|---|---:|---:|---:|---:|\r\n| oos_1 | minimum variance | 4.21% | 1.34 | -4.35% | 73.29% |\r\n| oos_1 | equal weight same universe | 12.21% | 0.98 | -23.48% | 15.01% |\r\n| oos_1 | SPY/QQQ buy-and-hold | 17.98% | 0.86 | -30.86% | 15.01% |\r\n\r\n"
+            },
+            {
+              "heading": "Conclusion",
+              "classification": "verdict",
+              "raw_markdown_body": "\n\r\n**Full-sample comparison: INCONCLUSIVE: better on only one of net return and Sharpe.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n**Full-sample SPY/QQQ comparison: MIXED; the strategy trails return and beats Sharpe.**\r\n\r\n**Benchmark-specific OOS judgments: equal-weight same-universe FAIL; SPY/QQQ buy-and-hold FAIL.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. There is still no parameter-search correction or project-level multiple-testing adjustment for this strategy; promotion also requires a live paper period.\r\n\r\n"
             },
             {
               "heading": "Ecosystem review",
@@ -1019,7 +1237,7 @@
               "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2015-01-02 to 2021-12-15 | 1752 | 44.83% | 5.47% | 13.32% | 0.47 | -30.86% | 227.51% | 1.00 | -182.68% | -0.53 |\r\n| oos_1 | out_of_sample | 2021-12-16 to 2026-08-14 | 1169 | 17.37% | 3.51% | 11.54% | 0.36 | -20.78% | 86.52% | 0.77 | -69.15% | -0.41 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n"
             },
             {
-              "heading": "Giudizio / conclusion",
+              "heading": "Conclusion",
               "classification": "verdict",
               "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.\r\n\r\n"
             },
@@ -1092,7 +1310,7 @@
               "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2015-01-02 to 2021-12-15 | 1752 | 75.50% | 8.43% | 14.24% | 0.64 | -30.86% | 227.51% | 1.00 | -152.02% | -0.36 |\r\n| oos_1 | out_of_sample | 2021-12-16 to 2026-08-14 | 1169 | 43.79% | 8.14% | 12.40% | 0.69 | -20.78% | 86.52% | 0.77 | -42.73% | -0.07 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n"
             },
             {
-              "heading": "Giudizio / conclusion",
+              "heading": "Conclusion",
               "classification": "verdict",
               "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.\r\n\r\n"
             },
@@ -1169,7 +1387,7 @@
               "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2015-01-02 to 2021-12-15 | 1752 | 181.97% | 16.08% | 6.96% | 2.18 | -4.27% | 227.51% | 1.00 | -45.55% | 1.18 |\r\n| oos_1 | out_of_sample | 2021-12-16 to 2026-08-14 | 1169 | 53.20% | 9.63% | 6.03% | 1.56 | -4.31% | 86.52% | 0.77 | -33.31% | 0.79 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n"
             },
             {
-              "heading": "Giudizio / conclusion",
+              "heading": "Conclusion",
               "classification": "verdict",
               "raw_markdown_body": "\n\r\n**Full-sample comparison: INCONCLUSIVE: better on only one of net return and Sharpe.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.\r\n\r\n"
             },
@@ -1235,7 +1453,7 @@
               "raw_markdown_body": "\n\r\n**Walk-forward verdict: NOT RUN / NOT EVALUABLE.** The real digest history is too short for a statistically meaningful development/OOS split. These metrics are a short-sample infrastructure smoke test only, not a PASS/FAIL verdict.\r\n\r\n"
             },
             {
-              "heading": "Giudizio / conclusion",
+              "heading": "Conclusion",
               "classification": "verdict",
               "raw_markdown_body": "\n\r\n**INFORMATIONAL ONLY / NON-CONCLUSIVE.** The observed return, Sharpe, and drawdown differences are descriptive metrics from a very short overlap, not evidence for promotion and not a strategy verdict.\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.\r\n\r\n"
             },
@@ -1359,7 +1577,7 @@
               "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2010-01-04 to 2019-12-16 | 2506 | -98.70% | -35.36% | 109.12% | 0.16 | -99.88% | 65.32% | 0.60 | -164.02% | -0.44 |\r\n| oos_1 | out_of_sample | 2019-12-17 to 2026-08-14 | 1672 | -23.14% | -3.89% | 123.92% | 0.60 | -97.05% | 116.86% | 0.99 | -140.00% | -0.39 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n"
             },
             {
-              "heading": "Giudizio / conclusion",
+              "heading": "Conclusion",
               "classification": "verdict",
               "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.\r\n"
             }
@@ -1518,7 +1736,7 @@
               "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2010-01-04 to 2020-01-02 | 2517 | -98.92% | -36.48% | 111.62% | 0.16 | -99.91% | 68.40% | 0.62 | -167.33% | -0.46 |\r\n| oos_1 | out_of_sample | 2020-01-03 to 2026-09-10 | 1679 | -55.20% | -11.35% | 122.86% | 0.54 | -98.06% | 115.74% | 0.98 | -170.94% | -0.44 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n"
             },
             {
-              "heading": "Giudizio / conclusion",
+              "heading": "Conclusion",
               "classification": "verdict",
               "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.\r\n"
             }
@@ -1637,7 +1855,7 @@
               "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2010-01-04 to 2020-01-02 | 2517 | 12.69% | 1.20% | 18.26% | 0.16 | -51.34% | 68.40% | 0.62 | -55.71% | -0.46 |\r\n| oos_1 | out_of_sample | 2020-01-03 to 2026-09-10 | 1679 | 1.99% | 0.30% | 24.20% | 0.14 | -48.19% | 115.74% | 0.98 | -113.75% | -0.84 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n"
             },
             {
-              "heading": "Giudizio / conclusion",
+              "heading": "Conclusion",
               "classification": "verdict",
               "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.\r\n"
             }
@@ -1713,7 +1931,7 @@
               "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2015-01-02 to 2021-11-18 | 1734 | 100.51% | 10.64% | 12.22% | 0.89 | -21.13% | 229.11% | 1.01 | -128.60% | -0.12 |\r\n| oos_1 | out_of_sample | 2021-11-19 to 2026-07-02 | 1157 | 77.59% | 13.32% | 11.99% | 1.10 | -10.89% | 76.01% | 0.71 | 1.57% | 0.39 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: PASS: coherent between development and OOS; the frozen strategy matches or beats the benchmark on return and Sharpe in every OOS window.**\r\n\r\n"
             },
             {
-              "heading": "Giudizio / conclusion",
+              "heading": "Conclusion",
               "classification": "verdict",
               "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: PASS: coherent between development and OOS; the frozen strategy matches or beats the benchmark on return and Sharpe in every OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.\r\n\r\n"
             },
@@ -1791,7 +2009,7 @@
               "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2015-01-02 to 2021-12-15 | 1752 | 75.40% | 8.42% | 11.06% | 0.79 | -20.44% | 227.51% | 1.00 | -152.11% | -0.21 |\r\n| oos_1 | out_of_sample | 2021-12-16 to 2026-08-14 | 1169 | 55.80% | 10.03% | 10.64% | 0.95 | -15.30% | 86.52% | 0.77 | -30.71% | 0.18 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n"
             },
             {
-              "heading": "Giudizio / conclusion",
+              "heading": "Conclusion",
               "classification": "verdict",
               "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.\r\n\r\n"
             },
@@ -1865,7 +2083,7 @@
               "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2010-01-04 to 2019-12-17 | 2507 | 121.57% | 8.33% | 10.79% | 0.80 | -17.62% | 315.92% | 0.99 | -194.36% | -0.20 |\r\n| oos_1 | out_of_sample | 2019-12-18 to 2026-08-14 | 1672 | 82.95% | 9.53% | 10.59% | 0.91 | -15.30% | 214.03% | 0.89 | -131.08% | 0.02 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n"
             },
             {
-              "heading": "Giudizio / conclusion",
+              "heading": "Conclusion",
               "classification": "verdict",
               "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.\r\n\r\n"
             },
