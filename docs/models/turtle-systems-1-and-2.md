@@ -17,7 +17,7 @@
 </div>
 <figure class="la-chart la-chart--fallback" data-chart-kind="fallback">
   <div class="la-chart__label">Metrics-only summary</div>
-  <img src="../../assets/charts/turtle-systems-1-and-2__variant-1.svg" alt="turtle_systems_1_and_2 variant 1 metrics-only bar chart; no equity time series available" loading="lazy">
+  <img src="../../assets/charts/turtle-systems-1-and-2__variant-1.svg" alt="turtle_systems_1_and_2 variant 1 metrics-only bar chart; no equity time series available" width="576" height="241" decoding="async">
   <figcaption>No equity time series available for this run · return and Sharpe bars only</figcaption>
 </figure>
 </div>
@@ -157,7 +157,7 @@ This remains historical research, not evidence of tradability or a recommendatio
 </div>
 <figure class="la-chart la-chart--fallback" data-chart-kind="fallback">
   <div class="la-chart__label">Metrics-only summary</div>
-  <img src="../../assets/charts/turtle-systems-1-and-2__variant-2.svg" alt="turtle_systems_1_and_2 variant 2 metrics-only bar chart; no equity time series available" loading="lazy">
+  <img src="../../assets/charts/turtle-systems-1-and-2__variant-2.svg" alt="turtle_systems_1_and_2 variant 2 metrics-only bar chart; no equity time series available" width="576" height="241" decoding="async">
   <figcaption>No equity time series available for this run · return and Sharpe bars only</figcaption>
 </figure>
 </div>
@@ -298,7 +298,7 @@ This remains historical research, not evidence of tradability or a recommendatio
 </div>
 <figure class="la-chart la-chart--fallback" data-chart-kind="fallback">
   <div class="la-chart__label">Metrics-only summary</div>
-  <img src="../../assets/charts/turtle-systems-1-and-2__variant-3.svg" alt="turtle_systems_1_and_2 variant 3 metrics-only bar chart; no equity time series available" loading="lazy">
+  <img src="../../assets/charts/turtle-systems-1-and-2__variant-3.svg" alt="turtle_systems_1_and_2 variant 3 metrics-only bar chart; no equity time series available" width="576" height="241" decoding="async">
   <figcaption>No equity time series available for this run · return and Sharpe bars only</figcaption>
 </figure>
 </div>

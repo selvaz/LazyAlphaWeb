@@ -15,7 +15,7 @@
 </div>
 <figure class="la-chart la-chart--equity" data-chart-kind="equity">
   <div class="la-chart__label">Equity time series</div>
-  <img src="../../assets/charts/regime-conditional-ma-50-200-state-0__variant-1.svg" alt="regime_conditional_ma_50_200_state_0 variant 1 growth-of-one-dollar equity line" loading="lazy">
+  <img src="../../assets/charts/regime-conditional-ma-50-200-state-0__variant-1.svg" alt="regime_conditional_ma_50_200_state_0 variant 1 growth-of-one-dollar equity line" width="576" height="241" decoding="async">
   <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
 </figure>
 </div>

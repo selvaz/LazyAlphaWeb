@@ -16,7 +16,7 @@
 </div>
 <figure class="la-chart la-chart--equity" data-chart-kind="equity">
   <div class="la-chart__label">Equity time series</div>
-  <img src="../../assets/charts/policy-conditional-ma-50-200-6m__variant-1.svg" alt="policy_conditional_ma_50_200_6m variant 1 growth-of-one-dollar equity line" loading="lazy">
+  <img src="../../assets/charts/policy-conditional-ma-50-200-6m__variant-1.svg" alt="policy_conditional_ma_50_200_6m variant 1 growth-of-one-dollar equity line" width="576" height="241" decoding="async">
   <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
 </figure>
 </div>
@@ -121,7 +121,7 @@ This remains historical research, not evidence of tradability or a recommendatio
 </div>
 <figure class="la-chart la-chart--equity" data-chart-kind="equity">
   <div class="la-chart__label">Equity time series</div>
-  <img src="../../assets/charts/policy-conditional-ma-50-200-6m__variant-2.svg" alt="policy_conditional_ma_50_200_6m variant 2 growth-of-one-dollar equity line" loading="lazy">
+  <img src="../../assets/charts/policy-conditional-ma-50-200-6m__variant-2.svg" alt="policy_conditional_ma_50_200_6m variant 2 growth-of-one-dollar equity line" width="576" height="241" decoding="async">
   <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
 </figure>
 </div>

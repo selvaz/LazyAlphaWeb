@@ -15,7 +15,7 @@
 </div>
 <figure class="la-chart la-chart--fallback" data-chart-kind="fallback">
   <div class="la-chart__label">Metrics-only summary</div>
-  <img src="../../assets/charts/sentiment-conditional-ma-50-200-3d__variant-1.svg" alt="sentiment_conditional_ma_50_200_3d variant 1 metrics-only bar chart; no equity time series available" loading="lazy">
+  <img src="../../assets/charts/sentiment-conditional-ma-50-200-3d__variant-1.svg" alt="sentiment_conditional_ma_50_200_3d variant 1 metrics-only bar chart; no equity time series available" width="576" height="241" decoding="async">
   <figcaption>No equity time series available for this run · return and Sharpe bars only</figcaption>
 </figure>
 </div>

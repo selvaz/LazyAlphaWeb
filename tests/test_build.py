@@ -140,6 +140,27 @@ def test_every_research_note_body_traces_to_source() -> None:
     assert rows_checked > 0, "research notes contained no markdown table rows"
 
 
+def test_chart_images_reserve_layout_space() -> None:
+    """Charts must have dimensions before their SVG payload finishes decoding."""
+    pages = [SITE_ROOT / "docs" / "index.md", SITE_ROOT / "docs" / "leaderboard.md"]
+    pages.extend(sorted((SITE_ROOT / "docs" / "models").glob("*.md")))
+    image_tags = []
+    for page in pages:
+        image_tags.extend(
+            re.findall(r'<figure class="[^"]*la-chart[^"]*".*?<img ([^>]+)>', _read(page), re.DOTALL)
+        )
+
+    assert image_tags, "no generated chart images found"
+    for attributes in image_tags:
+        assert 'width="576"' in attributes
+        assert 'height="241"' in attributes
+        assert 'loading="lazy"' not in attributes
+
+    css = _read(SITE_ROOT / "docs" / "stylesheets" / "extra.css")
+    assert "aspect-ratio: 160 / 67" in css
+    assert ".la-chart img { display: block; width: 100%; max-width: 100%; height: auto;" in css
+
+
 def test_leaderboard_badges_match_model_card_badges() -> None:
     leaderboard = _read(SITE_ROOT / "docs" / "leaderboard.md")
     card_re = re.compile(

@@ -180,8 +180,8 @@ body {
 .verdict-badge--fail { background: var(--la-red-deep); color: var(--la-red); }
 .verdict-badge--warn { background: var(--la-amber-deep); color: var(--la-amber); }
 
-.la-chart { position: relative; margin: 1rem 0 0; padding: 1.85rem 0.75rem 0.55rem; border: 1px solid var(--la-border); border-radius: 0.4rem; background: rgba(5, 10, 16, 0.68); overflow: hidden; }
-.la-chart img { display: block; width: 100%; margin: 0; }
+.la-chart { position: relative; min-width: 0; margin: 1rem 0 0; padding: 1.85rem 0.75rem 0.55rem; border: 1px solid var(--la-border); border-radius: 0.4rem; background: rgba(5, 10, 16, 0.68); }
+.la-chart img { display: block; width: 100%; max-width: 100%; height: auto; aspect-ratio: 160 / 67; margin: 0; object-fit: contain; }
 .la-chart__label { position: absolute; top: 0.65rem; left: 0.75rem; color: var(--la-muted); font: 700 0.58rem/1 var(--la-mono); letter-spacing: 0.08em; text-transform: uppercase; }
 .la-chart__label::before { display: inline-block; width: 0.42rem; height: 0.42rem; margin-right: 0.4rem; border-radius: 50%; background: var(--la-green); content: ""; }
 .la-chart figcaption { margin-top: 0.15rem; color: var(--la-faint); font: 600 0.6rem/1.45 var(--la-mono); }
@@ -191,13 +191,12 @@ body {
 }
 .la-chart--fallback .la-chart__label, .la-chart--fallback figcaption { color: var(--la-amber); }
 .la-chart--fallback .la-chart__label::before { border-radius: 0; background: var(--la-amber); transform: rotate(45deg); }
-.la-chart--compact img { max-height: 12rem; object-fit: contain; }
 .la-card-link { display: inline-flex; gap: 0.45rem; align-items: center; margin-top: 0.85rem; color: var(--la-ink) !important; font-size: 0.72rem; font-weight: 750; text-decoration: none; }
 .la-card-link span { color: var(--la-green); font-size: 1rem; transition: transform 140ms ease; }
 .la-card-link:hover span { transform: translateX(0.2rem); }
 
 .la-leaderboard { display: grid; gap: 1rem; }
-.la-result-card { position: relative; display: grid; grid-template-columns: minmax(15rem, 0.8fr) minmax(22rem, 1.2fr); gap: 1.2rem; padding: 1.2rem; overflow: hidden; }
+.la-result-card { position: relative; display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 1.2rem; padding: 1.2rem; overflow: hidden; }
 .la-result-card::before { position: absolute; top: 0; bottom: 0; left: 0; width: 3px; background: var(--la-faint); content: ""; }
 .la-result-card--pass::before { background: var(--la-green); }
 .la-result-card--fail::before { background: var(--la-red); }
@@ -210,7 +209,6 @@ body {
 
 .la-model-result { margin: 0.65rem 0 1.35rem; padding: 1rem; }
 .la-model-result__headline { align-items: center; }
-.la-model-result .la-chart img { max-height: 25rem; }
 .la-home-guide { max-width: 60rem; margin: 0 auto 3rem; padding: 1.5rem 1.7rem; border-left: 2px solid var(--la-green); background: var(--la-panel); }
 .la-home-guide h2 { margin-top: 0; }
 

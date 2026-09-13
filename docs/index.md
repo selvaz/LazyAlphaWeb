@@ -45,7 +45,7 @@ description: Honest, documented backtests of systematic trading strategy researc
 </div>
 <figure class="la-chart la-chart--equity la-chart--compact" data-chart-kind="equity">
   <div class="la-chart__label">Equity time series</div>
-  <img src="assets/charts/ma-crossover-50-200__variant-1.svg" alt="ma_crossover_50_200 variant 1 growth-of-one-dollar equity line" loading="lazy">
+  <img src="assets/charts/ma-crossover-50-200__variant-1.svg" alt="ma_crossover_50_200 variant 1 growth-of-one-dollar equity line" width="576" height="241" decoding="async">
   <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
 </figure>
 <a class="la-card-link" href="models/ma-crossover-50-200/#variant-1">Inspect evidence <span aria-hidden="true">→</span></a>
@@ -60,7 +60,7 @@ description: Honest, documented backtests of systematic trading strategy researc
 </div>
 <figure class="la-chart la-chart--equity la-chart--compact" data-chart-kind="equity">
   <div class="la-chart__label">Equity time series</div>
-  <img src="assets/charts/vix-term-structure-gated-ma-50-200__variant-1.svg" alt="vix_term_structure_gated_ma_50_200 variant 1 growth-of-one-dollar equity line" loading="lazy">
+  <img src="assets/charts/vix-term-structure-gated-ma-50-200__variant-1.svg" alt="vix_term_structure_gated_ma_50_200 variant 1 growth-of-one-dollar equity line" width="576" height="241" decoding="async">
   <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
 </figure>
 <a class="la-card-link" href="models/vix-term-structure-gated-ma-50-200/#variant-1">Inspect evidence <span aria-hidden="true">→</span></a>

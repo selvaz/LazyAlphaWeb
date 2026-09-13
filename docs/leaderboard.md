@@ -13,7 +13,7 @@
 </div>
 <figure class="la-chart la-chart--equity la-chart--compact" data-chart-kind="equity">
   <div class="la-chart__label">Equity time series</div>
-  <img src="../assets/charts/ma-crossover-5-20__variant-1.svg" alt="ma_crossover_5_20 variant 1 growth-of-one-dollar equity line" loading="lazy">
+  <img src="../assets/charts/ma-crossover-5-20__variant-1.svg" alt="ma_crossover_5_20 variant 1 growth-of-one-dollar equity line" width="576" height="241" decoding="async">
   <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
 </figure>
 <div class="la-result-card__meta">
@@ -33,7 +33,7 @@
 </div>
 <figure class="la-chart la-chart--equity la-chart--compact" data-chart-kind="equity">
   <div class="la-chart__label">Equity time series</div>
-  <img src="../assets/charts/ma-crossover-50-200__variant-1.svg" alt="ma_crossover_50_200 variant 1 growth-of-one-dollar equity line" loading="lazy">
+  <img src="../assets/charts/ma-crossover-50-200__variant-1.svg" alt="ma_crossover_50_200 variant 1 growth-of-one-dollar equity line" width="576" height="241" decoding="async">
   <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
 </figure>
 <div class="la-result-card__meta">
@@ -53,7 +53,7 @@
 </div>
 <figure class="la-chart la-chart--equity la-chart--compact" data-chart-kind="equity">
   <div class="la-chart__label">Equity time series</div>
-  <img src="../assets/charts/factor-momentum-gated-ma-50-200__variant-1.svg" alt="factor_momentum_gated_ma_50_200 variant 1 growth-of-one-dollar equity line" loading="lazy">
+  <img src="../assets/charts/factor-momentum-gated-ma-50-200__variant-1.svg" alt="factor_momentum_gated_ma_50_200 variant 1 growth-of-one-dollar equity line" width="576" height="241" decoding="async">
   <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
 </figure>
 <div class="la-result-card__meta">
@@ -73,7 +73,7 @@
 </div>
 <figure class="la-chart la-chart--equity la-chart--compact" data-chart-kind="equity">
   <div class="la-chart__label">Equity time series</div>
-  <img src="../assets/charts/ma-crossover-grid-searched__variant-1.svg" alt="ma_crossover_grid_searched variant 1 growth-of-one-dollar equity line" loading="lazy">
+  <img src="../assets/charts/ma-crossover-grid-searched__variant-1.svg" alt="ma_crossover_grid_searched variant 1 growth-of-one-dollar equity line" width="576" height="241" decoding="async">
   <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
 </figure>
 <div class="la-result-card__meta">
@@ -93,7 +93,7 @@
 </div>
 <figure class="la-chart la-chart--equity la-chart--compact" data-chart-kind="equity">
   <div class="la-chart__label">Equity time series</div>
-  <img src="../assets/charts/vix-term-structure-gated-ma-50-200__variant-1.svg" alt="vix_term_structure_gated_ma_50_200 variant 1 growth-of-one-dollar equity line" loading="lazy">
+  <img src="../assets/charts/vix-term-structure-gated-ma-50-200__variant-1.svg" alt="vix_term_structure_gated_ma_50_200 variant 1 growth-of-one-dollar equity line" width="576" height="241" decoding="async">
   <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
 </figure>
 <div class="la-result-card__meta">
@@ -113,7 +113,7 @@
 </div>
 <figure class="la-chart la-chart--fallback la-chart--compact" data-chart-kind="fallback">
   <div class="la-chart__label">Metrics-only summary</div>
-  <img src="../assets/charts/turtle-systems-1-and-2__variant-3.svg" alt="turtle_systems_1_and_2 variant 3 metrics-only bar chart; no equity time series available" loading="lazy">
+  <img src="../assets/charts/turtle-systems-1-and-2__variant-3.svg" alt="turtle_systems_1_and_2 variant 3 metrics-only bar chart; no equity time series available" width="576" height="241" decoding="async">
   <figcaption>No equity time series available for this run · return and Sharpe bars only</figcaption>
 </figure>
 <div class="la-result-card__meta">
@@ -133,7 +133,7 @@
 </div>
 <figure class="la-chart la-chart--fallback la-chart--compact" data-chart-kind="fallback">
   <div class="la-chart__label">Metrics-only summary</div>
-  <img src="../assets/charts/turtle-systems-1-and-2__variant-2.svg" alt="turtle_systems_1_and_2 variant 2 metrics-only bar chart; no equity time series available" loading="lazy">
+  <img src="../assets/charts/turtle-systems-1-and-2__variant-2.svg" alt="turtle_systems_1_and_2 variant 2 metrics-only bar chart; no equity time series available" width="576" height="241" decoding="async">
   <figcaption>No equity time series available for this run · return and Sharpe bars only</figcaption>
 </figure>
 <div class="la-result-card__meta">
@@ -153,7 +153,7 @@
 </div>
 <figure class="la-chart la-chart--fallback la-chart--compact" data-chart-kind="fallback">
   <div class="la-chart__label">Metrics-only summary</div>
-  <img src="../assets/charts/turtle-systems-1-and-2__variant-1.svg" alt="turtle_systems_1_and_2 variant 1 metrics-only bar chart; no equity time series available" loading="lazy">
+  <img src="../assets/charts/turtle-systems-1-and-2__variant-1.svg" alt="turtle_systems_1_and_2 variant 1 metrics-only bar chart; no equity time series available" width="576" height="241" decoding="async">
   <figcaption>No equity time series available for this run · return and Sharpe bars only</figcaption>
 </figure>
 <div class="la-result-card__meta">
@@ -173,7 +173,7 @@
 </div>
 <figure class="la-chart la-chart--equity la-chart--compact" data-chart-kind="equity">
   <div class="la-chart__label">Equity time series</div>
-  <img src="../assets/charts/volatility-managed-ma-crossover-50-200__variant-2.svg" alt="volatility_managed_ma_crossover_50_200 variant 2 growth-of-one-dollar equity line" loading="lazy">
+  <img src="../assets/charts/volatility-managed-ma-crossover-50-200__variant-2.svg" alt="volatility_managed_ma_crossover_50_200 variant 2 growth-of-one-dollar equity line" width="576" height="241" decoding="async">
   <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
 </figure>
 <div class="la-result-card__meta">
@@ -193,7 +193,7 @@
 </div>
 <figure class="la-chart la-chart--equity la-chart--compact" data-chart-kind="equity">
   <div class="la-chart__label">Equity time series</div>
-  <img src="../assets/charts/policy-conditional-ma-50-200-6m__variant-2.svg" alt="policy_conditional_ma_50_200_6m variant 2 growth-of-one-dollar equity line" loading="lazy">
+  <img src="../assets/charts/policy-conditional-ma-50-200-6m__variant-2.svg" alt="policy_conditional_ma_50_200_6m variant 2 growth-of-one-dollar equity line" width="576" height="241" decoding="async">
   <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
 </figure>
 <div class="la-result-card__meta">
@@ -213,7 +213,7 @@
 </div>
 <figure class="la-chart la-chart--equity la-chart--compact" data-chart-kind="equity">
   <div class="la-chart__label">Equity time series</div>
-  <img src="../assets/charts/policy-conditional-ma-50-200-6m__variant-1.svg" alt="policy_conditional_ma_50_200_6m variant 1 growth-of-one-dollar equity line" loading="lazy">
+  <img src="../assets/charts/policy-conditional-ma-50-200-6m__variant-1.svg" alt="policy_conditional_ma_50_200_6m variant 1 growth-of-one-dollar equity line" width="576" height="241" decoding="async">
   <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
 </figure>
 <div class="la-result-card__meta">
@@ -233,7 +233,7 @@
 </div>
 <figure class="la-chart la-chart--equity la-chart--compact" data-chart-kind="equity">
   <div class="la-chart__label">Equity time series</div>
-  <img src="../assets/charts/volatility-managed-ma-crossover-50-200__variant-1.svg" alt="volatility_managed_ma_crossover_50_200 variant 1 growth-of-one-dollar equity line" loading="lazy">
+  <img src="../assets/charts/volatility-managed-ma-crossover-50-200__variant-1.svg" alt="volatility_managed_ma_crossover_50_200 variant 1 growth-of-one-dollar equity line" width="576" height="241" decoding="async">
   <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
 </figure>
 <div class="la-result-card__meta">
@@ -253,7 +253,7 @@
 </div>
 <figure class="la-chart la-chart--fallback la-chart--compact" data-chart-kind="fallback">
   <div class="la-chart__label">Metrics-only summary</div>
-  <img src="../assets/charts/sentiment-conditional-ma-50-200-3d__variant-1.svg" alt="sentiment_conditional_ma_50_200_3d variant 1 metrics-only bar chart; no equity time series available" loading="lazy">
+  <img src="../assets/charts/sentiment-conditional-ma-50-200-3d__variant-1.svg" alt="sentiment_conditional_ma_50_200_3d variant 1 metrics-only bar chart; no equity time series available" width="576" height="241" decoding="async">
   <figcaption>No equity time series available for this run · return and Sharpe bars only</figcaption>
 </figure>
 <div class="la-result-card__meta">
@@ -273,7 +273,7 @@
 </div>
 <figure class="la-chart la-chart--equity la-chart--compact" data-chart-kind="equity">
   <div class="la-chart__label">Equity time series</div>
-  <img src="../assets/charts/regime-conditional-ma-50-200-state-0__variant-1.svg" alt="regime_conditional_ma_50_200_state_0 variant 1 growth-of-one-dollar equity line" loading="lazy">
+  <img src="../assets/charts/regime-conditional-ma-50-200-state-0__variant-1.svg" alt="regime_conditional_ma_50_200_state_0 variant 1 growth-of-one-dollar equity line" width="576" height="241" decoding="async">
   <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
 </figure>
 <div class="la-result-card__meta">

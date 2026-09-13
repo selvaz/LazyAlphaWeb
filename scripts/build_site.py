@@ -819,7 +819,7 @@ def chart_figure(report: Report, src_prefix: str, compact: bool = False) -> list
     return [
         f'<figure class="{classes}" data-chart-kind="{"equity" if is_equity else "fallback"}">',
         f'  <div class="la-chart__label">{chart_kind}</div>',
-        f'  <img src="{src_prefix}{report.chart_filename}" alt="{html.escape(alt, quote=True)}" loading="lazy">',
+        f'  <img src="{src_prefix}{report.chart_filename}" alt="{html.escape(alt, quote=True)}" width="576" height="241" decoding="async">',
         f'  <figcaption>{caption}</figcaption>',
         "</figure>",
     ]
