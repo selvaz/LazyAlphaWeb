@@ -8,9 +8,9 @@ docs_dir: docs
 theme:
   name: material
   palette:
-    scheme: slate
-    primary: black
-    accent: green
+    scheme: default
+    primary: deep purple
+    accent: deep purple
   font:
     text: Inter
     code: JetBrains Mono
@@ -53,6 +53,7 @@ nav:
       - 'policy_conditional_ma_50_200_6m': models/policy-conditional-ma-50-200-6m.md
       - 'regime_conditional_ma_50_200_state_0': models/regime-conditional-ma-50-200-state-0.md
       - 'sentiment_conditional_ma_50_200_3d': models/sentiment-conditional-ma-50-200-3d.md
+      - 'turn_of_month_last_1_first_3': models/turn-of-month-last-1-first-3.md
       - 'turtle_systems_1_and_2': models/turtle-systems-1-and-2.md
       - 'vix_term_structure_gated_ma_50_200': models/vix-term-structure-gated-ma-50-200.md
       - 'volatility_managed_ma_crossover_50_200': models/volatility-managed-ma-crossover-50-200.md

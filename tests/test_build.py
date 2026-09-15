@@ -222,12 +222,22 @@ def test_charts_are_discoverable_and_truthfully_labeled() -> None:
 def test_research_terminal_theme_tokens_are_present() -> None:
     css = _read(SITE_ROOT / "docs" / "stylesheets" / "extra.css")
     for token in (
-        "--la-bg: #080d14",
-        "--la-green: #69e6a6",
+        "--la-bg: #f4f6fa",
+        "--la-violet: #6958d8",
         ".la-result-card",
         ".la-chart--fallback",
     ):
         assert token in css
+    for stale_dark_token in (
+        "#080d14",
+        "#0e1622",
+        "#f3f6f9",
+        "#69e6a6",
+        "#ff778c",
+        "#ffc66d",
+        'scheme="slate"',
+    ):
+        assert stale_dark_token not in css
 
 
 def test_generator_exits_zero_on_current_state() -> None:
