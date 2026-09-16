@@ -6,7 +6,7 @@
 <article class="la-result-card la-result-card--fail" data-model="ma-crossover-5-20" data-variant="variant-1">
 <div class="la-result-card__header">
 <div>
-<span class="la-kicker">Variant 1 · 2026-09-13T09:32:49+00:00</span>
+<span class="la-kicker">Variant 1 · 2026-09-16T14:18:55+00:00</span>
 <h2><a href="../models/ma-crossover-5-20/#variant-1">ma_crossover_5_20</a></h2>
 </div>
 <span class="verdict-badge verdict-badge--fail">FAIL</span>
@@ -20,6 +20,66 @@
 <span><b>Parameters</b><span title="fast=5, slow=20"><code>fast=5, slow=20</code></span></span>
 <span><b>Registry</b>—</span>
 <a class="la-card-link" href="../models/ma-crossover-5-20/#variant-1">Open full record <span aria-hidden="true">→</span></a>
+</div>
+</article>
+
+<article class="la-result-card la-result-card--fail" data-model="fifty-two-week-high-top3-252" data-variant="variant-1">
+<div class="la-result-card__header">
+<div>
+<span class="la-kicker">Variant 1 · 2026-09-16T14:17:47+00:00</span>
+<h2><a href="../models/fifty-two-week-high-top3-252/#variant-1">fifty_two_week_high_top3_252</a></h2>
+</div>
+<span class="verdict-badge verdict-badge--fail">FAIL</span>
+</div>
+<figure class="la-chart la-chart--equity la-chart--compact" data-chart-kind="equity">
+  <div class="la-chart__label">Equity time series</div>
+  <img src="../assets/charts/fifty-two-week-high-top3-252__variant-1.svg" alt="fifty_two_week_high_top3_252 variant 1 growth-of-one-dollar equity line" width="576" height="241" decoding="async">
+  <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
+</figure>
+<div class="la-result-card__meta">
+<span><b>Parameters</b><span title="lookback_days=252, top_k=3, ranking=price_divided_by_trailing_rolling_max, rebalance=daily, allocation=equal_weight_long_top_k, sizer=equal_weight_long"><code>lookback_days=252, top_k=3, ranking=price_divided_by_trailing_rolling_max, rebalance=daily, allocation=equal_weight_lon…</code></span></span>
+<span><b>Registry</b>✓</span>
+<a class="la-card-link" href="../models/fifty-two-week-high-top3-252/#variant-1">Open full record <span aria-hidden="true">→</span></a>
+</div>
+</article>
+
+<article class="la-result-card la-result-card--not_evaluable" data-model="sentiment-conditional-ma-50-200-3d" data-variant="variant-1">
+<div class="la-result-card__header">
+<div>
+<span class="la-kicker">Variant 1 · 2026-09-14T14:10:39+00:00</span>
+<h2><a href="../models/sentiment-conditional-ma-50-200-3d/#variant-1">sentiment_conditional_ma_50_200_3d</a></h2>
+</div>
+<span class="verdict-badge verdict-badge--warn">NOT EVALUABLE</span>
+</div>
+<figure class="la-chart la-chart--equity la-chart--compact" data-chart-kind="equity">
+  <div class="la-chart__label">Equity time series</div>
+  <img src="../assets/charts/sentiment-conditional-ma-50-200-3d__variant-1.svg" alt="sentiment_conditional_ma_50_200_3d variant 1 growth-of-one-dollar equity line" width="576" height="241" decoding="async">
+  <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
+</figure>
+<div class="la-result-card__meta">
+<span><b>Parameters</b><span title="fast=50, slow=200, rolling_window=3, daily_aggregation=equal_weight_mean_across_digests, normalization=positive_minus_negative_hits_div_total_words, lag=calendar_day_D_to_next_trading_session, lexicon=simplified_finance_domain_subset_not_full_LM"><code>fast=50, slow=200, rolling_window=3, daily_aggregation=equal_weight_mean_across_digests, normalization=positive_minus_n…</code></span></span>
+<span><b>Registry</b>✓</span>
+<a class="la-card-link" href="../models/sentiment-conditional-ma-50-200-3d/#variant-1">Open full record <span aria-hidden="true">→</span></a>
+</div>
+</article>
+
+<article class="la-result-card la-result-card--fail" data-model="turn-of-month-last-1-first-3" data-variant="variant-1">
+<div class="la-result-card__header">
+<div>
+<span class="la-kicker">Variant 1 · 2026-09-14T07:05:02+00:00</span>
+<h2><a href="../models/turn-of-month-last-1-first-3/#variant-1">turn_of_month_last_1_first_3</a></h2>
+</div>
+<span class="verdict-badge verdict-badge--fail">FAIL</span>
+</div>
+<figure class="la-chart la-chart--equity la-chart--compact" data-chart-kind="equity">
+  <div class="la-chart__label">Equity time series</div>
+  <img src="../assets/charts/turn-of-month-last-1-first-3__variant-1.svg" alt="turn_of_month_last_1_first_3 variant 1 growth-of-one-dollar equity line" width="576" height="241" decoding="async">
+  <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
+</figure>
+<div class="la-result-card__meta">
+<span><b>Parameters</b><span title="calendar_effect=turn_of_month, last_sessions=1, first_sessions=3, window=day_-1_through_day_+3, allocation=equal_weight_long_or_cash"><code>calendar_effect=turn_of_month, last_sessions=1, first_sessions=3, window=day_-1_through_day_+3, allocation=equal_weight…</code></span></span>
+<span><b>Registry</b>✓</span>
+<a class="la-card-link" href="../models/turn-of-month-last-1-first-3/#variant-1">Open full record <span aria-hidden="true">→</span></a>
 </div>
 </article>
 
@@ -300,26 +360,6 @@
 <span><b>Parameters</b><span title="fast=50, slow=200, volatility_lookback=126, target_annual_vol=0.12, max_leverage=1.0"><code>fast=50, slow=200, volatility_lookback=126, target_annual_vol=0.12, max_leverage=1.0</code></span></span>
 <span><b>Registry</b>✓</span>
 <a class="la-card-link" href="../models/volatility-managed-ma-crossover-50-200/#variant-1">Open full record <span aria-hidden="true">→</span></a>
-</div>
-</article>
-
-<article class="la-result-card la-result-card--not_evaluable" data-model="sentiment-conditional-ma-50-200-3d" data-variant="variant-1">
-<div class="la-result-card__header">
-<div>
-<span class="la-kicker">Variant 1 · 2026-09-11T19:16:46+00:00</span>
-<h2><a href="../models/sentiment-conditional-ma-50-200-3d/#variant-1">sentiment_conditional_ma_50_200_3d</a></h2>
-</div>
-<span class="verdict-badge verdict-badge--warn">NOT EVALUABLE</span>
-</div>
-<figure class="la-chart la-chart--fallback la-chart--compact" data-chart-kind="fallback">
-  <div class="la-chart__label">Metrics-only summary</div>
-  <img src="../assets/charts/sentiment-conditional-ma-50-200-3d__variant-1.svg" alt="sentiment_conditional_ma_50_200_3d variant 1 metrics-only bar chart; no equity time series available" width="576" height="241" decoding="async">
-  <figcaption>No equity time series available for this run · return and Sharpe bars only</figcaption>
-</figure>
-<div class="la-result-card__meta">
-<span><b>Parameters</b><span title="fast=50, slow=200, rolling_window=3, daily_aggregation=equal_weight_mean_across_digests, normalization=positive_minus_negative_hits_div_total_words, lag=calendar_day_D_to_next_trading_session, lexicon=simplified_finance_domain_subset_not_full_LM"><code>fast=50, slow=200, rolling_window=3, daily_aggregation=equal_weight_mean_across_digests, normalization=positive_minus_n…</code></span></span>
-<span><b>Registry</b>—</span>
-<a class="la-card-link" href="../models/sentiment-conditional-ma-50-200-3d/#variant-1">Open full record <span aria-hidden="true">→</span></a>
 </div>
 </article>
 

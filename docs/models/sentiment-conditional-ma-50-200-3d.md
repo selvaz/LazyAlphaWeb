@@ -1,10 +1,10 @@
 # Strategy: sentiment_conditional_ma_50_200_3d
 
-1 variant(s) documented · earliest 2026-09-11 · latest 2026-09-11.
+1 variant(s) documented · earliest 2026-09-14 · latest 2026-09-14.
 
 | Variant | Generated | Registered | Verdict |
 |---|---|---:|---|
-| <a href="#variant-1" title="fast=50, slow=200, rolling_window=3, daily_aggregation=equal_weight_mean_across_digests, normalization=positive_minus_negative_hits_div_total_words, lag=calendar_day_D_to_next_trading_session, lexicon=simplified_finance_domain_subset_not_full_LM"><code>fast=50, slow=200, rolling_window=3, daily_aggregation=equal_weight_mean_across…</code></a> | 2026-09-11T19:16:46+00:00 | — | <span class="verdict-badge verdict-badge--warn">NOT EVALUABLE</span> |
+| <a href="#variant-1" title="fast=50, slow=200, rolling_window=3, daily_aggregation=equal_weight_mean_across_digests, normalization=positive_minus_negative_hits_div_total_words, lag=calendar_day_D_to_next_trading_session, lexicon=simplified_finance_domain_subset_not_full_LM"><code>fast=50, slow=200, rolling_window=3, daily_aggregation=equal_weight_mean_across…</code></a> | 2026-09-14T14:10:39+00:00 | ✓ | <span class="verdict-badge verdict-badge--warn">NOT EVALUABLE</span> |
 
 ### Variant 1 {: #variant-1 }
 
@@ -13,16 +13,16 @@
 <span class="la-kicker">Recorded outcome</span>
 <span class="verdict-badge verdict-badge--warn">NOT EVALUABLE</span>
 </div>
-<figure class="la-chart la-chart--fallback" data-chart-kind="fallback">
-  <div class="la-chart__label">Metrics-only summary</div>
-  <img src="../../assets/charts/sentiment-conditional-ma-50-200-3d__variant-1.svg" alt="sentiment_conditional_ma_50_200_3d variant 1 metrics-only bar chart; no equity time series available" width="576" height="241" decoding="async">
-  <figcaption>No equity time series available for this run · return and Sharpe bars only</figcaption>
+<figure class="la-chart la-chart--equity" data-chart-kind="equity">
+  <div class="la-chart__label">Equity time series</div>
+  <img src="../../assets/charts/sentiment-conditional-ma-50-200-3d__variant-1.svg" alt="sentiment_conditional_ma_50_200_3d variant 1 growth-of-one-dollar equity line" width="576" height="241" decoding="async">
+  <figcaption>Real growth-of-$1 series · strategy vs benchmark</figcaption>
 </figure>
 </div>
 
-**Generated:** 2026-09-11T19:16:46+00:00  
-**Source report:** `20260911_191646_sentiment_conditional_ma_50_200_3d.md`  
-**Registered:** —
+**Generated:** 2026-09-14T14:10:39+00:00  
+**Source report:** `20260914_141039_sentiment_conditional_ma_50_200_3d.md`  
+**Registered:** ✓ — 2026-09-14T14:10:39+00:00 (walk_forward_passed=False)
 #### Experiment
 
 - Period: 2026-08-10 to 2026-08-14 (5 sessions)
@@ -35,8 +35,8 @@
 
 - Source: `digests` in `C:\ProgramData\InvestmentCommittee\live\db\digests.db` (SQLite URI `mode=ro` plus `PRAGMA query_only=ON`)
 - Path resolution: explicit argument, else `os.environ.get('DIGESTS_DB')`, else the production literal; this run used DIGESTS_DB environment variable
-- Production rows: 156 total; 152 scored; 4 empty-text rows explicitly excluded (never scored as neutral)
-- Calendar coverage: 2026-08-05 to 2026-09-11 (38 distinct consecutive days)
+- Production rows: 164 total; 160 scored; 4 empty-text rows explicitly excluded (never scored as neutral)
+- Calendar coverage: 2026-08-05 to 2026-09-13 (40 distinct consecutive days)
 - Engines: claude, deepseek; cycles: europeclose, morning, usclose
 - Per-digest score: `(positive exact-token hits - negative exact-token hits) / all alphabetic word tokens`; same-day digests are aggregated by an equal-weight arithmetic mean
 - Positive subset (34 terms): `accelerate`, `accelerated`, `accelerating`, `advance`, `advanced`, `advances`, `beat`, `beats`, `bullish`, `expansion`, `gain`, `gained`, `gains`, `grow`, `growing`, `growth`, `improve`, `improved`, `improvement`, `outperform`, `outperformed`, `profit`, `profitable`, `rally`, `rebound`, `rebounded`, `recovery`, `resilient`, `strength`, `strong`, `stronger`, `surge`, `surged`, `upside`
@@ -84,6 +84,7 @@ Known risks:
 
 | Metric | Strategy | Ungated MA | Benchmark |
 |---|---:|---:|---:|
+| Gross cumulative return | 0.76% | 0.76% | 0.76% |
 | Cumulative return | 0.70% | 0.76% | 0.76% |
 | CAGR | 42.46% | 46.11% | 46.11% |
 | Annualized volatility | 8.63% | 8.50% | 8.50% |
@@ -100,7 +101,7 @@ Known risks:
 
 **INFORMATIONAL ONLY / NON-CONCLUSIVE.** The observed return, Sharpe, and drawdown differences are descriptive metrics from a very short overlap, not evidence for promotion and not a strategy verdict.
 
-This remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.
+This remains historical research, not evidence of tradability or a recommendation. There is still no parameter-search correction or project-level multiple-testing adjustment for this strategy; promotion also requires a live paper period.
 
 #### Ecosystem review
 

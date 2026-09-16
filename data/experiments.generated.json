@@ -639,9 +639,101 @@
       ],
       "timestamp": "2026-09-13T09:24:17+00:00",
       "walk_forward_passed": false
+    },
+    {
+      "params": {
+        "fast": 50,
+        "risk_free_source": "ff5-rf",
+        "slippage_bps": 1.0,
+        "slow": 200
+      },
+      "period_end": "2026-06-30",
+      "period_start": "2015-01-02",
+      "report_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260913_141450_ma_crossover_50_200.md",
+      "strategy_name": "ma_crossover_50_200",
+      "symbols": [
+        "QQQ",
+        "SPY"
+      ],
+      "timestamp": "2026-09-13T14:14:50+00:00",
+      "walk_forward_passed": true
+    },
+    {
+      "params": {
+        "allocation": "equal_weight_long_or_cash",
+        "calendar_effect": "turn_of_month",
+        "first_sessions": 3,
+        "last_sessions": 1,
+        "window": "day_-1_through_day_+3"
+      },
+      "period_end": "2026-08-14",
+      "period_start": "2010-01-04",
+      "report_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260914_070248_turn_of_month_last_1_first_3.md",
+      "requested_end": null,
+      "requested_start": "2010-01-01",
+      "strategy_name": "turn_of_month_last_1_first_3",
+      "symbols": [
+        "QQQ",
+        "SPY"
+      ],
+      "timestamp": "2026-09-14T07:02:48+00:00",
+      "walk_forward_passed": false
+    },
+    {
+      "params": {
+        "daily_aggregation": "equal_weight_mean_across_digests",
+        "fast": 50,
+        "lag": "calendar_day_D_to_next_trading_session",
+        "lexicon": "simplified_finance_domain_subset_not_full_LM",
+        "normalization": "positive_minus_negative_hits_div_total_words",
+        "rolling_window": 3,
+        "slow": 200
+      },
+      "period_end": "2026-08-14",
+      "period_start": "2026-08-10",
+      "report_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260914_141039_sentiment_conditional_ma_50_200_3d.md",
+      "requested_end": null,
+      "requested_start": "2015-01-01",
+      "strategy_name": "sentiment_conditional_ma_50_200_3d",
+      "symbols": [
+        "QQQ",
+        "SPY"
+      ],
+      "timestamp": "2026-09-14T14:10:39+00:00",
+      "walk_forward_passed": false
+    },
+    {
+      "params": {
+        "allocation": "equal_weight_long_top_k",
+        "lookback_days": 252,
+        "ranking": "price_divided_by_trailing_rolling_max",
+        "rebalance": "daily",
+        "sizer": "equal_weight_long",
+        "top_k": 3
+      },
+      "period_end": "2026-08-14",
+      "period_start": "2015-01-02",
+      "report_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260916_141747_fifty_two_week_high_top3_252.md",
+      "requested_end": null,
+      "requested_start": "2015-01-01",
+      "strategy_name": "fifty_two_week_high_top3_252",
+      "symbols": [
+        "DBC",
+        "GLD",
+        "IEF",
+        "IWM",
+        "QQQ",
+        "SLV",
+        "SPY",
+        "TLT",
+        "USO",
+        "UUP"
+      ],
+      "timestamp": "2026-09-16T14:17:47+00:00",
+      "walk_forward_passed": false
     }
   ],
-  "duplicate_reruns_discarded": 14,
+  "duplicate_reruns_discarded": 47,
   "families": {
     "cointegration_pairs_tlt_ief": {
       "slug": "cointegration-pairs-tlt-ief",
@@ -884,6 +976,80 @@
         }
       ]
     },
+    "fifty_two_week_high_top3_252": {
+      "slug": "fifty-two-week-high-top3-252",
+      "variants": [
+        {
+          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260916_141747_fifty_two_week_high_top3_252.md",
+          "filename": "20260916_141747_fifty_two_week_high_top3_252.md",
+          "family": "fifty_two_week_high_top3_252",
+          "slug": "fifty-two-week-high-top3-252",
+          "variant_index": 1,
+          "generated_at": "2026-09-16T14:17:47+00:00",
+          "generated_at_source": "2026-09-16T14:17:47+00:00",
+          "params_line": "lookback_days=252, top_k=3, ranking=price_divided_by_trailing_rolling_max, rebalance=daily, allocation=equal_weight_long_top_k, sizer=equal_weight_long",
+          "period_string": "2015-01-02 to 2026-08-14",
+          "verdict_text": "Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.",
+          "verdict_category": "fail",
+          "verdict_label": "FAIL",
+          "badge_class": "verdict-badge--fail",
+          "registered": true,
+          "registry_matches": [
+            {
+              "timestamp": "2026-09-16T14:17:47+00:00",
+              "walk_forward_passed": false,
+              "params": {
+                "allocation": "equal_weight_long_top_k",
+                "lookback_days": 252,
+                "ranking": "price_divided_by_trailing_rolling_max",
+                "rebalance": "daily",
+                "sizer": "equal_weight_long",
+                "top_k": 3
+              }
+            }
+          ],
+          "chart_filename": "fifty-two-week-high-top3-252__variant-1.svg",
+          "equity_companion_found": true,
+          "sections": [
+            {
+              "heading": "Experiment",
+              "classification": "experiment",
+              "raw_markdown_body": "\n\r\n- Period: 2015-01-02 to 2026-08-14 (2920 sessions)\r\n- Execution rule: close-derived weights are applied one session later\r\n- Transaction costs: 5.00 bps per unit of turnover\r\n- Cash return: 0%; taxes, slippage and market impact: not modeled\r\n- Parameters: lookback_days=252, top_k=3, ranking=price_divided_by_trailing_rolling_max, rebalance=daily, allocation=equal_weight_long_top_k, sizer=equal_weight_long\r\n\r\n"
+            },
+            {
+              "heading": "Data provenance",
+              "classification": "provenance",
+              "raw_markdown_body": "\n\r\n- Source: `market-data-hub` (`adj_close`; live rows included: `False`)\r\n- Requested symbols: SPY, QQQ, IWM, TLT, IEF, GLD, SLV, DBC, USO, UUP\r\n- Validated common panel: 2015-01-02 to 2026-08-14; 2920 rows\r\n- Database: `C:\\Users\\Administrator\\Documents\\GitHub\\market-data-hub\\market_data.duckdb`\r\n\r\n| Symbol | Last date | Status | Coverage score | Stalled |\r\n|---|---:|---|---:|---|\r\n| DBC | 2026-08-14 00:00:00 | ok | 94.31 | False |\r\n| GLD | 2026-08-14 00:00:00 | ok | 94.32 | False |\r\n| IEF | 2026-08-14 00:00:00 | ok | 97.31 | False |\r\n| IWM | 2026-08-14 00:00:00 | ok | 97.31 | False |\r\n| QQQ | 2026-08-14 00:00:00 | ok | 97.31 | False |\r\n| SLV | 2026-08-14 00:00:00 | ok | 94.31 | False |\r\n| SPY | 2026-08-14 00:00:00 | ok | 97.33 | False |\r\n| TLT | 2026-08-14 00:00:00 | ok | 97.32 | False |\r\n| USO | 2026-08-14 00:00:00 | ok | 94.31 | False |\r\n| UUP | 2026-08-14 00:00:00 | ok | 94.31 | False |\r\n\r\n"
+            },
+            {
+              "heading": "Research rationale",
+              "classification": "rationale",
+              "raw_markdown_body": "\n\r\nSecurities trading nearest their own trailing 52-week high may subsequently outperform securities farther below that reference price because investors anchor on the high and underreact to news.\r\n\r\nEach session, divide every ETF's adjusted close by its trailing 252-session maximum, rank the ten confirmed Turtle-universe ETFs cross-sectionally, and hold the top three at equal weight. The rolling maximum includes only information through that close, and the common backtest engine applies selected weights one session later.\r\n\r\nSources:\r\n\r\n- [The 52-Week High and Momentum Investing](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1540-6261.2004.00695.x) — George and Hwang find that nearness to the 52-week high is a stronger and more robust predictor of future returns than past total returns, consistent with anchoring and underreaction. This is mechanistically different from LazyAlpha's already-tried 12-minus-1 total-return ranking, although both sit in the broad momentum literature; it is not a duplicate test of that hypothesis.\r\n\r\nKnown risks:\r\n\r\n- the cited evidence is primarily from individual equities rather than a ten-ETF cross-asset panel\r\n- a ten-symbol universe supplies a small and potentially unstable cross-section\r\n- daily ranking may create high turnover and sensitivity to trading frictions\r\n- the signal can concentrate in correlated assets near simultaneous highs\r\n- today's surviving ETF universe introduces survivorship and proxy limitations\r\n- one historical test is not evidence of future profitability\r\n\r\n"
+            },
+            {
+              "heading": "Net backtest metrics",
+              "classification": "metrics",
+              "raw_markdown_body": "\n\r\n| Metric | Strategy | Benchmark |\r\n|---|---:|---:|\r\n| Gross cumulative return | 194.44% | 175.51% |\r\n| Cumulative return | 119.30% | 175.38% |\r\n| CAGR | 7.01% | 9.14% |\r\n| Annualized volatility | 11.81% | 10.91% |\r\n| Annualized Sharpe (rf=0) | 0.63 | 0.86 |\r\n| Maximum drawdown | -29.94% | -23.48% |\r\n| Annualized turnover | 5088.90% | 8.63% |\r\n| Transaction-cost drag (sum of daily rates) | 29.48% | 0.05% |\r\n\r\n"
+            },
+            {
+              "heading": "Walk-forward / out-of-sample validation",
+              "classification": "walkforward",
+              "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2015-01-02 to 2021-12-15 | 1752 | 97.09% | 10.25% | 9.25% | 1.10 | -11.56% | 56.90% | 0.67 | 40.19% | 0.43 |\r\n| oos_1 | out_of_sample | 2021-12-16 to 2026-08-14 | 1168 | 26.11% | 5.13% | 13.05% | 0.45 | -15.90% | 75.68% | 1.11 | -49.57% | -0.66 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n"
+            },
+            {
+              "heading": "Conclusion",
+              "classification": "verdict",
+              "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. There is still no parameter-search correction or project-level multiple-testing adjustment for this strategy; promotion also requires a live paper period.\r\n\r\n"
+            },
+            {
+              "heading": "Ecosystem review",
+              "classification": "ecosystem",
+              "raw_markdown_body": "\n\r\n- **LazyFin:** Do not recreate hierarchical portfolio optimization in LazyAlpha; the line was moved/retired from LazyFin and belongs to LazyPortfolio. (`C:\\Users\\Administrator\\Documents\\GitHub\\LazyFin\\docs\\status.md`)\r\n- **investmentcommittee:** Keep B0/P0/Sa/PH/PF as methodological reference: same data, folds, costs and rebalance rules for honest comparisons; do not clone it 1:1. (`C:\\Users\\Administrator\\Documents\\GitHub\\investment-process-top-down-etf.md`)\r\n"
+            }
+          ]
+        }
+      ]
+    },
     "ma_crossover_50_200": {
       "slug": "ma-crossover-50-200",
       "variants": [
@@ -958,13 +1124,13 @@
       "slug": "ma-crossover-5-20",
       "variants": [
         {
-          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260913_093249_ma_crossover_5_20.md",
-          "filename": "20260913_093249_ma_crossover_5_20.md",
+          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260916_141855_ma_crossover_5_20.md",
+          "filename": "20260916_141855_ma_crossover_5_20.md",
           "family": "ma_crossover_5_20",
           "slug": "ma-crossover-5-20",
           "variant_index": 1,
-          "generated_at": "2026-09-13T09:32:49+00:00",
-          "generated_at_source": "2026-09-13T09:32:49+00:00",
+          "generated_at": "2026-09-16T14:18:55+00:00",
+          "generated_at_source": "2026-09-16T14:18:55+00:00",
           "params_line": "fast=5, slow=20",
           "period_string": "2020-01-01 to 2022-11-23",
           "verdict_text": "Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.",
@@ -1404,23 +1570,37 @@
       "slug": "sentiment-conditional-ma-50-200-3d",
       "variants": [
         {
-          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260911_191646_sentiment_conditional_ma_50_200_3d.md",
-          "filename": "20260911_191646_sentiment_conditional_ma_50_200_3d.md",
+          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260914_141039_sentiment_conditional_ma_50_200_3d.md",
+          "filename": "20260914_141039_sentiment_conditional_ma_50_200_3d.md",
           "family": "sentiment_conditional_ma_50_200_3d",
           "slug": "sentiment-conditional-ma-50-200-3d",
           "variant_index": 1,
-          "generated_at": "2026-09-11T19:16:46+00:00",
-          "generated_at_source": "2026-09-11T19:16:46+00:00",
+          "generated_at": "2026-09-14T14:10:39+00:00",
+          "generated_at_source": "2026-09-14T14:10:39+00:00",
           "params_line": "fast=50, slow=200, rolling_window=3, daily_aggregation=equal_weight_mean_across_digests, normalization=positive_minus_negative_hits_div_total_words, lag=calendar_day_D_to_next_trading_session, lexicon=simplified_finance_domain_subset_not_full_LM",
           "period_string": "2026-08-10 to 2026-08-14",
           "verdict_text": "Walk-forward verdict: NOT RUN / NOT EVALUABLE.",
           "verdict_category": "not_evaluable",
           "verdict_label": "NOT EVALUABLE",
           "badge_class": "verdict-badge--warn",
-          "registered": false,
-          "registry_matches": [],
+          "registered": true,
+          "registry_matches": [
+            {
+              "timestamp": "2026-09-14T14:10:39+00:00",
+              "walk_forward_passed": false,
+              "params": {
+                "daily_aggregation": "equal_weight_mean_across_digests",
+                "fast": 50,
+                "lag": "calendar_day_D_to_next_trading_session",
+                "lexicon": "simplified_finance_domain_subset_not_full_LM",
+                "normalization": "positive_minus_negative_hits_div_total_words",
+                "rolling_window": 3,
+                "slow": 200
+              }
+            }
+          ],
           "chart_filename": "sentiment-conditional-ma-50-200-3d__variant-1.svg",
-          "equity_companion_found": false,
+          "equity_companion_found": true,
           "sections": [
             {
               "heading": "Experiment",
@@ -1430,7 +1610,7 @@
             {
               "heading": "Digest-sentiment provenance and action rule",
               "classification": "extra",
-              "raw_markdown_body": "\n\r\n- Source: `digests` in `C:\\ProgramData\\InvestmentCommittee\\live\\db\\digests.db` (SQLite URI `mode=ro` plus `PRAGMA query_only=ON`)\r\n- Path resolution: explicit argument, else `os.environ.get('DIGESTS_DB')`, else the production literal; this run used DIGESTS_DB environment variable\r\n- Production rows: 156 total; 152 scored; 4 empty-text rows explicitly excluded (never scored as neutral)\r\n- Calendar coverage: 2026-08-05 to 2026-09-11 (38 distinct consecutive days)\r\n- Engines: claude, deepseek; cycles: europeclose, morning, usclose\r\n- Per-digest score: `(positive exact-token hits - negative exact-token hits) / all alphabetic word tokens`; same-day digests are aggregated by an equal-weight arithmetic mean\r\n- Positive subset (34 terms): `accelerate`, `accelerated`, `accelerating`, `advance`, `advanced`, `advances`, `beat`, `beats`, `bullish`, `expansion`, `gain`, `gained`, `gains`, `grow`, `growing`, `growth`, `improve`, `improved`, `improvement`, `outperform`, `outperformed`, `profit`, `profitable`, `rally`, `rebound`, `rebounded`, `recovery`, `resilient`, `strength`, `strong`, `stronger`, `surge`, `surged`, `upside`\r\n- Negative subset (34 terms): `bankrupt`, `bankruptcy`, `bearish`, `breach`, `contraction`, `crisis`, `decline`, `declined`, `declines`, `default`, `defaults`, `distress`, `distressed`, `downgrade`, `downgraded`, `fraud`, `impairment`, `insolvency`, `liquidation`, `loss`, `losses`, `miss`, `missed`, `plunge`, `plunged`, `recession`, `slump`, `slumped`, `underperform`, `underperformed`, `warning`, `weak`, `weaker`, `weakness`\r\n- Dictionary limitation: this is a simplified, manually curated representative finance-news subset inspired by Loughran & McDonald (2011), not the licensed/full Loughran-McDonald Master Dictionary and not a claim to reproduce it\r\n- Routine finance terms including `liability`, `tax`, and `cost` are intentionally absent; exact-token matching avoids assigning their generic-English polarity\r\n- Frozen gate: apply the existing 50/200 MA weights only when the trailing 3-calendar-day mean daily sentiment is strictly positive; otherwise cash\r\n- Window rationale: three calendar days was frozen before this run as a short smoother appropriate to an initial ~38-day history; it reduces single-digest/engine noise while preserving more usable observations than a five-day window\r\n- Lag rule: every calendar-day D digest score first becomes eligible for the next trading session after D; the backtest engine's uniform one-session weight shift is retained\r\n- Evaluation-only overlap: 2026-08-10 to 2026-08-14; earlier price rows are retained only to warm up the frozen 200-day MA and are excluded from all reported metrics\r\n- Missing required calendar-day or trading-day coverage raises `DigestSentimentDataUnavailable`; it is never imputed as zero/neutral\r\n- Methodology source: [Loughran & McDonald (2011), *The Journal of Finance* 66(1), 35-65](https://doi.org/10.1111/j.1540-6261.2010.01625.x)\r\n\r\n"
+              "raw_markdown_body": "\n\r\n- Source: `digests` in `C:\\ProgramData\\InvestmentCommittee\\live\\db\\digests.db` (SQLite URI `mode=ro` plus `PRAGMA query_only=ON`)\r\n- Path resolution: explicit argument, else `os.environ.get('DIGESTS_DB')`, else the production literal; this run used DIGESTS_DB environment variable\r\n- Production rows: 164 total; 160 scored; 4 empty-text rows explicitly excluded (never scored as neutral)\r\n- Calendar coverage: 2026-08-05 to 2026-09-13 (40 distinct consecutive days)\r\n- Engines: claude, deepseek; cycles: europeclose, morning, usclose\r\n- Per-digest score: `(positive exact-token hits - negative exact-token hits) / all alphabetic word tokens`; same-day digests are aggregated by an equal-weight arithmetic mean\r\n- Positive subset (34 terms): `accelerate`, `accelerated`, `accelerating`, `advance`, `advanced`, `advances`, `beat`, `beats`, `bullish`, `expansion`, `gain`, `gained`, `gains`, `grow`, `growing`, `growth`, `improve`, `improved`, `improvement`, `outperform`, `outperformed`, `profit`, `profitable`, `rally`, `rebound`, `rebounded`, `recovery`, `resilient`, `strength`, `strong`, `stronger`, `surge`, `surged`, `upside`\r\n- Negative subset (34 terms): `bankrupt`, `bankruptcy`, `bearish`, `breach`, `contraction`, `crisis`, `decline`, `declined`, `declines`, `default`, `defaults`, `distress`, `distressed`, `downgrade`, `downgraded`, `fraud`, `impairment`, `insolvency`, `liquidation`, `loss`, `losses`, `miss`, `missed`, `plunge`, `plunged`, `recession`, `slump`, `slumped`, `underperform`, `underperformed`, `warning`, `weak`, `weaker`, `weakness`\r\n- Dictionary limitation: this is a simplified, manually curated representative finance-news subset inspired by Loughran & McDonald (2011), not the licensed/full Loughran-McDonald Master Dictionary and not a claim to reproduce it\r\n- Routine finance terms including `liability`, `tax`, and `cost` are intentionally absent; exact-token matching avoids assigning their generic-English polarity\r\n- Frozen gate: apply the existing 50/200 MA weights only when the trailing 3-calendar-day mean daily sentiment is strictly positive; otherwise cash\r\n- Window rationale: three calendar days was frozen before this run as a short smoother appropriate to an initial ~38-day history; it reduces single-digest/engine noise while preserving more usable observations than a five-day window\r\n- Lag rule: every calendar-day D digest score first becomes eligible for the next trading session after D; the backtest engine's uniform one-session weight shift is retained\r\n- Evaluation-only overlap: 2026-08-10 to 2026-08-14; earlier price rows are retained only to warm up the frozen 200-day MA and are excluded from all reported metrics\r\n- Missing required calendar-day or trading-day coverage raises `DigestSentimentDataUnavailable`; it is never imputed as zero/neutral\r\n- Methodology source: [Loughran & McDonald (2011), *The Journal of Finance* 66(1), 35-65](https://doi.org/10.1111/j.1540-6261.2010.01625.x)\r\n\r\n"
             },
             {
               "heading": "Data provenance",
@@ -1445,7 +1625,7 @@
             {
               "heading": "Net backtest metrics",
               "classification": "metrics",
-              "raw_markdown_body": "\n\r\n| Metric | Strategy | Ungated MA | Benchmark |\r\n|---|---:|---:|---:|\r\n| Cumulative return | 0.70% | 0.76% | 0.76% |\r\n| CAGR | 42.46% | 46.11% | 46.11% |\r\n| Annualized volatility | 8.63% | 8.50% | 8.50% |\r\n| Annualized Sharpe (rf=0) | 4.14 | 4.50 | 4.50 |\r\n| Maximum drawdown | -0.33% | -0.33% | -0.33% |\r\n| Annualized turnover | 5040.00% | 0.00% | 0.00% |\r\n| Transaction-cost drag (sum of daily rates) | 0.05% | 0.00% | 0.00% |\r\n\r\n"
+              "raw_markdown_body": "\n\r\n| Metric | Strategy | Ungated MA | Benchmark |\r\n|---|---:|---:|---:|\r\n| Gross cumulative return | 0.76% | 0.76% | 0.76% |\r\n| Cumulative return | 0.70% | 0.76% | 0.76% |\r\n| CAGR | 42.46% | 46.11% | 46.11% |\r\n| Annualized volatility | 8.63% | 8.50% | 8.50% |\r\n| Annualized Sharpe (rf=0) | 4.14 | 4.50 | 4.50 |\r\n| Maximum drawdown | -0.33% | -0.33% | -0.33% |\r\n| Annualized turnover | 5040.00% | 0.00% | 0.00% |\r\n| Transaction-cost drag (sum of daily rates) | 0.05% | 0.00% | 0.00% |\r\n\r\n"
             },
             {
               "heading": "Walk-forward / out-of-sample validation",
@@ -1455,12 +1635,90 @@
             {
               "heading": "Conclusion",
               "classification": "verdict",
-              "raw_markdown_body": "\n\r\n**INFORMATIONAL ONLY / NON-CONCLUSIVE.** The observed return, Sharpe, and drawdown differences are descriptive metrics from a very short overlap, not evidence for promotion and not a strategy verdict.\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. Promotion still requires parameter-robustness and multiple-testing checks plus a live paper period.\r\n\r\n"
+              "raw_markdown_body": "\n\r\n**INFORMATIONAL ONLY / NON-CONCLUSIVE.** The observed return, Sharpe, and drawdown differences are descriptive metrics from a very short overlap, not evidence for promotion and not a strategy verdict.\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. There is still no parameter-search correction or project-level multiple-testing adjustment for this strategy; promotion also requires a live paper period.\r\n\r\n"
             },
             {
               "heading": "Ecosystem review",
               "classification": "ecosystem",
               "raw_markdown_body": "\n\r\n- **LazyAlpha backlog:** Family 4 explicitly calls for sentiment from LazyCrawler's own digests, so this implementation reuses the named proprietary data asset and the existing MA signal rather than duplicating another family. (`C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\docs\\candidate-strategy-families.md`)\r\n"
+            }
+          ]
+        }
+      ]
+    },
+    "turn_of_month_last_1_first_3": {
+      "slug": "turn-of-month-last-1-first-3",
+      "variants": [
+        {
+          "source_path": "C:\\Users\\Administrator\\Documents\\GitHub\\LazyAlpha\\reports\\20260914_070248_turn_of_month_last_1_first_3.md",
+          "filename": "20260914_070248_turn_of_month_last_1_first_3.md",
+          "family": "turn_of_month_last_1_first_3",
+          "slug": "turn-of-month-last-1-first-3",
+          "variant_index": 1,
+          "generated_at": "2026-09-14T07:05:02+00:00",
+          "generated_at_source": "2026-09-14T07:05:02+00:00",
+          "params_line": "calendar_effect=turn_of_month, last_sessions=1, first_sessions=3, window=day_-1_through_day_+3, allocation=equal_weight_long_or_cash",
+          "period_string": "2010-01-04 to 2026-08-14",
+          "verdict_text": "Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.",
+          "verdict_category": "fail",
+          "verdict_label": "FAIL",
+          "badge_class": "verdict-badge--fail",
+          "registered": true,
+          "registry_matches": [
+            {
+              "timestamp": "2026-09-14T07:02:48+00:00",
+              "walk_forward_passed": false,
+              "params": {
+                "allocation": "equal_weight_long_or_cash",
+                "calendar_effect": "turn_of_month",
+                "first_sessions": 3,
+                "last_sessions": 1,
+                "window": "day_-1_through_day_+3"
+              }
+            }
+          ],
+          "chart_filename": "turn-of-month-last-1-first-3__variant-1.svg",
+          "equity_companion_found": true,
+          "sections": [
+            {
+              "heading": "Experiment",
+              "classification": "experiment",
+              "raw_markdown_body": "\n\r\n- Period: 2010-01-04 to 2026-08-14 (4179 sessions)\r\n- Execution rule: close-derived weights are applied one session later\r\n- Transaction costs: 5.00 bps per unit of turnover\r\n- Cash return: 0%; taxes, slippage and market impact: not modeled\r\n- Parameters: calendar_effect=turn_of_month, last_sessions=1, first_sessions=3, window=day_-1_through_day_+3, allocation=equal_weight_long_or_cash\r\n\r\n"
+            },
+            {
+              "heading": "Turn-of-the-month construction",
+              "classification": "extra",
+              "raw_markdown_body": "\n\r\n- Frozen window: Day -1 through Day +3 — the last observed trading session of a month and the first three observed sessions of the next month.\r\n- Allocation: equal-weight long across the selected ETFs inside that four-session window; 100% cash otherwise.\r\n- Timing: the calendar for the next exchange session is knowable at close t. The strategy moves the desired calendar position back one row so the central backtester's one-session shift applies it to the intended close-to-close return; no future price or return is read.\r\n- Architecture: this is a standalone `Strategy` because the calendar is the complete source of exposure, rather than a gate applied to a price-derived base signal.\r\n- Realized invested sessions: 798 of 4179 (19.10%); all remaining sessions are cash under the base model.\r\n- The window was copied from Lakonishok and Smidt (1988) and McConnell and Xu (2008), not selected from this ETF sample.\r\n\r\n### What is notable in this sample\r\n\r\n- The strategy was exposed only 19.10% of sessions, yet its gross full-sample cumulative return was 92.14%. Repeated round trips reduced the net result to 57.30%; annualized turnover was 2412.06% at the stated 5.00-bp cost.\r\n- The calendar effect strengthened after the frozen split: strategy CAGR rose from 2.06% in development to 3.84% OOS, and Sharpe rose from 0.33 to 0.46.\r\n- That persistence was not enough to pass. OOS net return was 28.38% with 0.46 Sharpe, versus 214.03% and 0.89 for buy-and-hold.\r\n- OOS maximum drawdown was -12.28%, compared with -30.86% for buy-and-hold. The lower market exposure reduced drawdown, but the repository requires both return and Sharpe to match or beat the benchmark.\r\n\r\n"
+            },
+            {
+              "heading": "Data provenance",
+              "classification": "provenance",
+              "raw_markdown_body": "\n\r\n- Source: `market-data-hub` (`adj_close`; live rows included: `False`)\r\n- Requested symbols: SPY, QQQ\r\n- Validated common panel: 2010-01-04 to 2026-08-14; 4179 rows\r\n- Database: `C:\\Users\\Administrator\\Documents\\GitHub\\market-data-hub\\market_data.duckdb`\r\n\r\n| Symbol | Last date | Status | Coverage score | Stalled |\r\n|---|---:|---|---:|---|\r\n| QQQ | 2026-08-14 00:00:00 | ok | 97.31 | False |\r\n| SPY | 2026-08-14 00:00:00 | ok | 97.33 | False |\r\n\r\n"
+            },
+            {
+              "heading": "Research rationale",
+              "classification": "rationale",
+              "raw_markdown_body": "\n\r\nEquity returns may be concentrated around the turn of each calendar month, providing a signal that depends only on the trading calendar rather than a continuous price trend.\r\n\r\nHold the selected equity ETFs at equal weight from the last trading session of each month through the first three trading sessions of the next month, and hold cash on all other sessions. The Day -1 through Day +3 window is copied from the cited literature and frozen before this sample is evaluated.\r\n\r\nSources:\r\n\r\n- [Are Seasonal Anomalies Real? A Ninety-Year Perspective](https://doi.org/10.1093/rfs/1.4.403) — Lakonishok and Smidt document persistent anomalous Dow returns around the turn of the month over 1897-1986.\r\n- [Equity Returns at the Turn of the Month](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1135217) — McConnell and Xu define the canonical interval as Day -1 through Day +3, confirm it in U.S. data through 2005, and report it in 31 of 35 countries examined.\r\n- [A Monthly Effect in Stock Returns](https://doi.org/10.1016/0304-405X(87)90066-3) — Ariel provides early peer-reviewed evidence that positive market returns cluster immediately before and during the early part of calendar months.\r\n\r\nKnown risks:\r\n\r\n- a published anomaly can weaken after discovery or vary across market regimes\r\n- four invested sessions per month leave most capital in zero-return cash under the base model\r\n- frequent entry and exit makes the result sensitive to trading costs and slippage\r\n- the ETF sample is much newer and shorter than the index histories in the cited studies\r\n- calendar dates are known in advance, but unexpected exchange closures can alter the realized session sequence\r\n- one historical sample is not evidence of future profitability\r\n\r\n"
+            },
+            {
+              "heading": "Net backtest metrics",
+              "classification": "metrics",
+              "raw_markdown_body": "\n\r\n| Metric | Strategy | Benchmark |\r\n|---|---:|---:|\r\n| Gross cumulative return | 92.14% | 1207.96% |\r\n| Cumulative return | 57.30% | 1207.31% |\r\n| CAGR | 2.77% | 16.77% |\r\n| Annualized volatility | 7.97% | 18.56% |\r\n| Annualized Sharpe (rf=0) | 0.38 | 0.93 |\r\n| Maximum drawdown | -13.03% | -30.86% |\r\n| Annualized turnover | 2412.06% | 6.03% |\r\n| Transaction-cost drag (sum of daily rates) | 20.00% | 0.05% |\r\n\r\n"
+            },
+            {
+              "heading": "Walk-forward / out-of-sample validation",
+              "classification": "walkforward",
+              "raw_markdown_body": "\n\r\nParameters were frozen before the chronological split. Each window is non-overlapping and backtested independently.\r\n\r\n| Window | Role | Period | Sessions | Return | CAGR | Volatility | Sharpe | Max drawdown | Benchmark return | Benchmark Sharpe | Return delta | Sharpe delta |\r\n|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|\r\n| development | development | 2010-01-04 to 2019-12-17 | 2507 | 22.53% | 2.06% | 7.04% | 0.33 | -13.03% | 315.92% | 0.99 | -293.39% | -0.67 |\r\n| oos_1 | out_of_sample | 2019-12-18 to 2026-08-14 | 1672 | 28.38% | 3.84% | 9.18% | 0.46 | -12.28% | 214.03% | 0.89 | -185.65% | -0.43 |\r\n\r\nPass criterion: in every OOS window, strategy cumulative return and annualized Sharpe must each be at least the corresponding benchmark value.\r\n\r\n**Walk-forward verdict: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\n"
+            },
+            {
+              "heading": "Conclusion",
+              "classification": "verdict",
+              "raw_markdown_body": "\n\r\n**Full-sample comparison: FAIL on this sample: lower net return and Sharpe than the benchmark.**\r\n\r\n**Final validation judgment: FAIL: degrades out of sample; the frozen strategy trails the benchmark on return or Sharpe in at least one OOS window.**\r\n\r\nThis remains historical research, not evidence of tradability or a recommendation. There is still no parameter-search correction or project-level multiple-testing adjustment for this strategy; promotion also requires a live paper period.\r\n\r\n"
+            },
+            {
+              "heading": "Ecosystem review",
+              "classification": "ecosystem",
+              "raw_markdown_body": "\n\r\n- **LazyFin:** Do not recreate hierarchical portfolio optimization in LazyAlpha; the line was moved/retired from LazyFin and belongs to LazyPortfolio. (`C:\\Users\\Administrator\\Documents\\GitHub\\LazyFin\\docs\\status.md`)\r\n- **investmentcommittee:** Keep B0/P0/Sa/PH/PF as methodological reference: same data, folds, costs and rebalance rules for honest comparisons; do not clone it 1:1. (`C:\\Users\\Administrator\\Documents\\GitHub\\investment-process-top-down-etf.md`)\r\n"
             }
           ]
         }
