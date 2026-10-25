@@ -1,10 +1,10 @@
 # Strategy: ma_crossover_5_20
 
-1 variant(s) documented · earliest 2026-09-16 · latest 2026-09-16.
+1 variant(s) documented · earliest 2026-09-17 · latest 2026-09-17.
 
 | Variant | Generated | Registered | Verdict |
 |---|---|---:|---|
-| <a href="#variant-1" title="fast=5, slow=20"><code>fast=5, slow=20</code></a> | 2026-09-16T14:18:55+00:00 | — | <span class="verdict-badge verdict-badge--fail">FAIL</span> |
+| <a href="#variant-1" title="fast=5, slow=20"><code>fast=5, slow=20</code></a> | 2026-09-17T14:00:54+00:00 | — | <span class="verdict-badge verdict-badge--fail">FAIL</span> |
 
 ### Variant 1 {: #variant-1 }
 
@@ -20,8 +20,8 @@
 </figure>
 </div>
 
-**Generated:** 2026-09-16T14:18:55+00:00  
-**Source report:** `20260916_141855_ma_crossover_5_20.md`  
+**Generated:** 2026-09-17T14:00:54+00:00  
+**Source report:** `20260917_140054_ma_crossover_5_20.md`  
 **Registered:** —
 #### Experiment
 
