@@ -6,7 +6,7 @@
 <article class="la-result-card la-result-card--fail" data-model="ma-crossover-5-20" data-variant="variant-1">
 <div class="la-result-card__header">
 <div>
-<span class="la-kicker">Variant 1 · 2026-09-16T14:18:55+00:00</span>
+<span class="la-kicker">Variant 1 · 2026-09-17T14:00:54+00:00</span>
 <h2><a href="../models/ma-crossover-5-20/#variant-1">ma_crossover_5_20</a></h2>
 </div>
 <span class="verdict-badge verdict-badge--fail">FAIL</span>

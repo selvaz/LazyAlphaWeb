@@ -964,6 +964,7 @@ def render_changelog(
         raw = entry.raw
         strategy_name = str(raw["strategy_name"])
         strategy_display = html.escape(strategy_name)
+        changelog_badge = registry_badge(entry)
         report_path = Path(str(raw["report_path"])).resolve()
         report_path_status = report_path_statuses.get(normalized_windows_path(report_path))
         if report_path_status is None:
@@ -979,6 +980,7 @@ def render_changelog(
                 f"[{strategy_display}](models/{matching_report.slug}.md"
                 f"#variant-{matching_report.variant_index})"
             )
+            changelog_badge = badge(matching_report.badge_class, matching_report.verdict_label)
         elif report_path_status.bucket == "discarded_duplicate":
             discarded_report = report_path_status.report
             if discarded_report is None:
@@ -1003,7 +1005,7 @@ def render_changelog(
         compact_params = json.dumps(raw["params"], sort_keys=True, ensure_ascii=False)
         lines.append(
             f"- {html.escape(str(raw['timestamp']))} · {strategy_display} · "
-            f"{code_html(compact_params, 120)} · {registry_badge(entry)}"
+            f"{code_html(compact_params, 120)} · {changelog_badge}"
         )
     return newline.join(lines) + newline
 
